@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */; };
+		CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */; };
+		CDD8B60227482B7600C9F7FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B60127482B7600C9F7FF /* ViewController.swift */; };
+		CDD8B60527482B7600C9F7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60327482B7600C9F7FF /* Main.storyboard */; };
+		CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60627482B7700C9F7FF /* Assets.xcassets */; };
+		CDD8B60A27482B7700C9F7FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */; };
+		CDD8B61527482B7800C9F7FF /* LazyFolksiOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDD8B61127482B7800C9F7FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDD8B5F227482B7600C9F7FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDD8B5F927482B7600C9F7FF;
+			remoteInfo = LazyFolksiOSApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CDD8B60127482B7600C9F7FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDD8B60427482B7600C9F7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDD8B60627482B7700C9F7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDD8B60927482B7700C9F7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CDD8B60B27482B7700C9F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDD8B61027482B7800C9F7FF /* LazyFolksiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyFolksiOSAppTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDD8B5F727482B7600C9F7FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD8B60D27482B7800C9F7FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDD8B5F127482B7600C9F7FF = {
+			isa = PBXGroup;
+			children = (
+				CDD8B5FC27482B7600C9F7FF /* LazyFolksiOSApp */,
+				CDD8B61327482B7800C9F7FF /* LazyFolksiOSAppTests */,
+				CDD8B5FB27482B7600C9F7FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDD8B5FB27482B7600C9F7FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */,
+				CDD8B61027482B7800C9F7FF /* LazyFolksiOSAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDD8B5FC27482B7600C9F7FF /* LazyFolksiOSApp */ = {
+			isa = PBXGroup;
+			children = (
+				CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */,
+				CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */,
+				CDD8B60127482B7600C9F7FF /* ViewController.swift */,
+				CDD8B60327482B7600C9F7FF /* Main.storyboard */,
+				CDD8B60627482B7700C9F7FF /* Assets.xcassets */,
+				CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */,
+				CDD8B60B27482B7700C9F7FF /* Info.plist */,
+			);
+			path = LazyFolksiOSApp;
+			sourceTree = "<group>";
+		};
+		CDD8B61327482B7800C9F7FF /* LazyFolksiOSAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */,
+			);
+			path = LazyFolksiOSAppTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDD8B5F927482B7600C9F7FF /* LazyFolksiOSApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD8B62427482B7800C9F7FF /* Build configuration list for PBXNativeTarget "LazyFolksiOSApp" */;
+			buildPhases = (
+				CDD8B5F627482B7600C9F7FF /* Sources */,
+				CDD8B5F727482B7600C9F7FF /* Frameworks */,
+				CDD8B5F827482B7600C9F7FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyFolksiOSApp;
+			productName = LazyFolksiOSApp;
+			productReference = CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDD8B60F27482B7800C9F7FF /* LazyFolksiOSAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD8B62727482B7800C9F7FF /* Build configuration list for PBXNativeTarget "LazyFolksiOSAppTests" */;
+			buildPhases = (
+				CDD8B60C27482B7800C9F7FF /* Sources */,
+				CDD8B60D27482B7800C9F7FF /* Frameworks */,
+				CDD8B60E27482B7800C9F7FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDD8B61227482B7800C9F7FF /* PBXTargetDependency */,
+			);
+			name = LazyFolksiOSAppTests;
+			productName = LazyFolksiOSAppTests;
+			productReference = CDD8B61027482B7800C9F7FF /* LazyFolksiOSAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDD8B5F227482B7600C9F7FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					CDD8B5F927482B7600C9F7FF = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					CDD8B60F27482B7800C9F7FF = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = CDD8B5F927482B7600C9F7FF;
+					};
+				};
+			};
+			buildConfigurationList = CDD8B5F527482B7600C9F7FF /* Build configuration list for PBXProject "LazyFolksiOSApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDD8B5F127482B7600C9F7FF;
+			productRefGroup = CDD8B5FB27482B7600C9F7FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDD8B5F927482B7600C9F7FF /* LazyFolksiOSApp */,
+				CDD8B60F27482B7800C9F7FF /* LazyFolksiOSAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDD8B5F827482B7600C9F7FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD8B60A27482B7700C9F7FF /* LaunchScreen.storyboard in Resources */,
+				CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */,
+				CDD8B60527482B7600C9F7FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD8B60E27482B7800C9F7FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDD8B5F627482B7600C9F7FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD8B60227482B7600C9F7FF /* ViewController.swift in Sources */,
+				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
+				CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD8B60C27482B7800C9F7FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD8B61527482B7800C9F7FF /* LazyFolksiOSAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDD8B61227482B7800C9F7FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDD8B5F927482B7600C9F7FF /* LazyFolksiOSApp */;
+			targetProxy = CDD8B61127482B7800C9F7FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CDD8B60327482B7600C9F7FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDD8B60427482B7600C9F7FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDD8B60927482B7700C9F7FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDD8B62227482B7800C9F7FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CDD8B62327482B7800C9F7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDD8B62527482B7800C9F7FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LazyFolksiOSApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luispiura.LazyFolksiOSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDD8B62627482B7800C9F7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LazyFolksiOSApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luispiura.LazyFolksiOSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CDD8B62827482B7800C9F7FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luispiura.LazyFolksiOSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyFolksiOSApp.app/LazyFolksiOSApp";
+			};
+			name = Debug;
+		};
+		CDD8B62927482B7800C9F7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luispiura.LazyFolksiOSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyFolksiOSApp.app/LazyFolksiOSApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDD8B5F527482B7600C9F7FF /* Build configuration list for PBXProject "LazyFolksiOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD8B62227482B7800C9F7FF /* Debug */,
+				CDD8B62327482B7800C9F7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD8B62427482B7800C9F7FF /* Build configuration list for PBXNativeTarget "LazyFolksiOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD8B62527482B7800C9F7FF /* Debug */,
+				CDD8B62627482B7800C9F7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD8B62727482B7800C9F7FF /* Build configuration list for PBXNativeTarget "LazyFolksiOSAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD8B62827482B7800C9F7FF /* Debug */,
+				CDD8B62927482B7800C9F7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDD8B5F227482B7600C9F7FF /* Project object */;
+}
