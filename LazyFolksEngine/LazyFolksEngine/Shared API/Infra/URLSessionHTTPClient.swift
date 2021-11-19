@@ -15,13 +15,19 @@ public final class URLSessionHTTPClient: HTTPClient {
         self.session = session
     }
     
+    private struct UnexpectedResponseValues: Error {}
+    
     public func get(from url: URL, completion: @escaping GetCompletion) {
         session.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data, let response = response as? HTTPURLResponse {
-                completion(.success((data, response)))
-            }
+            completion(Result {
+                if let error = error {
+                    throw error
+                } else if let data = data, let response = response as? HTTPURLResponse {
+                    return (data, response)
+                } else {
+                    throw UnexpectedResponseValues()
+                }
+            })
         }.resume()
     }
 }
