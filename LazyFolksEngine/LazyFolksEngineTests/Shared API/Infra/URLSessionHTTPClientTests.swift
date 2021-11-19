@@ -27,6 +27,27 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedResult?.response.statusCode, anyHTTPURLResponse().statusCode)
     }
     
+    func test_get_shouldDeliverErrorForAnyHTTPRequestWithUnexpectedValues() {
+        /*
+         The only two expected scenarios are:
+         1. non-nil data, non-nil response and nil error
+         2. nil data, nil response and non-nil error
+         
+         any other combination should throw an error
+         */
+        
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: anyData(), response: anyHTTPURLResponse(), error: anyNSError()))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: anyData(), response: anyNonHTTPURLResponse(), error: anyNSError()))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: nil, response: nil, error: nil))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: nil, response: anyHTTPURLResponse(), error: anyNSError()))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: nil, response: anyNonHTTPURLResponse(), error: anyNSError()))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: anyData(), response: nil, error: anyNSError()))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: anyData(), response: nil, error: nil))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: anyData(), response: anyNonHTTPURLResponse(), error: nil))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: nil, response: anyHTTPURLResponse(), error: nil))))
+        XCTAssertNotNil(errorResultFor(makeSUT(with: (data: nil, response: anyNonHTTPURLResponse(), error: nil))))
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(with values: (data: Data?, response: URLResponse? , error: NSError? )) -> HTTPClient {
@@ -55,6 +76,10 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
         HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+    }
+    
+    private func anyNonHTTPURLResponse() -> URLResponse {
+        URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
     }
     
     private func resultFor(_ sut: HTTPClient) -> HTTPClient.GetResult {
