@@ -15,14 +15,16 @@ final class URLProtocolStub: URLProtocol {
         var error: NSError?
     }
     
-    static var stub: Stub?
+    private static var stub: Stub?
+    private static var requestObserver: ((URL?) -> Void)?
     
     static func removeStub() {
         stub = nil
     }
     
-    static func stub(with values: Stub) {
+    static func stub(with values: Stub, observer: ((URL?) -> Void)? = nil) {
         stub = values
+        requestObserver = observer
     }
     
     override class func canInit(with request: URLRequest) -> Bool {
@@ -36,6 +38,10 @@ final class URLProtocolStub: URLProtocol {
     override func startLoading() {
         guard let stub = URLProtocolStub.stub else {
             return
+        }
+        
+        if let requestObserver = URLProtocolStub.requestObserver {
+            requestObserver(request.url)
         }
         
         if let error = stub.error {

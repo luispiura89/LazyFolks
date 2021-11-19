@@ -48,16 +48,36 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertNotNil(errorResultFor(makeSUT(with: (data: nil, response: anyNonHTTPURLResponse(), error: nil))))
     }
     
+    func test_get_sendsGetRequestToSpecifiedURL() {
+        var expectedURL: URL?
+        let sut = makeSUT(
+            with: (data: anyData(), response: anyHTTPURLResponse(), error: nil),
+            requestObserver: { expectedURL = $0 }
+        )
+        
+        let exp = expectation(description: "wait for get method")
+        sut.get(from: anyURL()) { _ in
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+        XCTAssertEqual(expectedURL, anyURL())
+    }
+    
     // MARK: - Helpers
     
-    private func makeSUT(with values: (data: Data?, response: URLResponse? , error: NSError? )) -> HTTPClient {
+    private func makeSUT(
+        with values: (data: Data?, response: URLResponse? , error: NSError?),
+        requestObserver: ((URL?) -> Void)? = nil
+    ) -> HTTPClient {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolStub.self]
         URLProtocolStub.stub(
             with: URLProtocolStub.Stub(
                 data: values.data,
                 response: values.response,
-                error: values.error))
+                error: values.error),
+            observer: requestObserver)
         let session = URLSession(configuration: configuration)
         return URLSessionHTTPClient(session: session)
     }
