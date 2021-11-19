@@ -10,6 +10,14 @@ import LazyFolksEngine
 
 final class URLSessionHTTPClientTests: XCTestCase {
     
+    override func setUp() {
+        URLProtocolStub.removeStub()
+    }
+    
+    override func tearDown() {
+        URLProtocolStub.removeStub()
+    }
+    
     func test_get_shouldDeliverErrorOnHTTPRequestError() {
         let sut = makeSUT(with: (data: nil, response: nil, error: anyNSError()))
         

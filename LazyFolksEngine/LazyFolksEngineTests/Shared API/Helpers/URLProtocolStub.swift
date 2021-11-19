@@ -20,6 +20,7 @@ final class URLProtocolStub: URLProtocol {
     
     static func removeStub() {
         stub = nil
+        requestObserver = nil
     }
     
     static func stub(with values: Stub, observer: ((URL?) -> Void)? = nil) {
