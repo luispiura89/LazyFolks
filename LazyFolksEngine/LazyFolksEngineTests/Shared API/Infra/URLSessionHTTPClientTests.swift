@@ -13,32 +13,16 @@ final class URLSessionHTTPClientTests: XCTestCase {
     func test_get_shouldDeliverErrorOnHTTPRequestError() {
         let sut = makeSUT(with: (data: nil, response: nil, error: anyNSError()))
         
-        let exp = expectation(description: "Wait for get")
-        var receivedResult: NSError?
-        sut.get(from: anyURL()) { result in
-            if case let .failure(error) = result {
-                receivedResult = error as NSError
-            }
-            exp.fulfill()
-        }
+        let receivedResult = errorResultFor(sut)
         
-        wait(for: [exp], timeout: 1.0)
         XCTAssertEqual(receivedResult?.code, anyNSError().code)
     }
     
     func test_get_deliversDataOnSuccessfulHTTPRequest() {
         let sut = makeSUT(with: (data: anyData(), response: anyHTTPURLResponse(), error: nil))
         
-        let exp = expectation(description: "Wait for get")
-        var receivedResult: (data: Data, response: HTTPURLResponse)?
-        sut.get(from: anyURL()) { result in
-            if case let .success(response) = result {
-                receivedResult = response
-            }
-            exp.fulfill()
-        }
+        let receivedResult = successfulResultFor(sut)
         
-        wait(for: [exp], timeout: 1.0)
         XCTAssertEqual(receivedResult?.data, anyData())
         XCTAssertEqual(receivedResult?.response.statusCode, anyHTTPURLResponse().statusCode)
     }
@@ -71,5 +55,41 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
         HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+    }
+    
+    private func resultFor(_ sut: HTTPClient) -> HTTPClient.GetResult {
+        let exp = expectation(description: "Wait for get")
+        
+        var receivedResult: HTTPClient.GetResult!
+        
+        sut.get(from: anyURL()) {
+            receivedResult = $0
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+        return receivedResult
+    }
+    
+    private func errorResultFor(_ sut: HTTPClient, file: StaticString = #filePath, line: UInt = #line) -> NSError? {
+        let result = resultFor(sut)
+        
+        if case let .failure(error) = result {
+            return error as NSError
+        } else {
+            XCTFail("Expected failure got \(result) instead", file: file, line: line)
+            return nil
+        }
+    }
+    
+    private func successfulResultFor(_ sut: HTTPClient, file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
+        let result = resultFor(sut)
+        
+        if case let .success(response) = result {
+            return response
+        } else {
+            XCTFail("Expected success got \(result) instead", file: file, line: line)
+            return nil
+        }
     }
 }
