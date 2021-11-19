@@ -12,7 +12,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     func test_get_shouldDeliverErrorOnHTTPRequestError() {
         let sut = makeSUT(with: (data: nil, response: nil, error: anyNSError()))
-        let error = anyNSError()
         
         let exp = expectation(description: "Wait for get")
         var receivedResult: NSError?
@@ -24,7 +23,24 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
         
         wait(for: [exp], timeout: 1.0)
-        XCTAssertEqual(receivedResult?.code, error.code)
+        XCTAssertEqual(receivedResult?.code, anyNSError().code)
+    }
+    
+    func test_get_deliversDataOnSuccessfulHTTPRequest() {
+        let sut = makeSUT(with: (data: anyData(), response: anyHTTPURLResponse(), error: nil))
+        
+        let exp = expectation(description: "Wait for get")
+        var receivedResult: (data: Data, response: HTTPURLResponse)?
+        sut.get(from: anyURL()) { result in
+            if case let .success(response) = result {
+                receivedResult = response
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+        XCTAssertEqual(receivedResult?.data, anyData())
+        XCTAssertEqual(receivedResult?.response.statusCode, anyHTTPURLResponse().statusCode)
     }
     
     // MARK: - Helpers
@@ -47,5 +63,13 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     private func anyNSError() -> NSError {
         NSError(domain: "Any error", code: -1, userInfo: nil)
+    }
+    
+    private func anyData() -> Data {
+        Data("Any data".utf8)
+    }
+    
+    private func anyHTTPURLResponse() -> HTTPURLResponse {
+        HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
     }
 }

@@ -42,6 +42,14 @@ final class URLProtocolStub: URLProtocol {
             client?.urlProtocol(self, didFailWithError: error)
         }
         
+        if let data = stub.data {
+            client?.urlProtocol(self, didLoad: data)
+        }
+        
+        if let response = stub.response {
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        }
+        
         client?.urlProtocolDidFinishLoading(self)
     }
     

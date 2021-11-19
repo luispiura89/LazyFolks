@@ -16,9 +16,11 @@ public final class URLSessionHTTPClient: HTTPClient {
     }
     
     public func get(from url: URL, completion: @escaping GetCompletion) {
-        session.dataTask(with: url) { _, _, error in
+        session.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
+            } else if let data = data, let response = response as? HTTPURLResponse {
+                completion(.success((data, response)))
             }
         }.resume()
     }
