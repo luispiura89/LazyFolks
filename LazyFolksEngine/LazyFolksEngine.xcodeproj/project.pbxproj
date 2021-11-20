@@ -11,6 +11,9 @@
 		CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A26FC274858F80096143A /* URLSessionHTTPClient.swift */; };
 		CD8A2701274859530096143A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2700274859530096143A /* HTTPClient.swift */; };
 		CD8A270427485BB40096143A /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A270327485BB40096143A /* URLProtocolStub.swift */; };
+		CD8A27082748726E0096143A /* ActivitiesMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A27072748726E0096143A /* ActivitiesMapperTests.swift */; };
+		CD8A270A274873480096143A /* ActivitiesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2709274873480096143A /* ActivitiesMapper.swift */; };
+		CD8A270D274875080096143A /* TestHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A270C274875080096143A /* TestHelperFunctions.swift */; };
 		CDD8B5E227482B2400C9F7FF /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		CD8A26FC274858F80096143A /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		CD8A2700274859530096143A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		CD8A270327485BB40096143A /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		CD8A27072748726E0096143A /* ActivitiesMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesMapperTests.swift; sourceTree = "<group>"; };
+		CD8A2709274873480096143A /* ActivitiesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesMapper.swift; sourceTree = "<group>"; };
+		CD8A270C274875080096143A /* TestHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelperFunctions.swift; sourceTree = "<group>"; };
 		CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5E127482B2400C9F7FF /* LazyFolksEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +100,30 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CD8A2705274870DC0096143A /* Activity API */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A2709274873480096143A /* ActivitiesMapper.swift */,
+			);
+			path = "Activity API";
+			sourceTree = "<group>";
+		};
+		CD8A27062748720C0096143A /* Activity API */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A27072748726E0096143A /* ActivitiesMapperTests.swift */,
+			);
+			path = "Activity API";
+			sourceTree = "<group>";
+		};
+		CD8A270B274874EB0096143A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A270C274875080096143A /* TestHelperFunctions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CDD8B5CF27482B2400C9F7FF = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +145,7 @@
 		CDD8B5DB27482B2400C9F7FF /* LazyFolksEngine */ = {
 			isa = PBXGroup;
 			children = (
+				CD8A2705274870DC0096143A /* Activity API */,
 				CD8A26F7274857C10096143A /* Shared API */,
 			);
 			path = LazyFolksEngine;
@@ -123,6 +154,8 @@
 		CDD8B5E527482B2400C9F7FF /* LazyFolksEngineTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD8A270B274874EB0096143A /* Helpers */,
+				CD8A27062748720C0096143A /* Activity API */,
 				CD8A26F8274857DC0096143A /* Shared API */,
 			);
 			path = LazyFolksEngineTests;
@@ -238,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8A270A274873480096143A /* ActivitiesMapper.swift in Sources */,
 				CD8A2701274859530096143A /* HTTPClient.swift in Sources */,
 				CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */,
 			);
@@ -247,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8A27082748726E0096143A /* ActivitiesMapperTests.swift in Sources */,
+				CD8A270D274875080096143A /* TestHelperFunctions.swift in Sources */,
 				CD8A26FB274858CB0096143A /* URLSessionHTTPClientTests.swift in Sources */,
 				CD8A270427485BB40096143A /* URLProtocolStub.swift in Sources */,
 			);
