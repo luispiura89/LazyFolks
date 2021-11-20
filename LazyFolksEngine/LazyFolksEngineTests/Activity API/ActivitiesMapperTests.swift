@@ -19,6 +19,19 @@ final class ActivitiesMapperTests: XCTestCase {
         }
     }
     
+    func test_map_shouldThrowAnErrorOn200HTTPResponseAndErrorData() {
+        let noActivityFoundData = makeNoActivityFoundData()
+        
+        XCTAssertThrowsError(try ActivitiesMapper.map(noActivityFoundData, for: HTTPURLResponse(code: 200)!)) {
+            XCTAssertEqual($0 as? ActivitiesMapper.Error, ActivitiesMapper.Error.noActivityWasFound)
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeNoActivityFoundData() -> Data {
+        try! JSONSerialization.data(withJSONObject: ["error": "Any error"])
+    }
 }
 
 private extension HTTPURLResponse {
