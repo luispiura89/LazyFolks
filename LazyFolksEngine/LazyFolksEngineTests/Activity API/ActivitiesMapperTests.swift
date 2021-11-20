@@ -15,7 +15,9 @@ final class ActivitiesMapperTests: XCTestCase {
         let invalidJSONData = anyData()
         
         try non200HTTPCodes.forEach { code in
-            XCTAssertThrowsError(try ActivitiesMapper.map(invalidJSONData, for: HTTPURLResponse(code: code)!))
+            XCTAssertThrowsError(try ActivitiesMapper.map(invalidJSONData, for: HTTPURLResponse(code: code)!)) {
+                XCTAssertEqual($0 as? ActivitiesMapper.Error, ActivitiesMapper.Error.invalidData)
+            }
         }
     }
     
