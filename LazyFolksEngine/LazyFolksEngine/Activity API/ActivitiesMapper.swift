@@ -13,6 +13,17 @@ public final class ActivitiesMapper {
         let error: String
     }
     
+    private struct DecodableActivity: Decodable {
+        let activity: String
+        let type: String
+        let participants: Int
+        let price: Double
+        
+        var mappedActivity: Activity {
+            Activity(description: activity, type: type, participants: participants, price: price)
+        }
+    }
+    
     private init() {}
     
     public enum Error: Swift.Error, Equatable {
@@ -20,13 +31,21 @@ public final class ActivitiesMapper {
         case noActivityWasFound
     }
     
-    public static func map(_ data: Data, for response: HTTPURLResponse) throws {
-        guard response.statusCode == 200,
-                let _ = try? JSONDecoder().decode(DecodableError.self, from: data) else {
-                    throw Error.invalidData
+    public static func map(_ data: Data, for response: HTTPURLResponse) throws -> Activity {
+        guard isOK(response), let activity = try? JSONDecoder().decode(DecodableActivity.self, from: data) else {
+                  throw mapError(from: data)
         }
         
-        throw Error.noActivityWasFound
+        return activity.mappedActivity
     }
     
+    private static func mapError(from data: Data) -> Error {
+        (try? JSONDecoder().decode(DecodableError.self, from: data)).map { _ in
+            Error.noActivityWasFound
+        } ?? Error.invalidData
+    }
+    
+    private static func isOK(_ response: HTTPURLResponse) -> Bool {
+        response.statusCode == 200
+    }
 }

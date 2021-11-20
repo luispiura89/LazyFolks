@@ -14,6 +14,7 @@
 		CD8A27082748726E0096143A /* ActivitiesMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A27072748726E0096143A /* ActivitiesMapperTests.swift */; };
 		CD8A270A274873480096143A /* ActivitiesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2709274873480096143A /* ActivitiesMapper.swift */; };
 		CD8A270D274875080096143A /* TestHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A270C274875080096143A /* TestHelperFunctions.swift */; };
+		CD8A270F274957050096143A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A270E274957050096143A /* Activity.swift */; };
 		CDD8B5E227482B2400C9F7FF /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		CD8A27072748726E0096143A /* ActivitiesMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesMapperTests.swift; sourceTree = "<group>"; };
 		CD8A2709274873480096143A /* ActivitiesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesMapper.swift; sourceTree = "<group>"; };
 		CD8A270C274875080096143A /* TestHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelperFunctions.swift; sourceTree = "<group>"; };
+		CD8A270E274957050096143A /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5E127482B2400C9F7FF /* LazyFolksEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				CD8A2709274873480096143A /* ActivitiesMapper.swift */,
+				CD8A270E274957050096143A /* Activity.swift */,
 			);
 			path = "Activity API";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				CD8A270A274873480096143A /* ActivitiesMapper.swift in Sources */,
 				CD8A2701274859530096143A /* HTTPClient.swift in Sources */,
+				CD8A270F274957050096143A /* Activity.swift in Sources */,
 				CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
