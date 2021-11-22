@@ -25,6 +25,8 @@
 		CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D3877274BF609005E849B /* SearchActivityViewController.swift */; };
 		CD9D387C274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */; };
 		CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D387D274BF956005E849B /* SearchActivityView.swift */; };
+		CD9D3882274C47C4005E849B /* SEARCH_VIEW_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D3880274C47C4005E849B /* SEARCH_VIEW_light.png */; };
+		CD9D3883274C47C4005E849B /* SEARCH_VIEW_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D3881274C47C4005E849B /* SEARCH_VIEW_dark.png */; };
 		CDD8B5E227482B2400C9F7FF /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		CD9D3877274BF609005E849B /* SearchActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityViewController.swift; sourceTree = "<group>"; };
 		CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
 		CD9D387D274BF956005E849B /* SearchActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityView.swift; sourceTree = "<group>"; };
+		CD9D3880274C47C4005E849B /* SEARCH_VIEW_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_light.png; sourceTree = "<group>"; };
+		CD9D3881274C47C4005E849B /* SEARCH_VIEW_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_dark.png; sourceTree = "<group>"; };
 		CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5E127482B2400C9F7FF /* LazyFolksEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -203,6 +207,7 @@
 		CD9D3861274BF2A4005E849B /* LazyFolksiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD9D387F274C47C4005E849B /* snapshots */,
 				CD9D3871274BF550005E849B /* Helpers */,
 				CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */,
 			);
@@ -248,6 +253,15 @@
 				CD9D387D274BF956005E849B /* SearchActivityView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD9D387F274C47C4005E849B /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D3880274C47C4005E849B /* SEARCH_VIEW_light.png */,
+				CD9D3881274C47C4005E849B /* SEARCH_VIEW_dark.png */,
+			);
+			path = snapshots;
 			sourceTree = "<group>";
 		};
 		CDD8B5CF27482B2400C9F7FF = {
@@ -446,6 +460,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9D3883274C47C4005E849B /* SEARCH_VIEW_dark.png in Resources */,
+				CD9D3882274C47C4005E849B /* SEARCH_VIEW_light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@ import UIKit
 
 final class SearchActivityView: UIView {
     
+    // MARK: - Subviews
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.addSubview(mainStackView)
@@ -27,55 +29,35 @@ final class SearchActivityView: UIView {
     }()
     
     private lazy var fieldsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [typeTextField, participantsTextField, minPriceTextField, maxPriceTextField, searchButton])
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        return stackView
+        makeStackView(
+            subviews: [typeTextField, participantsTextField, minPriceTextField, maxPriceTextField, searchButton],
+            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            spacing: 20
+        )
     }()
     
     private lazy var topStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [headerLabel, subHeaderLabel])
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 20
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        return stackView
+        makeStackView(
+            subviews: [headerLabel, subHeaderLabel],
+            margins: UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25),
+            spacing: 20
+        )
     }()
     
     private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [topStackView, containerView])
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 60
-        return stackView
+        makeStackView(subviews: [topStackView, containerView], spacing: 60)
     }()
     
     private lazy var headerLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .preferredFont(forTextStyle: .largeTitle)
-        label.adjustsFontForContentSizeCategory = true
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = makeLabel(text: "Welcome Lazy Folks!", numberOfLines: 1, textStyle: .largeTitle)
         NSLayoutConstraint.activate([
             label.heightAnchor.constraint(equalToConstant: 80)
         ])
-        label.text = "Welcome Lazy Folks!"
         return label
     }()
     
     private lazy var subHeaderLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .preferredFont(forTextStyle: .title2)
-        label.adjustsFontForContentSizeCategory = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.text = "Please search an activity so you can fight lazyness"
-        return label
+        makeLabel(text: "Please search an activity so you can fight laziness", numberOfLines: 0, textStyle: .title2)
     }()
     
     private lazy var containerView: UIView = {
@@ -93,55 +75,19 @@ final class SearchActivityView: UIView {
     }()
     
     private lazy var participantsTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.backgroundColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            textField.heightAnchor.constraint(equalToConstant: 45)
-        ])
-        var placeHolder = NSAttributedString(string: "Number of participants", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.attributedPlaceholder = placeHolder
-        return textField
+        makeTexField(placeholder: "Number of participants")
     }()
     
     private lazy var typeTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.backgroundColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            textField.heightAnchor.constraint(equalToConstant: 45)
-        ])
-        var placeHolder = NSAttributedString(string: "Type", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.attributedPlaceholder = placeHolder
-        return textField
+        makeTexField(placeholder: "Type")
     }()
     
     private lazy var minPriceTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.backgroundColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            textField.heightAnchor.constraint(equalToConstant: 45)
-        ])
-        var placeHolder = NSAttributedString(string: "Min Price", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.attributedPlaceholder = placeHolder
-        return textField
+        makeTexField(placeholder: "Min price")
     }()
     
     private lazy var maxPriceTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.backgroundColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            textField.heightAnchor.constraint(equalToConstant: 45)
-        ])
-        var placeHolder = NSAttributedString(string: "Max Price", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.attributedPlaceholder = placeHolder
-        return textField
+        makeTexField(placeholder: "Max price")
     }()
     
     private lazy var searchButton: UIButton = {
@@ -156,6 +102,8 @@ final class SearchActivityView: UIView {
         button.layer.cornerRadius = 5
         return button
     }()
+    
+    // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -174,6 +122,8 @@ final class SearchActivityView: UIView {
         super.init(coder: coder)
     }
     
+    // MARK: - Methods
+    
     func addGradientBackground(frame: CGRect? = nil) {
         let gradientFrame = frame ?? bounds
         let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
@@ -190,7 +140,7 @@ final class SearchActivityView: UIView {
     }
     
     func addCurveTop(frame: CGRect? = nil) {
-        let pathFrame = frame ?? bounds
+        let pathFrame = frame ?? containerView.bounds
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: 0, y: pathFrame.maxY))
@@ -205,5 +155,42 @@ final class SearchActivityView: UIView {
         layer.strokeColor = containerView.backgroundColor?.cgColor
         
         containerView.layer.insertSublayer(layer, at: 0)
+    }
+    
+    // MARK: - Private methods
+    
+    private func makeTexField(placeholder: String) -> UITextField {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = .white
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            textField.heightAnchor.constraint(equalToConstant: 45)
+        ])
+        let placeHolder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.attributedPlaceholder = placeHolder
+        return textField
+    }
+    
+    
+    private func makeStackView(subviews: [UIView], margins: UIEdgeInsets? = nil, spacing: CGFloat) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: subviews)
+        stackView.axis = .vertical
+        stackView.spacing = spacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        margins.map { stackView.layoutMargins = $0 }
+        stackView.isLayoutMarginsRelativeArrangement = true
+        return stackView
+    }
+    
+    private func makeLabel(text: String, numberOfLines: Int, textStyle: UIFont.TextStyle) -> UILabel {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = .preferredFont(forTextStyle: textStyle)
+        label.adjustsFontForContentSizeCategory = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = numberOfLines
+        label.text = text
+        return label
     }
 }
