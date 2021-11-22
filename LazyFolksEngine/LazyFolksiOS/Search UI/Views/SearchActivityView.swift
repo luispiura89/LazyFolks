@@ -9,6 +9,13 @@ import UIKit
 
 final class SearchActivityView: UIView {
     
+    // MARK: - Properties
+    
+    var isLoading: Bool {
+        get { searchButton.isLoading }
+        set { searchButton.isLoading = newValue }
+    }
+    
     // MARK: - Subviews
     
     private lazy var scrollView: UIScrollView = {
@@ -90,16 +97,11 @@ final class SearchActivityView: UIView {
         makeTexField(placeholder: "Max price")
     }()
     
-    private lazy var searchButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Search", for: .normal)
-        button.backgroundColor = UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var searchButton: LoadingButton = {
+        let button = LoadingButton(title: "Search", color: UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0))
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 45)
         ])
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 5
         return button
     }()
     

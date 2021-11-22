@@ -27,6 +27,9 @@
 		CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D387D274BF956005E849B /* SearchActivityView.swift */; };
 		CD9D3882274C47C4005E849B /* SEARCH_VIEW_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D3880274C47C4005E849B /* SEARCH_VIEW_light.png */; };
 		CD9D3883274C47C4005E849B /* SEARCH_VIEW_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D3881274C47C4005E849B /* SEARCH_VIEW_dark.png */; };
+		CD9D3885274C5491005E849B /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D3884274C5491005E849B /* LoadingButton.swift */; };
+		CD9D3889274C6034005E849B /* SEARCH_VIEW_LOADING_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D3887274C6034005E849B /* SEARCH_VIEW_LOADING_dark.png */; };
+		CD9D388A274C6034005E849B /* SEARCH_VIEW_LOADING_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D3888274C6034005E849B /* SEARCH_VIEW_LOADING_light.png */; };
 		CDD8B5E227482B2400C9F7FF /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,9 @@
 		CD9D387D274BF956005E849B /* SearchActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityView.swift; sourceTree = "<group>"; };
 		CD9D3880274C47C4005E849B /* SEARCH_VIEW_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_light.png; sourceTree = "<group>"; };
 		CD9D3881274C47C4005E849B /* SEARCH_VIEW_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_dark.png; sourceTree = "<group>"; };
+		CD9D3884274C5491005E849B /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		CD9D3887274C6034005E849B /* SEARCH_VIEW_LOADING_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_LOADING_dark.png; sourceTree = "<group>"; };
+		CD9D3888274C6034005E849B /* SEARCH_VIEW_LOADING_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_LOADING_light.png; sourceTree = "<group>"; };
 		CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5E127482B2400C9F7FF /* LazyFolksEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -199,6 +205,7 @@
 		CD9D3857274BF2A4005E849B /* LazyFolksiOS */ = {
 			isa = PBXGroup;
 			children = (
+				CD9D3886274C5496005E849B /* Common UI */,
 				CD9D3876274BF5DF005E849B /* Search UI */,
 			);
 			path = LazyFolksiOS;
@@ -258,10 +265,20 @@
 		CD9D387F274C47C4005E849B /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
+				CD9D3887274C6034005E849B /* SEARCH_VIEW_LOADING_dark.png */,
+				CD9D3888274C6034005E849B /* SEARCH_VIEW_LOADING_light.png */,
 				CD9D3880274C47C4005E849B /* SEARCH_VIEW_light.png */,
 				CD9D3881274C47C4005E849B /* SEARCH_VIEW_dark.png */,
 			);
 			path = snapshots;
+			sourceTree = "<group>";
+		};
+		CD9D3886274C5496005E849B /* Common UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D3884274C5491005E849B /* LoadingButton.swift */,
+			);
+			path = "Common UI";
 			sourceTree = "<group>";
 		};
 		CDD8B5CF27482B2400C9F7FF = {
@@ -460,7 +477,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9D388A274C6034005E849B /* SEARCH_VIEW_LOADING_light.png in Resources */,
 				CD9D3883274C47C4005E849B /* SEARCH_VIEW_dark.png in Resources */,
+				CD9D3889274C6034005E849B /* SEARCH_VIEW_LOADING_dark.png in Resources */,
 				CD9D3882274C47C4005E849B /* SEARCH_VIEW_light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +507,7 @@
 			files = (
 				CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */,
 				CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */,
+				CD9D3885274C5491005E849B /* LoadingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

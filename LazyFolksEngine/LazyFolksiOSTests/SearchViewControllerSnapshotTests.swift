@@ -13,8 +13,17 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
     func test_search_shouldRenderInitialState() {
         let sut = makeSUT()
         
-        record(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_light")
-        record(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_light")
+        assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_dark")
+    }
+    
+    func test_search_shouldLoad() {
+        let sut = makeSUT()
+        
+        sut.didStartLoading(isLoading: true)
+        
+        assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_light")
+        assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_dark")
     }
     
     // MARK: - Helpers

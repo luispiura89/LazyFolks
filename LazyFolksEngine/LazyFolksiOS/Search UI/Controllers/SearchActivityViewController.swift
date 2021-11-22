@@ -27,4 +27,8 @@ public final class SearchActivityViewController: UIViewController {
         searchView.addCurveTop(frame: snapshotFrame)
     }
     
+    public func didStartLoading(isLoading: Bool) {
+        searchView.isLoading = true
+    }
+    
 }
