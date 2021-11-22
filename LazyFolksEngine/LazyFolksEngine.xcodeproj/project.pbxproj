@@ -18,10 +18,13 @@
 		CD8A2711274957FE0096143A /* ActivityEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2710274957FE0096143A /* ActivityEndpoint.swift */; };
 		CD8A2713274959260096143A /* ActivityEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2712274959250096143A /* ActivityEndpointTests.swift */; };
 		CD9D385E274BF2A4005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D3856274BF2A4005E849B /* LazyFolksiOS.framework */; };
-		CD9D3863274BF2A4005E849B /* LazyFolksiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D3862274BF2A4005E849B /* LazyFolksiOSTests.swift */; };
-		CD9D3864274BF2A4005E849B /* LazyFolksiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9D3858274BF2A4005E849B /* LazyFolksiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9D386C274BF3C3005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 		CD9D386D274BF3C3005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD9D3873274BF576005E849B /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D3872274BF576005E849B /* UIViewController+Snapshot.swift */; };
+		CD9D3875274BF5BA005E849B /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D3874274BF5BA005E849B /* XCTestCase+Snapshot.swift */; };
+		CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D3877274BF609005E849B /* SearchActivityViewController.swift */; };
+		CD9D387C274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */; };
+		CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D387D274BF956005E849B /* SearchActivityView.swift */; };
 		CDD8B5E227482B2400C9F7FF /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,9 +78,12 @@
 		CD8A2710274957FE0096143A /* ActivityEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEndpoint.swift; sourceTree = "<group>"; };
 		CD8A2712274959250096143A /* ActivityEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEndpointTests.swift; sourceTree = "<group>"; };
 		CD9D3856274BF2A4005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD9D3858274BF2A4005E849B /* LazyFolksiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyFolksiOS.h; sourceTree = "<group>"; };
 		CD9D385D274BF2A4005E849B /* LazyFolksiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD9D3862274BF2A4005E849B /* LazyFolksiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyFolksiOSTests.swift; sourceTree = "<group>"; };
+		CD9D3872274BF576005E849B /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
+		CD9D3874274BF5BA005E849B /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
+		CD9D3877274BF609005E849B /* SearchActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityViewController.swift; sourceTree = "<group>"; };
+		CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
+		CD9D387D274BF956005E849B /* SearchActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityView.swift; sourceTree = "<group>"; };
 		CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5E127482B2400C9F7FF /* LazyFolksEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,7 +195,7 @@
 		CD9D3857274BF2A4005E849B /* LazyFolksiOS */ = {
 			isa = PBXGroup;
 			children = (
-				CD9D3858274BF2A4005E849B /* LazyFolksiOS.h */,
+				CD9D3876274BF5DF005E849B /* Search UI */,
 			);
 			path = LazyFolksiOS;
 			sourceTree = "<group>";
@@ -197,7 +203,8 @@
 		CD9D3861274BF2A4005E849B /* LazyFolksiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD9D3862274BF2A4005E849B /* LazyFolksiOSTests.swift */,
+				CD9D3871274BF550005E849B /* Helpers */,
+				CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */,
 			);
 			path = LazyFolksiOSTests;
 			sourceTree = "<group>";
@@ -207,6 +214,40 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD9D3871274BF550005E849B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D3872274BF576005E849B /* UIViewController+Snapshot.swift */,
+				CD9D3874274BF5BA005E849B /* XCTestCase+Snapshot.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD9D3876274BF5DF005E849B /* Search UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D3879274BF782005E849B /* Controllers */,
+				CD9D387A274BF78E005E849B /* Views */,
+			);
+			path = "Search UI";
+			sourceTree = "<group>";
+		};
+		CD9D3879274BF782005E849B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D3877274BF609005E849B /* SearchActivityViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CD9D387A274BF78E005E849B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D387D274BF956005E849B /* SearchActivityView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CDD8B5CF27482B2400C9F7FF = {
@@ -258,7 +299,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9D3864274BF2A4005E849B /* LazyFolksiOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +398,7 @@
 				TargetAttributes = {
 					CD9D3855274BF2A4005E849B = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					CD9D385C274BF2A4005E849B = {
 						CreatedOnToolsVersion = 13.1;
@@ -429,6 +470,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */,
+				CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +479,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9D3863274BF2A4005E849B /* LazyFolksiOSTests.swift in Sources */,
+				CD9D3875274BF5BA005E849B /* XCTestCase+Snapshot.swift in Sources */,
+				CD9D3873274BF576005E849B /* UIViewController+Snapshot.swift in Sources */,
+				CD9D387C274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +533,7 @@
 		CD9D3865274BF2A4005E849B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -510,6 +556,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -518,6 +565,7 @@
 		CD9D3866274BF2A4005E849B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -549,6 +597,7 @@
 		CD9D3867274BF2A4005E849B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -571,6 +620,7 @@
 		CD9D3868274BF2A4005E849B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
