@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Activity: Equatable {
+public struct Activity: Hashable {
     let description: String
     let type: String
     let participants: Int
