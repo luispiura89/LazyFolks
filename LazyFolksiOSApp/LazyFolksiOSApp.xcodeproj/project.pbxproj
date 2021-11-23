@@ -10,6 +10,9 @@
 		CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C34274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift */; };
 		CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C37274D5DFD0037B5C8 /* SearchViewComposer.swift */; };
 		CD003C3D274D84F50037B5C8 /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C3C274D84F50037B5C8 /* XCTestCase+MemoryLeaks.swift */; };
+		CD003C3F274D93380037B5C8 /* SearchActivityPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C3E274D93380037B5C8 /* SearchActivityPresentationAdapter.swift */; };
+		CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C40274D93750037B5C8 /* WeakRefProxy.swift */; };
+		CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */; };
 		CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; };
 		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
@@ -49,6 +52,9 @@
 		CD003C34274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerIntegrationTests.swift; sourceTree = "<group>"; };
 		CD003C37274D5DFD0037B5C8 /* SearchViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewComposer.swift; sourceTree = "<group>"; };
 		CD003C3C274D84F50037B5C8 /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
+		CD003C3E274D93380037B5C8 /* SearchActivityPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresentationAdapter.swift; sourceTree = "<group>"; };
+		CD003C40274D93750037B5C8 /* WeakRefProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefProxy.swift; sourceTree = "<group>"; };
+		CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAdapter.swift; sourceTree = "<group>"; };
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				CD003C37274D5DFD0037B5C8 /* SearchViewComposer.swift */,
+				CD003C3E274D93380037B5C8 /* SearchActivityPresentationAdapter.swift */,
+				CD003C40274D93750037B5C8 /* WeakRefProxy.swift */,
+				CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */,
 			);
 			path = "Search Activity Composistion";
 			sourceTree = "<group>";
@@ -255,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */,
 				CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */,
 				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
+				CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */,
+				CD003C3F274D93380037B5C8 /* SearchActivityPresentationAdapter.swift in Sources */,
 				CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
