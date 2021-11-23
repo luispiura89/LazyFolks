@@ -28,12 +28,20 @@ final class SearchActivityPresenterTests: XCTestCase {
         XCTAssertEqual(viewSpy.messages, [.loading(true), .failure(nil)])
     }
     
-    func test_presenter_shouldTellTheViewToDisplayErrorOnError() {
+    func test_presenter_shouldTellTheViewToDisplayNotFoundActivityErrorOnError() {
         let (presenter, viewSpy) = makeSUT()
         
         presenter.didFinishLoading(with: ActivitiesMapper.Error.noActivityWasFound)
         
         XCTAssertEqual(viewSpy.messages, [.loading(false), .failure(localized("NO_ACTIVITY_FOUND_ERROR_MESSAGE"))])
+    }
+    
+    func test_presenter_shouldTellTheViewToDisplayGeneralErrorOnError() {
+        let (presenter, viewSpy) = makeSUT()
+        
+        presenter.didFinishLoading(with: anyNSError())
+        
+        XCTAssertEqual(viewSpy.messages, [.loading(false), .failure(localized("GENERAL_LOADING_ERROR_MESSAGE"))])
     }
     
     func test_presenter_shouldTellTheViewToDisplayAnActivityOnSuccessfulLoading() {
