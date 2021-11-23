@@ -35,7 +35,10 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         sut.simulateUserRequestedActivitySearch()
-        XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Action should request activity search")
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Should had requested activity search")
+        
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Shouldn't request activity search while loading")
     }
     
     // MARK: - Helpers
