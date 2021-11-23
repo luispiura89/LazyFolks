@@ -20,6 +20,15 @@ final class SearchActivityPresenterTests: XCTestCase {
         XCTAssertEqual(SearchActivityPresenter.maxPricePlaceholder, localized("SEARCH_ACTIVITY_MAX_PRICE_PLACEHOLDER"))
     }
     
+    func test_presenter_shouldTellTheViewToLoadWhenSearchStarts() {
+        let viewSpy = ViewSpy()
+        let presenter = SearchActivityPresenter(loadingView: viewSpy)
+        
+        presenter.startSearchingActivity()
+        
+        XCTAssertEqual(viewSpy.messages, [.loading(true)])
+    }
+    
     // MARK: - Helpers
     
     private func localized(_ key: String, file: StaticString = #filePath, line: UInt = #line) -> String {
@@ -29,5 +38,20 @@ final class SearchActivityPresenterTests: XCTestCase {
             XCTFail("Please provide a localization for the key \(key)", file: file, line: line)
         }
         return localized
+    }
+    
+    private final class ViewSpy: LoadingView {
+        
+        enum Message: Equatable {
+            case loading(Bool)
+        }
+        
+        private(set) var messages = [Message]()
+        
+        
+        func didLoadingStateChanged(_ data: LoadingViewData) {
+            messages.append(.loading(data.isLoading))
+        }
+        
     }
 }

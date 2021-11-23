@@ -10,6 +10,7 @@
 		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
 		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
 		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
+		CD6FB9B4274D4D3300096F9B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9B3274D4D3300096F9B /* LoadingView.swift */; };
 		CD8A26FB274858CB0096143A /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A26FA274858CB0096143A /* URLSessionHTTPClientTests.swift */; };
 		CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A26FC274858F80096143A /* URLSessionHTTPClient.swift */; };
 		CD8A2701274859530096143A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2700274859530096143A /* HTTPClient.swift */; };
@@ -81,6 +82,7 @@
 		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
 		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
 		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
+		CD6FB9B3274D4D3300096F9B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CD8A26FA274858CB0096143A /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		CD8A26FC274858F80096143A /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		CD8A2700274859530096143A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */,
 				CD6FB9B1274D472F00096F9B /* SearchActivity.strings */,
+				CD6FB9B3274D4D3300096F9B /* LoadingView.swift */,
 			);
 			path = "Search Activity";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				CD8A270F274957050096143A /* Activity.swift in Sources */,
 				CD8A2711274957FE0096143A /* ActivityEndpoint.swift in Sources */,
 				CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */,
+				CD6FB9B4274D4D3300096F9B /* LoadingView.swift in Sources */,
 				CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
