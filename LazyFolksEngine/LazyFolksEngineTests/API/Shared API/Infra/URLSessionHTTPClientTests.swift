@@ -90,10 +90,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         return URLSessionHTTPClient(session: session)
     }
     
-    private func anyNSError() -> NSError {
-        NSError(domain: "Any error", code: -1, userInfo: nil)
-    }
-    
     private func anyHTTPURLResponse() -> HTTPURLResponse {
         HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
     }

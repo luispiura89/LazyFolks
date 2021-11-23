@@ -14,3 +14,7 @@ func anyData() -> Data {
 func anyURL() -> URL {
     URL(string: "https://any-url.com")!
 }
+
+func anyNSError() -> NSError {
+    NSError(domain: "Any error", code: -1, userInfo: nil)
+}
