@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
+		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
+		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
 		CD8A26FB274858CB0096143A /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A26FA274858CB0096143A /* URLSessionHTTPClientTests.swift */; };
 		CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A26FC274858F80096143A /* URLSessionHTTPClient.swift */; };
 		CD8A2701274859530096143A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2700274859530096143A /* HTTPClient.swift */; };
@@ -75,6 +78,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
+		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
+		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
 		CD8A26FA274858CB0096143A /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		CD8A26FC274858F80096143A /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		CD8A2700274859530096143A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		CD6FB9A7274D411900096F9B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CD6FB9AE274D45F400096F9B /* Search Activity */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -183,8 +190,18 @@
 		CD6FB9AB274D42B900096F9B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CD6FB9AE274D45F400096F9B /* Search Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */,
+				CD6FB9B1274D472F00096F9B /* SearchActivity.strings */,
+			);
+			path = "Search Activity";
 			sourceTree = "<group>";
 		};
 		CD8A26F7274857C10096143A /* Shared API */ = {
@@ -547,6 +564,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +608,7 @@
 				CD8A270F274957050096143A /* Activity.swift in Sources */,
 				CD8A2711274957FE0096143A /* ActivityEndpoint.swift in Sources */,
 				CD8A26FD274858F80096143A /* URLSessionHTTPClient.swift in Sources */,
+				CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +619,7 @@
 				CD8A27082748726E0096143A /* ActivitiesMapperTests.swift in Sources */,
 				CD8A270D274875080096143A /* TestHelperFunctions.swift in Sources */,
 				CD8A2713274959260096143A /* ActivityEndpointTests.swift in Sources */,
+				CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */,
 				CD8A26FB274858CB0096143A /* URLSessionHTTPClientTests.swift in Sources */,
 				CD8A270427485BB40096143A /* URLProtocolStub.swift in Sources */,
 			);
