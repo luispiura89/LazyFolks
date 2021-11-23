@@ -1,0 +1,14 @@
+/* 
+  SearchActivity.strings
+  LazyFolksEngine
+
+  Created by Luis Francisco Piura Mejia on 23/11/21.
+  
+*/
+
+"SEARCH_ACTIVITY_VIEW_TITLE" = "Welcome Lazy Folks!";
+"SEARCH_ACTIVITY_VIEW_SUBTITLE" = "Please search an activity so you can fight laziness";
+"SEARCH_ACTIVITY_TYPE_PLACEHOLDER" = "Type";
+"SEARCH_ACTIVITY_PARTICIPANTS_PLACEHOLDER" = "Number of participants";
+"SEARCH_ACTIVITY_MIN_PRICE_PLACEHOLDER" = "Min price";
+"SEARCH_ACTIVITY_MAX_PRICE_PLACEHOLDER" = "Max price";
