@@ -9,6 +9,6 @@ public struct ErrorViewData {
     public let errorMessage: String?
 }
 
-public protocol ErrorView {
+public protocol LoadingErrorView {
     func displayErrorMessage(_ data: ErrorViewData)
 }

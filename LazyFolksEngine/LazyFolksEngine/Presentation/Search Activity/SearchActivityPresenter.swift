@@ -60,12 +60,12 @@ public final class SearchActivityPresenter {
     }
     
     private let loadingView: LoadingView
-    private let errorView: ErrorView
+    private let errorView: LoadingErrorView
     private let searchView: SearchView
     
     // MARK: - Init
     
-    public init(loadingView: LoadingView, errorView: ErrorView, searchView: SearchView) {
+    public init(loadingView: LoadingView, errorView: LoadingErrorView, searchView: SearchView) {
         self.loadingView = loadingView
         self.errorView = errorView
         self.searchView = searchView
