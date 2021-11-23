@@ -138,6 +138,16 @@ public final class SearchActivityView: UIView {
         self.minPricePlaceholder = minPricePlaceholder
         self.maxPricePlaceholder = maxPricePlaceholder
         
+        setupSubviews()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    // MARK: - Methods
+    
+    func setupSubviews() {
         addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
@@ -146,12 +156,6 @@ public final class SearchActivityView: UIView {
             trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
         ])
     }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    // MARK: - Methods
     
     func addGradientBackground(frame: CGRect? = nil) {
         let gradientFrame = frame ?? bounds
