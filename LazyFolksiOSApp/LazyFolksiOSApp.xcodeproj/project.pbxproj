@@ -17,7 +17,6 @@
 		CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */; };
 		CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60627482B7700C9F7FF /* Assets.xcassets */; };
 		CDD8B60A27482B7700C9F7FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */; };
-		CDD8B61527482B7800C9F7FF /* LazyFolksiOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		CDD8B60927482B7700C9F7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDD8B60B27482B7700C9F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD8B61027482B7800C9F7FF /* LazyFolksiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyFolksiOSAppTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				CD003C33274D5BBA0037B5C8 /* Search Activity Integration */,
-				CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */,
 			);
 			path = LazyFolksiOSAppTests;
 			sourceTree = "<group>";
@@ -257,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD8B61527482B7800C9F7FF /* LazyFolksiOSAppTests.swift in Sources */,
 				CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
