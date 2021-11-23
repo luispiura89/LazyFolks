@@ -41,7 +41,6 @@ public final class SearchActivityViewController: UIViewController {
 extension SearchActivityViewController: LoadingView {
     public func didLoadingStateChanged(_ data: LoadingViewData) {
         searchView?.searchButton.isLoading = data.isLoading
-        searchController?.isSearching = data.isLoading
     }
 }
 

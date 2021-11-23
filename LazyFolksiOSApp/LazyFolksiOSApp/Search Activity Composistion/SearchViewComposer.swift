@@ -20,10 +20,14 @@ public final class SearchViewComposer {
         loader:  @escaping SearchActivityLoader = { _, _, _, _ in Empty<Activity, Error>().eraseToAnyPublisher() }
     ) -> SearchActivityViewController {
         let presentationAdapter = SearchActivityPresentationAdapter(loader: loader)
+        let view = makeView()
         let search = SearchActivityViewController(
-            searchView: makeView(),
+            searchView: view,
             bounds: windowBounds,
-            searchController: SearchActivityController(searchHandler: presentationAdapter.searchActivity)
+            searchController: SearchActivityController(
+                searchHandler: presentationAdapter.searchActivity,
+                isSearching: { [weak view] in view?.searchButton.isLoading == true }
+            )
         )
         let searchView = SearchViewAdapter(controller: search)
         let loadingView = WeakRefProxy(reference: search)
