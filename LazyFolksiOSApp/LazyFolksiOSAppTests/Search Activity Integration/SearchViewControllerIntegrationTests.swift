@@ -43,11 +43,12 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT() -> (SearchActivityViewController, LoaderSpy) {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (SearchActivityViewController, LoaderSpy) {
         let loaderSpy = LoaderSpy()
         let search = SearchViewComposer.compose(windowBounds: .zero, loader: loaderSpy.loaderPublisher)
         
-        
+        trackMemoryLeaks(search, file: file, line: line)
+        trackMemoryLeaks(loaderSpy, file: file, line: line)
         
         return (search, loaderSpy)
     }
