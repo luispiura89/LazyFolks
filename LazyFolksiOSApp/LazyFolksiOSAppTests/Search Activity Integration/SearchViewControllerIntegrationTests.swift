@@ -39,6 +39,14 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         
         sut.simulateUserRequestedActivitySearch()
         XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Shouldn't request activity search while loading")
+        
+        loaderSpy.simulateLoadingCompletionWithError(at: 0)
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 2, "Shouldn't request activity search while loading")
+        
+        loaderSpy.simulateLoadingCompletionSuccessfully(at: 1)
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 3, "Shouldn't request activity search while loading")
     }
     
     // MARK: - Helpers
@@ -59,15 +67,27 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     
     private final class LoaderSpy {
         
-        private(set) var searchActivityCallCount = 0
-        
-        private var requests = [AnyPublisher<Activity, Error>]()
-        
-        func loaderPublisher(type: String, participants: Int, minPrice: Double, maxPrice: Double) -> AnyPublisher<Activity, Error> {
-            searchActivityCallCount += 1
-            return Empty<Activity, Error>().eraseToAnyPublisher()
+        var searchActivityCallCount: Int {
+            requests.count
         }
         
+        private var requests = [PassthroughSubject<Activity, Error>]()
+        
+        func loaderPublisher(type: String, participants: Int, minPrice: Double, maxPrice: Double) -> AnyPublisher<Activity, Error> {
+            let publisher = PassthroughSubject<Activity, Error>()
+            requests.append(publisher)
+            return publisher.eraseToAnyPublisher()
+        }
+        
+        func simulateLoadingCompletionSuccessfully(at index: Int) {
+            guard requests.count > index else { return }
+            requests[index].send(Activity(description: "any description", type: "any type", participants: 10, price: 0.5))
+        }
+        
+        func simulateLoadingCompletionWithError(at index: Int) {
+            guard requests.count > index else { return }
+            requests[index].send(completion: .failure(NSError(domain: "Any error", code: -1, userInfo: nil)))
+        }
     }
 }
 
