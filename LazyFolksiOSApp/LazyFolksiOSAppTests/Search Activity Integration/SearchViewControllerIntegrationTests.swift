@@ -42,11 +42,33 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         
         loaderSpy.simulateLoadingCompletionWithError(at: 0)
         sut.simulateUserRequestedActivitySearch()
-        XCTAssertEqual(loaderSpy.searchActivityCallCount, 2, "Shouldn't request activity search while loading")
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 2, "Should had requested activity search after failure and retry")
         
         loaderSpy.simulateLoadingCompletionSuccessfully(at: 1)
         sut.simulateUserRequestedActivitySearch()
-        XCTAssertEqual(loaderSpy.searchActivityCallCount, 3, "Shouldn't request activity search while loading")
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 3, "Should had requested activity search after successful search")
+    }
+    
+    func test_searchView_shouldShowLoadingIndicator() {
+        let (sut, loaderSpy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertTrue(sut.isShowingLoadingIndicator, "Should be showing loader after first request")
+        
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertTrue(sut.isShowingLoadingIndicator, "Should continue showing loading indicator")
+        
+        loaderSpy.simulateLoadingCompletionWithError(at: 0)
+        XCTAssertFalse(sut.isShowingLoadingIndicator, "Shouldn't be showing loading after request failure")
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertTrue(sut.isShowingLoadingIndicator, "Should show loading after retry")
+        
+        loaderSpy.simulateLoadingCompletionSuccessfully(at: 1)
+        XCTAssertFalse(sut.isShowingLoadingIndicator, "Shouldn't show load indicator after successful request")
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertTrue(sut.isShowingLoadingIndicator, "Should show loading indicator after retry")
     }
     
     // MARK: - Helpers
@@ -115,6 +137,10 @@ extension SearchActivityViewController {
     
     var maxPricePlaceholder: String? {
         searchView?.maxPricePlaceholder
+    }
+    
+    var isShowingLoadingIndicator: Bool {
+        searchView?.searchButton.isLoading == true
     }
     
     func simulateUserRequestedActivitySearch() {

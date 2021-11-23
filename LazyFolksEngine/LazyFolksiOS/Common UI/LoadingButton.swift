@@ -11,7 +11,7 @@ public final class LoadingButton: UIButton {
     
     // MARK: Properties
     
-    var isLoading: Bool {
+    public var isLoading: Bool {
         get { activityIndicator.isAnimating }
         set {
             if newValue {
