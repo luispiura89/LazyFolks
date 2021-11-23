@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchActivityView: UIView {
+public final class SearchActivityView: UIView {
     
     // MARK: - Properties
     
@@ -15,6 +15,14 @@ final class SearchActivityView: UIView {
         get { searchButton.isLoading }
         set { searchButton.isLoading = newValue }
     }
+    
+    public private(set) var title: String?
+    public private(set) var subtitle: String?
+    public private(set) var typePlaceholder: String?
+    public private(set) var participantsPlaceholder: String?
+    public private(set) var minPricePlaceholder: String?
+    public private(set) var maxPricePlaceholder: String?
+           
     
     // MARK: - Subviews
     
@@ -56,7 +64,7 @@ final class SearchActivityView: UIView {
     }()
     
     private lazy var headerLabel: UILabel = {
-        let label = makeLabel(text: "Welcome Lazy Folks!", numberOfLines: 1, textStyle: .largeTitle)
+        let label = makeLabel(text: title, numberOfLines: 1, textStyle: .largeTitle)
         NSLayoutConstraint.activate([
             label.heightAnchor.constraint(equalToConstant: 80)
         ])
@@ -64,7 +72,7 @@ final class SearchActivityView: UIView {
     }()
     
     private lazy var subHeaderLabel: UILabel = {
-        makeLabel(text: "Please search an activity so you can fight laziness", numberOfLines: 0, textStyle: .title2)
+        makeLabel(text: subtitle, numberOfLines: 0, textStyle: .title2)
     }()
     
     private lazy var containerView: UIView = {
@@ -82,19 +90,19 @@ final class SearchActivityView: UIView {
     }()
     
     private lazy var participantsTextField: UITextField = {
-        makeTexField(placeholder: "Number of participants")
+        makeTexField(placeholder: participantsPlaceholder)
     }()
     
     private lazy var typeTextField: UITextField = {
-        makeTexField(placeholder: "Type")
+        makeTexField(placeholder: typePlaceholder)
     }()
     
     private lazy var minPriceTextField: UITextField = {
-        makeTexField(placeholder: "Min price")
+        makeTexField(placeholder: minPricePlaceholder)
     }()
     
     private lazy var maxPriceTextField: UITextField = {
-        makeTexField(placeholder: "Max price")
+        makeTexField(placeholder: maxPricePlaceholder)
     }()
     
     private lazy var searchButton: LoadingButton = {
@@ -107,10 +115,29 @@ final class SearchActivityView: UIView {
     
     // MARK: - Init
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    public convenience init(
+        title: String,
+        subtitle: String,
+        typePlaceholder: String,
+        participantsPlaceholder: String,
+        minPricePlaceholder: String,
+        maxPricePlaceholder: String
+    ) {
+        self.init(frame: CGRect.zero)
+        
+        self.title = title
+        self.subtitle = subtitle
+        self.typePlaceholder = typePlaceholder
+        self.participantsPlaceholder = participantsPlaceholder
+        self.minPricePlaceholder = minPricePlaceholder
+        self.maxPricePlaceholder = maxPricePlaceholder
+        
         addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
@@ -161,7 +188,7 @@ final class SearchActivityView: UIView {
     
     // MARK: - Private methods
     
-    private func makeTexField(placeholder: String) -> UITextField {
+    private func makeTexField(placeholder: String?) -> UITextField {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
@@ -169,7 +196,7 @@ final class SearchActivityView: UIView {
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 45)
         ])
-        let placeHolder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let placeHolder = NSAttributedString(string: placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         textField.attributedPlaceholder = placeHolder
         return textField
     }
@@ -185,7 +212,7 @@ final class SearchActivityView: UIView {
         return stackView
     }
     
-    private func makeLabel(text: String, numberOfLines: Int, textStyle: UIFont.TextStyle) -> UILabel {
+    private func makeLabel(text: String?, numberOfLines: Int, textStyle: UIFont.TextStyle) -> UILabel {
         let label = UILabel()
         label.textColor = .white
         label.font = .preferredFont(forTextStyle: textStyle)

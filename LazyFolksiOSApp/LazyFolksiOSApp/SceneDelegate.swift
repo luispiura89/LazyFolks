@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         let bounds = window!.bounds
-        window!.rootViewController = SearchActivityViewController(snapshotFrame: bounds)
+        window!.rootViewController = SearchViewComposer.compose(windowBounds: bounds)
         window!.makeKeyAndVisible()
     }
 

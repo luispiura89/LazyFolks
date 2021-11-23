@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C34274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift */; };
+		CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C37274D5DFD0037B5C8 /* SearchViewComposer.swift */; };
 		CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; };
 		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
@@ -44,6 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD003C34274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerIntegrationTests.swift; sourceTree = "<group>"; };
+		CD003C37274D5DFD0037B5C8 /* SearchViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewComposer.swift; sourceTree = "<group>"; };
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD003C33274D5BBA0037B5C8 /* Search Activity Integration */ = {
+			isa = PBXGroup;
+			children = (
+				CD003C34274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift */,
+			);
+			path = "Search Activity Integration";
+			sourceTree = "<group>";
+		};
+		CD003C36274D5DE60037B5C8 /* Search Activity Composistion */ = {
+			isa = PBXGroup;
+			children = (
+				CD003C37274D5DFD0037B5C8 /* SearchViewComposer.swift */,
+			);
+			path = "Search Activity Composistion";
+			sourceTree = "<group>";
+		};
 		CD9D38B1274C7259005E849B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +127,7 @@
 		CDD8B5FC27482B7600C9F7FF /* LazyFolksiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				CD003C36274D5DE60037B5C8 /* Search Activity Composistion */,
 				CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */,
 				CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */,
 				CDD8B60627482B7700C9F7FF /* Assets.xcassets */,
@@ -119,6 +140,7 @@
 		CDD8B61327482B7800C9F7FF /* LazyFolksiOSAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD003C33274D5BBA0037B5C8 /* Search Activity Integration */,
 				CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */,
 			);
 			path = LazyFolksiOSAppTests;
@@ -225,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */,
 				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
 				CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */,
 			);
@@ -235,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD8B61527482B7800C9F7FF /* LazyFolksiOSAppTests.swift in Sources */,
+				CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
