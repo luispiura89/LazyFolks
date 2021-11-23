@@ -24,6 +24,7 @@ public final class SearchActivityController {
     
     func searchActivity() {
         guard !isSearching else { return }
+        isSearching = true
         searchHandler(activityType, participants, minPrice, maxPrice)
     }
     
