@@ -9,6 +9,6 @@ public struct SearchActivityViewData {
     public let activity: Activity
 }
 
-public protocol SearchActivityView {
+public protocol SearchView {
     func didLoad(_ data: SearchActivityViewData)
 }
