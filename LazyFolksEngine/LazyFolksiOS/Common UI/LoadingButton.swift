@@ -9,6 +9,8 @@ import UIKit
 
 final class LoadingButton: UIButton {
     
+    // MARK: Properties
+    
     var isLoading: Bool {
         get { activityIndicator.isAnimating }
         set {
@@ -22,6 +24,10 @@ final class LoadingButton: UIButton {
         }
     }
     
+    private var title: String?
+    
+    // MARK: - Subviews
+    
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.color = .white
@@ -29,7 +35,7 @@ final class LoadingButton: UIButton {
         return activityIndicator
     }()
     
-    private var title: String?
+    // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
