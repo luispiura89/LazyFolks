@@ -22,6 +22,8 @@ public final class SearchActivityView: UIView {
     public private(set) var participantsPlaceholder: String?
     public private(set) var minPricePlaceholder: String?
     public private(set) var maxPricePlaceholder: String?
+    
+    var searchHandler: (() -> Void)?
            
     
     // MARK: - Subviews
@@ -105,7 +107,7 @@ public final class SearchActivityView: UIView {
         makeTexField(placeholder: maxPricePlaceholder)
     }()
     
-    private lazy var searchButton: LoadingButton = {
+    public private(set) lazy var searchButton: LoadingButton = {
         let button = LoadingButton(title: "Search", color: UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0))
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 45)
@@ -155,6 +157,7 @@ public final class SearchActivityView: UIView {
             bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
         ])
+        searchButton.addTarget(self, action: #selector(searchActivity), for: .touchUpInside)
     }
     
     func addGradientBackground(frame: CGRect? = nil) {
@@ -191,6 +194,10 @@ public final class SearchActivityView: UIView {
     }
     
     // MARK: - Private methods
+    
+    @objc private func searchActivity() {
+        searchHandler?()
+    }
     
     private func makeTexField(placeholder: String?) -> UITextField {
         let textField = UITextField()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoadingButton: UIButton {
+public final class LoadingButton: UIButton {
     
     // MARK: Properties
     

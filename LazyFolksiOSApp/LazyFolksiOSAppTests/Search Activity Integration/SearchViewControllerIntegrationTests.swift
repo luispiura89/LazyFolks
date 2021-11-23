@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import LazyFolksiOS
 import LazyFolksiOSApp
 import LazyFolksEngine
@@ -14,7 +15,7 @@ import XCTest
 final class SearchViewControllerIntegrationTests: XCTestCase {
     
     func test_searchView_hasTitleAndPlaceholders() {
-        let sut = makeSUT()
+        let (sut, _) = makeSUT()
         let table = "SearchActivity"
         let bundle = Bundle(for: SearchActivityPresenter.self)
         
@@ -28,18 +29,42 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.maxPricePlaceholder, localized("SEARCH_ACTIVITY_MAX_PRICE_PLACEHOLDER", table: table, bundle: bundle))
     }
     
+    func test_searchView_shouldRequestSearchActivity() {
+        let (sut, loaderSpy) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Action should request activity search")
+    }
+    
     // MARK: - Helpers
     
-    private func makeSUT() -> SearchActivityViewController {
-        let search = SearchViewComposer.compose(windowBounds: .zero)
+    private func makeSUT() -> (SearchActivityViewController, LoaderSpy) {
+        let loaderSpy = LoaderSpy()
+        let search = SearchViewComposer.compose(windowBounds: .zero, loader: loaderSpy.loaderPublisher)
         
-        return search
+        
+        
+        return (search, loaderSpy)
     }
     
     private func localized(_ key: String, table: String, bundle: Bundle) -> String {
         bundle.localizedString(forKey: key, value: nil, table: table)
     }
     
+    private final class LoaderSpy {
+        
+        private(set) var searchActivityCallCount = 0
+        
+        private var requests = [AnyPublisher<Activity, Error>]()
+        
+        func loaderPublisher(type: String, participants: Int, minPrice: Double, maxPrice: Double) -> AnyPublisher<Activity, Error> {
+            searchActivityCallCount += 1
+            return Empty<Activity, Error>().eraseToAnyPublisher()
+        }
+        
+    }
 }
 
 extension SearchActivityViewController {
@@ -68,4 +93,17 @@ extension SearchActivityViewController {
         searchView?.maxPricePlaceholder
     }
     
+    func simulateUserRequestedActivitySearch() {
+        searchView?.searchButton.simulate(event: .touchUpInside)
+    }
+}
+
+private extension UIControl {
+    func simulate(event: UIControl.Event) {
+        allTargets.forEach { target in
+            actions(forTarget: target, forControlEvent: event)?.forEach {
+                (target as NSObject).perform(Selector($0))
+            }
+        }
+    }
 }
