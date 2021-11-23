@@ -22,7 +22,7 @@ final class SearchActivityPresenterTests: XCTestCase {
     
     func test_presenter_shouldTellTheViewToLoadWhenSearchStarts() {
         let viewSpy = ViewSpy()
-        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy)
+        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
         
         presenter.startSearchingActivity()
         
@@ -31,11 +31,21 @@ final class SearchActivityPresenterTests: XCTestCase {
     
     func test_presenter_shouldTellTheViewToDisplayErrorOnError() {
         let viewSpy = ViewSpy()
-        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy)
+        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
         
         presenter.didFinishLoading(with: ActivitiesMapper.Error.noActivityWasFound)
         
         XCTAssertEqual(viewSpy.messages, [.loading(false), .failure(localized("NO_ACTIVITY_FOUND_ERROR_MESSAGE"))])
+    }
+    
+    func test_presenter_shouldTellTheViewToDisplayAnActivityOnSuccessfulLoading() {
+        let activity = Activity(description: "A description", type: "A type", participants: 1, price: 0.2)
+        let viewSpy = ViewSpy()
+        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
+        
+        presenter.didFinishLoading(with: activity)
+        
+        XCTAssertEqual(viewSpy.messages, [.loading(false), .success(activity)])
     }
     
     // MARK: - Helpers
@@ -49,11 +59,12 @@ final class SearchActivityPresenterTests: XCTestCase {
         return localized
     }
     
-    private final class ViewSpy: LoadingView, ErrorView {
+    private final class ViewSpy: LoadingView, ErrorView, SearchActivityView {
         
         enum Message: Hashable {
             case loading(Bool)
             case failure(String?)
+            case success(Activity)
         }
         
         private(set) var messages = Set<Message>()
@@ -68,5 +79,8 @@ final class SearchActivityPresenterTests: XCTestCase {
             messages.insert(.failure(data.errorMessage))
         }
         
+        func didLoad(_ data: SearchActivityViewData) {
+            messages.insert(.success(data.activity))
+        }
     }
 }

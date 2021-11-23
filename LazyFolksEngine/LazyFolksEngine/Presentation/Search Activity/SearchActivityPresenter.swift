@@ -7,7 +7,17 @@
 
 import Foundation
 
+public struct SearchActivityViewData {
+    public let activity: Activity
+}
+
+public protocol SearchActivityView {
+    func didLoad(_ data: SearchActivityViewData)
+}
+
 public final class SearchActivityPresenter {
+    
+    // MARK: - Properties
     
     public static var title: String {
         localize(
@@ -59,11 +69,17 @@ public final class SearchActivityPresenter {
     
     private let loadingView: LoadingView
     private let errorView: ErrorView
+    private let searchView: SearchActivityView
     
-    public init(loadingView: LoadingView, errorView: ErrorView) {
+    // MARK: - Init
+    
+    public init(loadingView: LoadingView, errorView: ErrorView, searchView: SearchActivityView) {
         self.loadingView = loadingView
         self.errorView = errorView
+        self.searchView = searchView
     }
+    
+    // MARK: - Methods
     
     public func startSearchingActivity() {
         loadingView.didLoadingStateChanged(LoadingViewData(isLoading: true))
@@ -77,6 +93,11 @@ public final class SearchActivityPresenter {
         } else {
             errorView.displayErrorMessage(ErrorViewData(errorMessage: SearchActivityPresenter.generalLoadingErrorMessage))
         }
+    }
+    
+    public func didFinishLoading(with activity: Activity) {
+        loadingView.didLoadingStateChanged(LoadingViewData(isLoading: false))
+        searchView.didLoad(SearchActivityViewData(activity: activity))
     }
     
     private static func localize(key: String, comment: String) -> String {
