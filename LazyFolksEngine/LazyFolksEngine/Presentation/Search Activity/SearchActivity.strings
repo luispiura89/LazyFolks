@@ -12,3 +12,6 @@
 "SEARCH_ACTIVITY_PARTICIPANTS_PLACEHOLDER" = "Number of participants";
 "SEARCH_ACTIVITY_MIN_PRICE_PLACEHOLDER" = "Min price";
 "SEARCH_ACTIVITY_MAX_PRICE_PLACEHOLDER" = "Max price";
+
+"NO_ACTIVITY_FOUND_ERROR_MESSAGE" = "Sorry we couldn't found an activity with the provided data";
+"GENERAL_LOADING_ERROR_MESSAGE" = "Sorry something went wrong";

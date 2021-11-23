@@ -45,14 +45,38 @@ public final class SearchActivityPresenter {
             comment: "Max price field placeholder")
     }
     
-    private let loadingView: LoadingView
+    private static var noActivityFoundErrorMessage: String {
+        localize(
+            key: "NO_ACTIVITY_FOUND_ERROR_MESSAGE",
+            comment: "No activity found error")
+    }
     
-    public init(loadingView: LoadingView) {
+    private static var generalLoadingErrorMessage: String {
+        localize(
+            key: "GENERAL_LOADING_ERROR_MESSAGE",
+            comment: "General error")
+    }
+    
+    private let loadingView: LoadingView
+    private let errorView: ErrorView
+    
+    public init(loadingView: LoadingView, errorView: ErrorView) {
         self.loadingView = loadingView
+        self.errorView = errorView
     }
     
     public func startSearchingActivity() {
         loadingView.didLoadingStateChanged(LoadingViewData(isLoading: true))
+        errorView.displayErrorMessage(ErrorViewData(errorMessage: nil))
+    }
+    
+    public func didFinishLoading(with error: Error) {
+        loadingView.didLoadingStateChanged(LoadingViewData(isLoading: false))
+        if let error = error as? ActivitiesMapper.Error, error == .noActivityWasFound {
+            errorView.displayErrorMessage(ErrorViewData(errorMessage: SearchActivityPresenter.noActivityFoundErrorMessage))
+        } else {
+            errorView.displayErrorMessage(ErrorViewData(errorMessage: SearchActivityPresenter.generalLoadingErrorMessage))
+        }
     }
     
     private static func localize(key: String, comment: String) -> String {
