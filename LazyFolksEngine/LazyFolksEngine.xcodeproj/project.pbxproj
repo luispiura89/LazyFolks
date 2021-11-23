@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD003C3A274D7B350037B5C8 /* SearchActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C39274D7B350037B5C8 /* SearchActivityController.swift */; };
 		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
 		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
 		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD003C39274D7B350037B5C8 /* SearchActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityController.swift; sourceTree = "<group>"; };
 		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
 		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
 		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				CD9D3877274BF609005E849B /* SearchActivityViewController.swift */,
+				CD003C39274D7B350037B5C8 /* SearchActivityController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */,
+				CD003C3A274D7B350037B5C8 /* SearchActivityController.swift in Sources */,
 				CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */,
 				CD9D3885274C5491005E849B /* LoadingButton.swift in Sources */,
 				CD9D388C274C6188005E849B /* ErrorView.swift in Sources */,
