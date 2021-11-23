@@ -12,7 +12,7 @@ public final class SearchActivityController {
     public typealias SearchHandler = (String, Int, Double, Double) -> Void
 
     private let searchHandler: SearchHandler
-    private var isSearching = false
+    var isSearching = false
     var activityType: String = ""
     var participants: Int = 0
     var minPrice: Double = 0.0
