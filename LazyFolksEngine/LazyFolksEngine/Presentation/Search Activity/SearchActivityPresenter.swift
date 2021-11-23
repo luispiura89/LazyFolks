@@ -7,14 +7,6 @@
 
 import Foundation
 
-public struct SearchActivityViewData {
-    public let activity: Activity
-}
-
-public protocol SearchActivityView {
-    func didLoad(_ data: SearchActivityViewData)
-}
-
 public final class SearchActivityPresenter {
     
     // MARK: - Properties
