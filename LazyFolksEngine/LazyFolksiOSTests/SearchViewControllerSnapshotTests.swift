@@ -7,6 +7,7 @@
 
 import XCTest
 import LazyFolksiOS
+import LazyFolksEngine
 
 final class SearchViewControllerSnapshotTests: XCTestCase {
     
@@ -20,7 +21,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
     func test_search_shouldLoad() {
         let sut = makeSUT()
         
-        sut.didStartLoading(isLoading: true)
+        sut.didStartLoading()
         
         assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_light")
         assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_dark")
@@ -50,5 +51,14 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
         searchController.loadViewIfNeeded()
         return searchController
     }
+}
+
+extension SearchActivityViewController {
+    func didFinishLoadWithError(message: String?) {
+        displayErrorMessage(ErrorViewData(errorMessage: message))
+    }
     
+    func didStartLoading() {
+        didLoadingStateChanged(LoadingViewData(isLoading: true))
+    }
 }

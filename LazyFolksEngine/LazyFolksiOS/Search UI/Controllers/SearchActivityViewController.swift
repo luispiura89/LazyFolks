@@ -36,19 +36,6 @@ public final class SearchActivityViewController: UIViewController {
         searchView?.addGradientBackground(frame: windowBounds)
         searchView?.addCurveTop(frame: windowBounds)
     }
-    
-    public func didFinishLoadWithError(message: String?) {
-        errorView.message = message
-        if message == nil {
-            errorView.removeFromSuperview()
-        } else {
-            guard let searchView = searchView else { return }
-            searchView.addSubview(errorView)
-            errorView.topAnchor.constraint(equalTo: searchView.topAnchor).isActive = true
-            errorView.leadingAnchor.constraint(equalTo: searchView.leadingAnchor).isActive = true
-            searchView.trailingAnchor.constraint(equalTo: errorView.trailingAnchor).isActive = true
-        }
-    }
 }
 
 extension SearchActivityViewController: LoadingView {
