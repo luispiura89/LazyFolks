@@ -22,11 +22,20 @@ final class SearchActivityPresenterTests: XCTestCase {
     
     func test_presenter_shouldTellTheViewToLoadWhenSearchStarts() {
         let viewSpy = ViewSpy()
-        let presenter = SearchActivityPresenter(loadingView: viewSpy)
+        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy)
         
         presenter.startSearchingActivity()
         
-        XCTAssertEqual(viewSpy.messages, [.loading(true)])
+        XCTAssertEqual(viewSpy.messages, [.loading(true), .failure(nil)])
+    }
+    
+    func test_presenter_shouldTellTheViewToDisplayErrorOnError() {
+        let viewSpy = ViewSpy()
+        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy)
+        
+        presenter.didFinishLoading(with: ActivitiesMapper.Error.noActivityWasFound)
+        
+        XCTAssertEqual(viewSpy.messages, [.loading(false), .failure(localized("NO_ACTIVITY_FOUND_ERROR_MESSAGE"))])
     }
     
     // MARK: - Helpers
@@ -40,17 +49,23 @@ final class SearchActivityPresenterTests: XCTestCase {
         return localized
     }
     
-    private final class ViewSpy: LoadingView {
+    private final class ViewSpy: LoadingView, ErrorView {
         
-        enum Message: Equatable {
+        enum Message: Hashable {
             case loading(Bool)
+            case failure(String?)
         }
         
-        private(set) var messages = [Message]()
+        private(set) var messages = Set<Message>()
         
         
         func didLoadingStateChanged(_ data: LoadingViewData) {
-            messages.append(.loading(data.isLoading))
+            messages.insert(.loading(data.isLoading))
+        }
+        
+        
+        func displayErrorMessage(_ data: ErrorViewData) {
+            messages.insert(.failure(data.errorMessage))
         }
         
     }
