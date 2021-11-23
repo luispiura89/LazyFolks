@@ -74,7 +74,7 @@ final class SearchActivityPresenterTests: XCTestCase {
         return localized
     }
     
-    private final class ViewSpy: LoadingView, ErrorView, SearchView {
+    private final class ViewSpy: LoadingView, LoadingErrorView, SearchView {
         
         enum Message: Hashable {
             case loading(Bool)
