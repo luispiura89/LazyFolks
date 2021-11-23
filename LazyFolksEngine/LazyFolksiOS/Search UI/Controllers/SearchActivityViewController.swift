@@ -10,6 +10,7 @@ import UIKit
 public final class SearchActivityViewController: UIViewController {
     
     private var searchView = SearchActivityView(frame: .zero)
+    private var errorView = ErrorView(frame: .zero)
     private var snapshotFrame: CGRect?
     
     public override func loadView() {
@@ -29,6 +30,18 @@ public final class SearchActivityViewController: UIViewController {
     
     public func didStartLoading(isLoading: Bool) {
         searchView.isLoading = true
+    }
+    
+    public func didFinishLoadWithError(message: String?) {
+        errorView.message = message
+        if message == nil {
+            errorView.removeFromSuperview()
+        } else {
+            searchView.addSubview(errorView)
+            errorView.topAnchor.constraint(equalTo: searchView.topAnchor).isActive = true
+            errorView.leadingAnchor.constraint(equalTo: searchView.leadingAnchor).isActive = true
+            searchView.trailingAnchor.constraint(equalTo: errorView.trailingAnchor).isActive = true
+        }
     }
     
 }
