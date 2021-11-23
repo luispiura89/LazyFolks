@@ -139,6 +139,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD6FB9A6274D410E00096F9B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A2705274870DC0096143A /* Activity API */,
+				CD8A26F7274857C10096143A /* Shared API */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CD6FB9A7274D411900096F9B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CD6FB9A8274D413000096F9B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CD6FB9A9274D414900096F9B /* Activity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CD6FB9A9274D414900096F9B /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A270E274957050096143A /* Activity.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		CD6FB9AA274D424900096F9B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A27062748720C0096143A /* Activity API */,
+				CD8A26F8274857DC0096143A /* Shared API */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CD6FB9AB274D42B900096F9B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		CD8A26F7274857C10096143A /* Shared API */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				CD8A2709274873480096143A /* ActivitiesMapper.swift */,
-				CD8A270E274957050096143A /* Activity.swift */,
 				CD8A2710274957FE0096143A /* ActivityEndpoint.swift */,
 			);
 			path = "Activity API";
@@ -316,8 +363,9 @@
 		CDD8B5DB27482B2400C9F7FF /* LazyFolksEngine */ = {
 			isa = PBXGroup;
 			children = (
-				CD8A2705274870DC0096143A /* Activity API */,
-				CD8A26F7274857C10096143A /* Shared API */,
+				CD6FB9A8274D413000096F9B /* Domain */,
+				CD6FB9A7274D411900096F9B /* Presentation */,
+				CD6FB9A6274D410E00096F9B /* API */,
 			);
 			path = LazyFolksEngine;
 			sourceTree = "<group>";
@@ -325,9 +373,9 @@
 		CDD8B5E527482B2400C9F7FF /* LazyFolksEngineTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD6FB9AB274D42B900096F9B /* Presentation */,
 				CD8A270B274874EB0096143A /* Helpers */,
-				CD8A27062748720C0096143A /* Activity API */,
-				CD8A26F8274857DC0096143A /* Shared API */,
+				CD6FB9AA274D424900096F9B /* API */,
 			);
 			path = LazyFolksEngineTests;
 			sourceTree = "<group>";
