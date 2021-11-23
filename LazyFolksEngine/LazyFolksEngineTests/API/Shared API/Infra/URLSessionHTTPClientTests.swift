@@ -76,7 +76,9 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     private func makeSUT(
         with values: (data: Data?, response: URLResponse? , error: NSError?),
-        requestObserver: ((URL?) -> Void)? = nil
+        requestObserver: ((URL?) -> Void)? = nil,
+        file: StaticString = #filePath,
+        line: UInt = #line
     ) -> HTTPClient {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolStub.self]
@@ -87,7 +89,11 @@ final class URLSessionHTTPClientTests: XCTestCase {
                 error: values.error),
             observer: requestObserver)
         let session = URLSession(configuration: configuration)
-        return URLSessionHTTPClient(session: session)
+        let client = URLSessionHTTPClient(session: session)
+        
+        trackMemoryLeaks(client, file: file, line: line)
+        
+        return client
     }
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
