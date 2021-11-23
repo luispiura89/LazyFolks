@@ -21,8 +21,7 @@ final class SearchActivityPresenterTests: XCTestCase {
     }
     
     func test_presenter_shouldTellTheViewToLoadWhenSearchStarts() {
-        let viewSpy = ViewSpy()
-        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
+        let (presenter, viewSpy) = makeSUT()
         
         presenter.startSearchingActivity()
         
@@ -30,8 +29,7 @@ final class SearchActivityPresenterTests: XCTestCase {
     }
     
     func test_presenter_shouldTellTheViewToDisplayErrorOnError() {
-        let viewSpy = ViewSpy()
-        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
+        let (presenter, viewSpy) = makeSUT()
         
         presenter.didFinishLoading(with: ActivitiesMapper.Error.noActivityWasFound)
         
@@ -40,8 +38,7 @@ final class SearchActivityPresenterTests: XCTestCase {
     
     func test_presenter_shouldTellTheViewToDisplayAnActivityOnSuccessfulLoading() {
         let activity = Activity(description: "A description", type: "A type", participants: 1, price: 0.2)
-        let viewSpy = ViewSpy()
-        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
+        let (presenter, viewSpy) = makeSUT()
         
         presenter.didFinishLoading(with: activity)
         
@@ -49,6 +46,16 @@ final class SearchActivityPresenterTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (SearchActivityPresenter, ViewSpy) {
+        let viewSpy = ViewSpy()
+        let presenter = SearchActivityPresenter(loadingView: viewSpy, errorView: viewSpy, searchView: viewSpy)
+        
+        trackMemoryLeaks(viewSpy, file: file, line: line)
+        trackMemoryLeaks(presenter, file: file, line: line)
+        
+        return (presenter, viewSpy)
+    }
     
     private func localized(_ key: String, file: StaticString = #filePath, line: UInt = #line) -> String {
         let bundle = Bundle(for: SearchActivityPresenter.self)
