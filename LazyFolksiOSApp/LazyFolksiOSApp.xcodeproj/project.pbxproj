@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; };
+		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
+		CD9D38B8274C725E005E849B /* LazyFolksiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */; };
 		CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */; };
-		CDD8B60227482B7600C9F7FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B60127482B7600C9F7FF /* ViewController.swift */; };
-		CDD8B60527482B7600C9F7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60327482B7600C9F7FF /* Main.storyboard */; };
 		CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60627482B7700C9F7FF /* Assets.xcassets */; };
 		CDD8B60A27482B7700C9F7FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */; };
 		CDD8B61527482B7800C9F7FF /* LazyFolksiOSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B61427482B7800C9F7FF /* LazyFolksiOSAppTests.swift */; };
@@ -26,12 +28,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CD9D38B5274C7259005E849B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD9D38B8274C725E005E849B /* LazyFolksiOS.framework in Embed Frameworks */,
+				CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDD8B60127482B7600C9F7FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CDD8B60427482B7600C9F7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDD8B60627482B7700C9F7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDD8B60927482B7700C9F7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDD8B60B27482B7700C9F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */,
+				CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +76,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD9D38B1274C7259005E849B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */,
+				CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDD8B5F127482B7600C9F7FF = {
 			isa = PBXGroup;
 			children = (
 				CDD8B5FC27482B7600C9F7FF /* LazyFolksiOSApp */,
 				CDD8B61327482B7800C9F7FF /* LazyFolksiOSAppTests */,
 				CDD8B5FB27482B7600C9F7FF /* Products */,
+				CD9D38B1274C7259005E849B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +109,6 @@
 			children = (
 				CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */,
 				CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */,
-				CDD8B60127482B7600C9F7FF /* ViewController.swift */,
-				CDD8B60327482B7600C9F7FF /* Main.storyboard */,
 				CDD8B60627482B7700C9F7FF /* Assets.xcassets */,
 				CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */,
 				CDD8B60B27482B7700C9F7FF /* Info.plist */,
@@ -107,6 +134,7 @@
 				CDD8B5F627482B7600C9F7FF /* Sources */,
 				CDD8B5F727482B7600C9F7FF /* Frameworks */,
 				CDD8B5F827482B7600C9F7FF /* Resources */,
+				CD9D38B5274C7259005E849B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,7 +208,6 @@
 			files = (
 				CDD8B60A27482B7700C9F7FF /* LaunchScreen.storyboard in Resources */,
 				CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */,
-				CDD8B60527482B7600C9F7FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD8B60227482B7600C9F7FF /* ViewController.swift in Sources */,
 				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
 				CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */,
 			);
@@ -223,14 +249,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CDD8B60327482B7600C9F7FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDD8B60427482B7600C9F7FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,7 +388,6 @@
 				INFOPLIST_FILE = LazyFolksiOSApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -399,7 +416,6 @@
 				INFOPLIST_FILE = LazyFolksiOSApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
