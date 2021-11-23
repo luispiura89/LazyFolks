@@ -45,6 +45,16 @@ public final class SearchActivityPresenter {
             comment: "Max price field placeholder")
     }
     
+    private let loadingView: LoadingView
+    
+    public init(loadingView: LoadingView) {
+        self.loadingView = loadingView
+    }
+    
+    public func startSearchingActivity() {
+        loadingView.didLoadingStateChanged(LoadingViewData(isLoading: true))
+    }
+    
     private static func localize(key: String, comment: String) -> String {
         NSLocalizedString(
             key,
