@@ -71,7 +71,7 @@ extension SearchActivityViewController: LoadingErrorView {
         } else {
             guard let searchView = searchView else { return }
             searchView.addSubview(errorView)
-            errorView.topAnchor.constraint(equalTo: searchView.topAnchor).isActive = true
+            errorView.topAnchor.constraint(equalTo: searchView.safeAreaLayoutGuide.topAnchor).isActive = true
             errorView.leadingAnchor.constraint(equalTo: searchView.leadingAnchor).isActive = true
             searchView.trailingAnchor.constraint(equalTo: errorView.trailingAnchor).isActive = true
         }
