@@ -38,7 +38,10 @@ final class SearchActivityValidator: SearchActivityViewControllerDelegate {
     }
     
     private func isDataValid() -> Bool {
-        type != nil && participants != nil && minPrice != nil && maxPrice != nil
+        type?.isEmpty == false
+        && participants?.isEmpty == false
+        && minPrice?.isEmpty == false
+        && maxPrice?.isEmpty == false
     }
     
     func updateView() {

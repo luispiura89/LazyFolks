@@ -8,7 +8,7 @@
 import Foundation
 
 public enum ActivityEndpoint {
-    case get(type: String, participants: Int, minRange: Double, maxRange: Double)
+    case get(type: String, participants: String, minRange: String, maxRange: String)
     
     public func requestURL(baseURL: URL) -> URL {
         switch self {
@@ -17,9 +17,9 @@ public enum ActivityEndpoint {
             components.path.append("activity")
             components.queryItems = [
                 URLQueryItem(name: "type", value: type),
-                URLQueryItem(name: "participants", value: "\(participants)"),
-                URLQueryItem(name: "minprice", value: "\(minRange)"),
-                URLQueryItem(name: "maxprice", value: "\(maxRange)"),
+                URLQueryItem(name: "participants", value: participants),
+                URLQueryItem(name: "minprice", value: minRange),
+                URLQueryItem(name: "maxprice", value: maxRange),
             ]
             return components.url!
         }

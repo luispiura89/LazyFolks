@@ -45,6 +45,8 @@ public final class SearchActivityViewController: UIViewController {
     public func updateInputedData(values: (String, String, String, String)?) {
         if values != nil {
             searchView?.searchButton.enableButton()
+        } else {
+            searchView?.searchButton.disableButton()
         }
         searchController?.updateData(values: values)
     }

@@ -12,9 +12,9 @@ final class ActivityEndpointTests: XCTestCase {
     
     func test_endpoint_shouldContainsQueryParams() {
         let type = "type"
-        let participants = 2
-        let minRange = 0.2
-        let maxRange = 0.5
+        let participants = "2"
+        let minRange = "0.2"
+        let maxRange = "0.5"
         let baseURL = URL(string: "https://www.boredapi.com/api/")!
         let endpoint = ActivityEndpoint.get(
             type: type,

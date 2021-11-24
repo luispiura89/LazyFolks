@@ -17,8 +17,8 @@ public final class SearchViewComposer {
     
     static public func compose(
         windowBounds: CGRect,
-        loader:  @escaping SearchActivityLoader = { _, _, _, _ in Empty<Activity, Error>().eraseToAnyPublisher() },
-        navigationHandler: @escaping (Activity) -> Void = { _ in }
+        loader:  @escaping SearchActivityLoader,
+        navigationHandler: @escaping (Activity) -> Void
     ) -> SearchActivityViewController {
         let presentationAdapter = SearchActivityPresentationAdapter(loader: loader)
         let delegate = SearchActivityValidator()

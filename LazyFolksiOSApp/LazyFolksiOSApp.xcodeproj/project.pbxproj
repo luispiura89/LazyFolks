@@ -22,6 +22,7 @@
 		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
 		CD9D38B8274C725E005E849B /* LazyFolksiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD9EF872274EEFCF00E7309F /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */; };
 		CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */; };
 		CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */; };
 		CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60627482B7700C9F7FF /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		CD643DDB274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchActivityViewController+Helpers.swift"; sourceTree = "<group>"; };
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				CDD8B60627482B7700C9F7FF /* Assets.xcassets */,
 				CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */,
 				CDD8B60B27482B7700C9F7FF /* Info.plist */,
+				CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */,
 			);
 			path = LazyFolksiOSApp;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			files = (
 				CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */,
 				CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */,
+				CD9EF872274EEFCF00E7309F /* CombineHelpers.swift in Sources */,
 				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
 				CD3BD905274EE08F00C24491 /* ActivityDetailsComposer.swift in Sources */,
 				CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */,
