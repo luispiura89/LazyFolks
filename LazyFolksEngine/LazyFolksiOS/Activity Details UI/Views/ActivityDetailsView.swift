@@ -13,6 +13,9 @@ public final class ActivityDetailsView: UIView {
     // MARK: - Properties
     
     private var viewData: ActivityDetailsViewData?
+    private var typeFieldTitle: String?
+    private var participantsFieldTitle: String?
+    private var priceFieldTitle: String?
     
     // MARK: - Subviews
     
@@ -28,25 +31,100 @@ public final class ActivityDetailsView: UIView {
         UIStackView.makeStackView(
             subviews: [activityTitleLabel],
             margins: UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25),
-            spacing: 60
+            spacing: 60,
+            alignment: .center
         )
     }()
     
     private lazy var infoStackView: UIStackView = {
         UIStackView.makeStackView(
-            subviews: [],
+            subviews: [typeStackView, participantsStackView, priceStackView],
             margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
-            spacing: 20
+            spacing: 0
+        )
+    }()
+    
+    private lazy var typeStackView: UIStackView = {
+        UIStackView.makeStackView(
+            subviews: [
+                typeIconImageView,
+                typeTitleLabel,
+                typeLabel
+            ],
+            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            spacing: 5,
+            alignment: .center
+        )
+    }()
+    
+    private lazy var participantsStackView: UIStackView = {
+        UIStackView.makeStackView(
+            subviews: [
+                participantsIconImageView,
+                participantsTitleLabel,
+                participantsLabel
+            ],
+            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            spacing: 5,
+            alignment: .center
+        )
+    }()
+    
+    private lazy var priceStackView: UIStackView = {
+        UIStackView.makeStackView(
+            subviews: [
+                priceIconImageView,
+                priceTitleLabel,
+                priceLabel
+            ],
+            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            spacing: 5,
+            alignment: .center
         )
     }()
     
     private lazy var activityTitleLabel: UILabel = {
-        UILabel.makeLabel(text: viewData?.title, numberOfLines: 0, textStyle: .title2)
+        UILabel.makeLabel(text: viewData?.title, numberOfLines: 0, textStyle: .title1)
+    }()
+    
+    private lazy var participantsLabel: UILabel = {
+        makeParticipantsViews().info
+    }()
+    
+    private lazy var participantsTitleLabel: UILabel = {
+        makeParticipantsViews().title
+    }()
+    
+    private lazy var participantsIconImageView: UIImageView = {
+        makeParticipantsViews().icon
+    }()
+    
+    private lazy var priceLabel: UILabel = {
+        makePriceViews().info
+    }()
+    
+    private lazy var priceTitleLabel: UILabel = {
+        makePriceViews().title
+    }()
+    
+    private lazy var priceIconImageView: UIImageView = {
+        makePriceViews().icon
+    }()
+    
+    private lazy var typeLabel: UILabel = {
+        makeTypeViews().info
+    }()
+    
+    private lazy var typeTitleLabel: UILabel = {
+        makeTypeViews().title
+    }()
+    
+    private lazy var typeIconImageView: UIImageView = {
+        makeTypeViews().icon
     }()
     
     private lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil)
+        let view = UIView.makeView(color: UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil))
         view.addSubview(infoStackView)
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -54,7 +132,6 @@ public final class ActivityDetailsView: UIView {
             infoStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             view.bottomAnchor.constraint(greaterThanOrEqualTo: infoStackView.bottomAnchor),
         ])
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -68,10 +145,16 @@ public final class ActivityDetailsView: UIView {
     
     public convenience init(
         frame: CGRect,
-        viewData: ActivityDetailsViewData
+        viewData: ActivityDetailsViewData,
+        typeFieldTitle: String,
+        participantsFieldTitle: String,
+        priceFieldTitle: String
     ) {
         self.init(frame: frame)
         self.viewData = viewData
+        self.typeFieldTitle = typeFieldTitle
+        self.participantsFieldTitle = participantsFieldTitle
+        self.priceFieldTitle = priceFieldTitle
         addGradientBackground(frame: frame)
         setupSubviews()
         containerView.addCurveTop(frame: frame)
@@ -91,5 +174,47 @@ public final class ActivityDetailsView: UIView {
             trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
             bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor)
         ])
+    }
+    
+    private func makeTypeViews() -> (title: UILabel, info: UILabel, icon: UIImageView) {
+        makeFieldViews(fieldTitle: typeFieldTitle, fieldValue: viewData?.type, iconName: "TypeIcon")
+    }
+    
+    private func makePriceViews() -> (title: UILabel, info: UILabel, icon: UIImageView) {
+        makeFieldViews(fieldTitle: priceFieldTitle, fieldValue: viewData?.price, iconName: "PriceIcon")
+    }
+    
+    private func makeParticipantsViews() -> (title: UILabel, info: UILabel, icon: UIImageView) {
+        makeFieldViews(fieldTitle: participantsFieldTitle, fieldValue: viewData?.participants, iconName: "ParticipantsIcon")
+    }
+    
+    private func makeFieldViews(
+        fieldTitle: String?,
+        fieldValue: String?,
+        iconName: String
+    ) -> (title: UILabel, info: UILabel, icon: UIImageView) {
+        let info = UILabel.makeLabel(
+            text: fieldValue,
+            numberOfLines: 0,
+            textStyle: .largeTitle,
+            textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
+        )
+        
+        let title = UILabel.makeLabel(
+            text: fieldTitle,
+            numberOfLines: 0,
+            textStyle: .title1,
+            textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
+        )
+        
+        let image = UIImage(named: iconName, in: Bundle(for: Self.self), compatibleWith: nil)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 50),
+            imageView.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        imageView.contentMode = .scaleAspectFit
+        return (title, info, imageView)
     }
 }

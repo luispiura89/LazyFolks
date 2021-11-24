@@ -20,6 +20,7 @@
 		CD3BD8FB274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD8F9274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png */; };
 		CD3BD8FC274EAAD900C24491 /* ACTIVITY_DETAILS_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD8FA274EAAD900C24491 /* ACTIVITY_DETAILS_light.png */; };
 		CD3BD8FE274EABE700C24491 /* CommonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD8FD274EABE700C24491 /* CommonAssets.xcassets */; };
+		CD3BD901274EC8EC00C24491 /* UIView+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD900274EC8EC00C24491 /* UIView+Make.swift */; };
 		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
 		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
 		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
@@ -108,6 +109,7 @@
 		CD3BD8F9274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTIVITY_DETAILS_dark.png; sourceTree = "<group>"; };
 		CD3BD8FA274EAAD900C24491 /* ACTIVITY_DETAILS_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTIVITY_DETAILS_light.png; sourceTree = "<group>"; };
 		CD3BD8FD274EABE700C24491 /* CommonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonAssets.xcassets; sourceTree = "<group>"; };
+		CD3BD900274EC8EC00C24491 /* UIView+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Make.swift"; sourceTree = "<group>"; };
 		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
 		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
 		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				CD3BD8EF274EA30F00C24491 /* UITextField+Make.swift */,
 				CD3BD8F1274EA34300C24491 /* UILabel+Make.swift */,
 				CD3BD8F3274EA37100C24491 /* UIStackView+Make.swift */,
+				CD3BD900274EC8EC00C24491 /* UIView+Make.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				CD3BD8EC274EA04200C24491 /* UIView+GradientBackground.swift in Sources */,
 				CD3BD8E5274E9CFA00C24491 /* ActivityDetailsViewController.swift in Sources */,
 				CD9D388C274C6188005E849B /* ErrorView.swift in Sources */,
+				CD3BD901274EC8EC00C24491 /* UIView+Make.swift in Sources */,
 				CD3BD8F4274EA37100C24491 /* UIStackView+Make.swift in Sources */,
 				CD3BD8E9274E9E8500C24491 /* ActivityDetailsView.swift in Sources */,
 				CD3BD8F2274EA34300C24491 /* UILabel+Make.swift in Sources */,
