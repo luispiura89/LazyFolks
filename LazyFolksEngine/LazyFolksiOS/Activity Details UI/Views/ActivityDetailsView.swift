@@ -46,7 +46,7 @@ public final class ActivityDetailsView: UIView {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 248.0/255.0, green: 248/255.0, blue: 248/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil)
         view.addSubview(infoStackView)
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: view.topAnchor),

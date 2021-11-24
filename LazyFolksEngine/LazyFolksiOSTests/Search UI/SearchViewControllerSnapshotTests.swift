@@ -14,8 +14,8 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
     func test_search_shouldRenderInitialState() {
         let sut = makeSUT()
         
-        assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_light")
-        assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_dark")
+        record(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_light")
+        record(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_dark")
     }
     
     func test_search_shouldLoad() {
@@ -24,8 +24,8 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
         sut.didStartLoading()
         sut.fillData()
         
-        assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_light")
-        assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_dark")
+        record(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_light")
+        record(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_dark")
     }
     
     func test_search_rendersError() {
@@ -34,8 +34,8 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
         sut.didFinishLoadWithError(message: "This is a long\nerror message")
         sut.fillData()
         
-        assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_ERROR_light")
-        assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_ERROR_dark")
+        record(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_ERROR_light")
+        record(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_ERROR_dark")
     }
     
     // MARK: - Helpers

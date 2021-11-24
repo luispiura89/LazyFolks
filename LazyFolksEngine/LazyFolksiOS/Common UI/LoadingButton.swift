@@ -41,7 +41,7 @@ public final class LoadingButton: UIButton {
         super.init(frame: frame)
     }
     
-    convenience init(title: String, color: UIColor) {
+    convenience init(title: String, color: UIColor?) {
         self.init(frame: .zero)
         self.title = title
         
