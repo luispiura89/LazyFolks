@@ -14,8 +14,8 @@ final class ActivityDetailsViewControllerSnapshotTests: XCTestCase {
     func test_activityDetails_shouldRenderActivityData() {
         let sut = makeSUT()
         
-        record(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "ACTIVITY_DETAILS_light")
-        record(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "ACTIVITY_DETAILS_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "ACTIVITY_DETAILS_light")
+        assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "ACTIVITY_DETAILS_dark")
     }
     
     private func makeSUT() -> ActivityDetailsViewController {
@@ -25,9 +25,12 @@ final class ActivityDetailsViewControllerSnapshotTests: XCTestCase {
                 frame: bounds,
                 viewData: ActivityDetailsViewData(
                     title: "A title",
-                    participants: 2,
-                    minPrice: 0.2,
-                    maxPrice: 0.5)
+                    type: "Type",
+                    participants: "2",
+                    price: "0.2"),
+                typeFieldTitle: "Activity type",
+                participantsFieldTitle: "Number of participants",
+                priceFieldTitle: "Price"
             )
         )
         details.loadViewIfNeeded()

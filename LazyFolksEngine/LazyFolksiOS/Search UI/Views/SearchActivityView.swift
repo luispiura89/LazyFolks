@@ -77,8 +77,7 @@ public final class SearchActivityView: UIView {
     }()
     
     private lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil)
+        let view = UIView.makeView(color: UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil))
         view.addSubview(fieldsStackView)
         NSLayoutConstraint.activate([
             fieldsStackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -86,7 +85,6 @@ public final class SearchActivityView: UIView {
             fieldsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             view.bottomAnchor.constraint(greaterThanOrEqualTo: fieldsStackView.bottomAnchor)
         ])
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     

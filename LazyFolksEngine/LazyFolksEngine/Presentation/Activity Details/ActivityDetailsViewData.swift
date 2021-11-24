@@ -9,14 +9,14 @@ import Foundation
 
 public struct ActivityDetailsViewData {
     public let title: String
-    public let participants: Int
-    public let minPrice: Double
-    public let maxPrice: Double
+    public let participants: String
+    public let price: String
+    public let type: String
     
-    public init(title: String, participants: Int, minPrice: Double, maxPrice: Double) {
+    public init(title: String, type: String, participants: String, price: String) {
         self.title = title
         self.participants = participants
-        self.minPrice = minPrice
-        self.maxPrice = maxPrice
+        self.price = price
+        self.type = type
     }
 }
