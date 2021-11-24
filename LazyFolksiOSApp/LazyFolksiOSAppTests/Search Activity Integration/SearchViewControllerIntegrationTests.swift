@@ -19,8 +19,6 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         let table = "SearchActivity"
         let bundle = Bundle(for: SearchActivityPresenter.self)
         
-        sut.loadViewIfNeeded()
-        
         XCTAssertEqual(sut.header, localized("SEARCH_ACTIVITY_VIEW_TITLE", table: table, bundle: bundle))
         XCTAssertEqual(sut.subtitle, localized("SEARCH_ACTIVITY_VIEW_SUBTITLE", table: table, bundle: bundle))
         XCTAssertEqual(sut.typePlaceholder, localized("SEARCH_ACTIVITY_TYPE_PLACEHOLDER", table: table, bundle: bundle))
@@ -32,8 +30,6 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     func test_searchView_shouldRequestSearchActivity() {
         let (sut, loaderSpy) = makeSUT()
         
-        sut.loadViewIfNeeded()
-        sut.simulateUserFilledData()
         sut.simulateUserRequestedActivitySearch()
         XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Should had requested activity search")
         
@@ -51,9 +47,6 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     
     func test_searchView_shouldShowLoadingIndicator() {
         let (sut, loaderSpy) = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        sut.simulateUserFilledData()
         
         sut.simulateUserRequestedActivitySearch()
         XCTAssertTrue(sut.isShowingLoadingIndicator, "Should be showing loader after first request")
@@ -73,9 +66,7 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     }
     
     func test_searchView_shouldEnableSearchButtonWhenUserHasFilledAllTheData() {
-        let (sut, _) = makeSUT()
-        
-        sut.loadViewIfNeeded()
+        let (sut, _) = makeSUT(withFilledData: false)
         
         XCTAssertFalse(sut.canSendSearchRequest, "Search button should be disabled")
         
@@ -86,9 +77,6 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     func test_searchView_shouldDisplayAnErrorWhenThereIsAnError() {
         let (sut, loader) = makeSUT()
         
-        sut.loadViewIfNeeded()
-        
-        sut.simulateUserFilledData()
         sut.simulateUserRequestedActivitySearch()
         XCTAssertFalse(sut.isShowingErrorMessage, "Should show error view until there's an error")
         
@@ -102,20 +90,50 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         XCTAssertFalse(sut.isShowingErrorMessage, "Should show error view until there's an error")
     }
     
+    func test_searchView_shouldDisplayActivityScreenWhenItFindsAnActivity() {
+        var expectedActivity: Activity?
+        let (sut, loader) = makeSUT { expectedActivity = $0 }
+        let activity = makeActivity()
+        
+        sut.simulateUserFilledData()
+        sut.simulateUserRequestedActivitySearch()
+        loader.simulateLoadingCompletionSuccessfully(with: activity, at: 0)
+        
+        XCTAssertEqual(activity, expectedActivity)
+    }
+    
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (SearchActivityViewController, LoaderSpy) {
+    private func makeSUT(
+        withFilledData fillData: Bool = true,
+        navigationHandler: @escaping (Activity) -> Void = { _ in },
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> (SearchActivityViewController, LoaderSpy) {
         let loaderSpy = LoaderSpy()
-        let search = SearchViewComposer.compose(windowBounds: .zero, loader: loaderSpy.loaderPublisher)
+        let search = SearchViewComposer.compose(
+            windowBounds: .zero,
+            loader: loaderSpy.loaderPublisher,
+            navigationHandler: navigationHandler
+        )
         
         trackMemoryLeaks(search, file: file, line: line)
         trackMemoryLeaks(loaderSpy, file: file, line: line)
+        
+        search.loadViewIfNeeded()
+        if fillData {
+            search.simulateUserFilledData()
+        }
         
         return (search, loaderSpy)
     }
     
     private func localized(_ key: String, table: String, bundle: Bundle) -> String {
         bundle.localizedString(forKey: key, value: nil, table: table)
+    }
+    
+    private func makeActivity() -> Activity {
+        Activity(description: "any description", type: "any type", participants: 10, price: 0.5)
     }
     
     private final class LoaderSpy {
@@ -132,9 +150,9 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
             return publisher.eraseToAnyPublisher()
         }
         
-        func simulateLoadingCompletionSuccessfully(at index: Int) {
+        func simulateLoadingCompletionSuccessfully(with activity: Activity? = nil, at index: Int) {
             guard requests.count > index else { return }
-            requests[index].send(Activity(description: "any description", type: "any type", participants: 10, price: 0.5))
+            requests[index].send( activity ?? Activity(description: "any description", type: "any type", participants: 10, price: 0.5))
         }
         
         func simulateLoadingCompletionWithError(at index: Int) {

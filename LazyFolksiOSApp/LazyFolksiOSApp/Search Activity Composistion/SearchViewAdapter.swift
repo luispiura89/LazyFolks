@@ -11,12 +11,19 @@ import LazyFolksiOS
 final class SearchViewAdapter: SearchView {
     
     private weak var controller: SearchActivityViewController?
+    private let navigationHandler: (Activity) -> Void
     
-    init(controller: SearchActivityViewController) {
+    init(
+        controller: SearchActivityViewController,
+        navigationHandler: @escaping (Activity) -> Void
+    ) {
         self.controller = controller
+        self.navigationHandler = navigationHandler
     }
     
-    func didLoad(_ data: SearchActivityViewData) {}
+    func didLoad(_ data: SearchActivityViewData) {
+        navigationHandler(data.activity)
+    }
     
     func updateEnteredData(_ data: InputedData?) {
         controller?.updateInputedData(values: data)
