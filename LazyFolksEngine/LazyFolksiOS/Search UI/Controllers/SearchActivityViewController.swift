@@ -31,7 +31,7 @@ public final class SearchActivityViewController: UIViewController {
         searchView: SearchActivityView,
         bounds: CGRect,
         searchController: SearchActivityController? = nil,
-        delegate: SearchActivityViewControllerDelegate
+        delegate: SearchActivityViewControllerDelegate? = nil
     ) {
         self.init()
         self.searchView = searchView
@@ -39,10 +39,10 @@ public final class SearchActivityViewController: UIViewController {
         self.searchController = searchController
         self.delegate = delegate
         self.searchView?.searchHandler = searchController?.searchActivity
-        self.searchView?.didTypeChangeHandler = delegate.updateType
-        self.searchView?.didParticipantsChangeHandler = delegate.updateParticipants
-        self.searchView?.didMinPriceChangeHandler = delegate.updateMinPrice
-        self.searchView?.didMaxPriceChangeHandler = delegate.updateMaxPrice
+        self.searchView?.didTypeChangeHandler = delegate?.updateType
+        self.searchView?.didParticipantsChangeHandler = delegate?.updateParticipants
+        self.searchView?.didMinPriceChangeHandler = delegate?.updateMinPrice
+        self.searchView?.didMaxPriceChangeHandler = delegate?.updateMaxPrice
     }
     
     public override func viewDidLoad() {
