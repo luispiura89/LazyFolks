@@ -23,6 +23,8 @@
 		CD3BD901274EC8EC00C24491 /* UIView+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD900274EC8EC00C24491 /* UIView+Make.swift */; };
 		CD3BD90C274EE48400C24491 /* ActivityDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD90B274EE48400C24491 /* ActivityDetailsPresenter.swift */; };
 		CD3BD90E274EE54000C24491 /* ActivityDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD90D274EE54000C24491 /* ActivityDetails.strings */; };
+		CD3BD910274EE76000C24491 /* ActivityDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD90F274EE76000C24491 /* ActivityDetailsPresenterTests.swift */; };
+		CD3BD913274EE7D200C24491 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD912274EE7D200C24491 /* TestHelpers.swift */; };
 		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
 		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
 		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
@@ -114,6 +116,8 @@
 		CD3BD900274EC8EC00C24491 /* UIView+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Make.swift"; sourceTree = "<group>"; };
 		CD3BD90B274EE48400C24491 /* ActivityDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsPresenter.swift; sourceTree = "<group>"; };
 		CD3BD90D274EE54000C24491 /* ActivityDetails.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ActivityDetails.strings; sourceTree = "<group>"; };
+		CD3BD90F274EE76000C24491 /* ActivityDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		CD3BD912274EE7D200C24491 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
 		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
 		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
@@ -260,6 +264,14 @@
 			path = snapshots;
 			sourceTree = "<group>";
 		};
+		CD3BD911274EE77600C24491 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD912274EE7D200C24491 /* TestHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CD6FB9A6274D410E00096F9B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +318,9 @@
 		CD6FB9AB274D42B900096F9B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BD911274EE77600C24491 /* Helpers */,
 				CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */,
+				CD3BD90F274EE76000C24491 /* ActivityDetailsPresenterTests.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -763,9 +777,11 @@
 				CD8A270D274875080096143A /* TestHelperFunctions.swift in Sources */,
 				CD8A2713274959260096143A /* ActivityEndpointTests.swift in Sources */,
 				CD6FB9B8274D55A600096F9B /* XCTestCase+MemoryLeaks.swift in Sources */,
+				CD3BD910274EE76000C24491 /* ActivityDetailsPresenterTests.swift in Sources */,
 				CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */,
 				CD8A26FB274858CB0096143A /* URLSessionHTTPClientTests.swift in Sources */,
 				CD8A270427485BB40096143A /* URLProtocolStub.swift in Sources */,
+				CD3BD913274EE7D200C24491 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
