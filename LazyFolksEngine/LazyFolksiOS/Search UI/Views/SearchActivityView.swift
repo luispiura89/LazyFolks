@@ -153,7 +153,16 @@ public final class SearchActivityView: UIView {
     
     // MARK: - Methods
     
-    func setupSubviews() {
+    func adjustInsets(keyboardFrame: CGRect) {
+        let intersection = keyboardFrame.intersection(frame)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: intersection.height + 50, right: 0)
+    }
+    
+    func hideKeyboard() {
+        scrollView.contentInset = .zero
+    }
+    
+    private func setupSubviews() {
         addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
@@ -167,8 +176,6 @@ public final class SearchActivityView: UIView {
         participantsTextField.addTarget(self, action: #selector(didEnterParticipants), for: .editingChanged)
         maxPriceTextField.addTarget(self, action: #selector(didEnterMaxPrice), for: .editingChanged)
     }
-    
-    // MARK: - Private methods
     
     @objc private func searchActivity() {
         searchHandler?()
