@@ -9,11 +9,15 @@ import UIKit
 
 extension UITextField {
     
-    static func makeTexField(placeholder: String?) -> UITextField {
+    static func makeTexField(placeholder: String?, keyboardType: UIKeyboardType = .default) -> UITextField {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
+        textField.textColor = .darkGray
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.autocorrectionType = .no
+        textField.keyboardType = keyboardType
+        textField.autocapitalizationType = .none
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 45)
         ])

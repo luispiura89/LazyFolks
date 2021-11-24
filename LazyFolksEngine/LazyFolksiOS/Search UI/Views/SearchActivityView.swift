@@ -89,7 +89,7 @@ public final class SearchActivityView: UIView {
     }()
     
     public private(set) lazy var participantsTextField: UITextField = {
-        UITextField.makeTexField(placeholder: participantsPlaceholder)
+        UITextField.makeTexField(placeholder: participantsPlaceholder, keyboardType: .numberPad)
     }()
     
     public private(set) lazy var typeTextField: UITextField = {
@@ -97,11 +97,11 @@ public final class SearchActivityView: UIView {
     }()
     
     public private(set) lazy var minPriceTextField: UITextField = {
-        UITextField.makeTexField(placeholder: minPricePlaceholder)
+        UITextField.makeTexField(placeholder: minPricePlaceholder, keyboardType: .decimalPad)
     }()
     
     public private(set) lazy var maxPriceTextField: UITextField = {
-        UITextField.makeTexField(placeholder: maxPricePlaceholder)
+        UITextField.makeTexField(placeholder: maxPricePlaceholder, keyboardType: .decimalPad)
     }()
     
     public private(set) lazy var searchButton: LoadingButton = {
