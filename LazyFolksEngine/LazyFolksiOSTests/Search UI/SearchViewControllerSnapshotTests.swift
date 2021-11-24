@@ -43,6 +43,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
     private func makeSUT() -> SearchActivityViewController {
         let bounds = SnapshotConfiguration.iPhone13(style: .light).frame
         let searchView = SearchActivityView(
+            bounds: bounds,
             title: "A title",
             subtitle: "A subtitle",
             typePlaceholder: "type",

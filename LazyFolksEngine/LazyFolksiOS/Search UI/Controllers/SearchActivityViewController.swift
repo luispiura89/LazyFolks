@@ -45,12 +45,6 @@ public final class SearchActivityViewController: UIViewController {
         self.searchView?.didMaxPriceChangeHandler = delegate?.updateMaxPrice
     }
     
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        searchView?.addGradientBackground(frame: windowBounds)
-        searchView?.addCurveTop(frame: windowBounds)
-    }
-    
     public func updateInputedData(values: (String, String, String, String)?) {
         if values != nil {
             searchView?.searchButton.enableButton()
