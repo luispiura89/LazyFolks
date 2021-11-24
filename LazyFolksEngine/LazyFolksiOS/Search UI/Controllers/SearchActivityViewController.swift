@@ -15,12 +15,13 @@ public protocol SearchActivityViewControllerDelegate {
     func updateMaxPrice(value: String?)
 }
 
-public final class SearchActivityViewController: UIViewController {
+public final class SearchActivityViewController: UIViewController, KeyboardObservable {
     
     public private(set) var searchView: SearchActivityView?
     public private(set) var errorView = ErrorView(frame: .zero)
     private var searchController: SearchActivityController?
     private var delegate: SearchActivityViewControllerDelegate?
+    var keyboardObserver: KeyboardObserver?
     
     public override func loadView() {
         view = searchView
@@ -40,6 +41,16 @@ public final class SearchActivityViewController: UIViewController {
         self.searchView?.didParticipantsChangeHandler = delegate?.updateParticipants
         self.searchView?.didMinPriceChangeHandler = delegate?.updateMinPrice
         self.searchView?.didMaxPriceChangeHandler = delegate?.updateMaxPrice
+    }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        startKeyboardObserving { [weak searchView] keyboardFrame in
+            searchView?.adjustInsets(keyboardFrame: keyboardFrame)
+        } onHide: { [weak searchView] in
+            searchView?.hideKeyboard()
+        }
+
     }
     
     public func updateInputedData(values: (String, String, String, String)?) {

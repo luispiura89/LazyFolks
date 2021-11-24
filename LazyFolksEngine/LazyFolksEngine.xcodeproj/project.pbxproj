@@ -58,6 +58,7 @@
 		CD9D388C274C6188005E849B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9D388B274C6188005E849B /* ErrorView.swift */; };
 		CD9D388F274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D388D274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_dark.png */; };
 		CD9D3890274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9D388E274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_light.png */; };
+		CD9EF874274EFDF800E7309F /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EF873274EFDF800E7309F /* KeyboardObserver.swift */; };
 		CDD8B5E227482B2400C9F7FF /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +151,7 @@
 		CD9D388B274C6188005E849B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		CD9D388D274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_LOADING_ERROR_dark.png; sourceTree = "<group>"; };
 		CD9D388E274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEARCH_VIEW_LOADING_ERROR_light.png; sourceTree = "<group>"; };
+		CD9EF873274EFDF800E7309F /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5E127482B2400C9F7FF /* LazyFolksEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -241,6 +243,7 @@
 				CD3BD8F1274EA34300C24491 /* UILabel+Make.swift */,
 				CD3BD8F3274EA37100C24491 /* UIStackView+Make.swift */,
 				CD3BD900274EC8EC00C24491 /* UIView+Make.swift */,
+				CD9EF873274EFDF800E7309F /* KeyboardObserver.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 			files = (
 				CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */,
 				CD003C3A274D7B350037B5C8 /* SearchActivityController.swift in Sources */,
+				CD9EF874274EFDF800E7309F /* KeyboardObserver.swift in Sources */,
 				CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */,
 				CD3BD8F0274EA30F00C24491 /* UITextField+Make.swift in Sources */,
 				CD9D3885274C5491005E849B /* LoadingButton.swift in Sources */,
