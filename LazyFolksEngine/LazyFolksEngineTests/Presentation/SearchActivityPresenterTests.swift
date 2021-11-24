@@ -53,6 +53,18 @@ final class SearchActivityPresenterTests: XCTestCase {
         XCTAssertEqual(viewSpy.messages, [.loading(false), .success(activity)])
     }
     
+    func test_presenter_shouldTellTheViewToUpdateData() {
+        let (presenter, viewSpy) = makeSUT()
+        let type = "type"
+        let participants = "0"
+        let minPrice = "0.2"
+        let maxPrice = "0.5"
+        
+        presenter.updateView(inputedData: (type: type, participants: participants, minPrice: minPrice, maxPrice: maxPrice))
+        
+        XCTAssertEqual(viewSpy.messages, [.inputedData(type, participants, minPrice, maxPrice)])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (SearchActivityPresenter, ViewSpy) {
@@ -77,9 +89,11 @@ final class SearchActivityPresenterTests: XCTestCase {
     private final class ViewSpy: LoadingView, LoadingErrorView, SearchView {
         
         enum Message: Hashable {
+            
             case loading(Bool)
             case failure(String?)
             case success(Activity)
+            case inputedData(String?, String?, String?, String?)
         }
         
         private(set) var messages = Set<Message>()
@@ -96,6 +110,15 @@ final class SearchActivityPresenterTests: XCTestCase {
         
         func didLoad(_ data: SearchActivityViewData) {
             messages.insert(.success(data.activity))
+        }
+        
+        func updateEnteredData(_ data: InputedData?) {
+            if let data = data {
+                let (type, participants, minPrice, maxPrice) = data
+                messages.insert(.inputedData(type, participants, minPrice, maxPrice))
+            } else {
+                messages.insert(.inputedData(nil, nil, nil, nil))
+            }
         }
     }
 }
