@@ -22,4 +22,7 @@ public final class ActivityDetailsViewController: UIViewController {
         view = detailsView
     }
     
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.portrait]
+    }
 }

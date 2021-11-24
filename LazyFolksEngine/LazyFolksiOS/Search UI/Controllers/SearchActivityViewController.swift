@@ -48,6 +48,10 @@ public final class SearchActivityViewController: UIViewController {
         }
         searchController?.updateData(values: values)
     }
+    
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.portrait]
+    }
 }
 
 extension SearchActivityViewController: LoadingView {
