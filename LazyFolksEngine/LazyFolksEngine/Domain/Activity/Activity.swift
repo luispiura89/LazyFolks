@@ -8,10 +8,10 @@
 import Foundation
 
 public struct Activity: Hashable {
-    let description: String
-    let type: String
-    let participants: Int
-    let price: Double
+    public let description: String
+    public let type: String
+    public let participants: Int
+    public let price: Double
     
     public init(description: String, type: String, participants: Int, price: Double) {
         self.description = description

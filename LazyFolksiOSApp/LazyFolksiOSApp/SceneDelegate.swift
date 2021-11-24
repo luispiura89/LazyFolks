@@ -27,11 +27,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window!.rootViewController = SearchViewComposer.compose(
             windowBounds: bounds,
             loader: loaderPublisher,
-            navigationHandler: { activity in
-                print(activity)
-            }
+            navigationHandler: navigateToActivityDetails
         )
         window!.makeKeyAndVisible()
+    }
+    
+    private func navigateToActivityDetails(activity: Activity) {
+        let activityData = ActivityDetailsViewData(
+            title: activity.description,
+            type: activity.type,
+            participants: "\(activity.participants)",
+            price: "\(activity.price)"
+        )
+        let details = ActivityDetailsComposer.compose(windowBounds: window!.bounds, viewData: activityData)
+        window?.rootViewController?.present(details, animated: true)
     }
 
     private func loaderPublisher(
