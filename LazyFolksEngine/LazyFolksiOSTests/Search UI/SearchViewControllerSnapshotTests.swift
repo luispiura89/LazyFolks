@@ -50,7 +50,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
             participantsPlaceholder: "participants",
             minPricePlaceholder: "min price",
             maxPricePlaceholder: "max price")
-        let searchController =  SearchActivityViewController(searchView: searchView, bounds: bounds, delegate: nil)
+        let searchController =  SearchActivityViewController(searchView: searchView, delegate: nil)
         searchController.loadViewIfNeeded()
         return searchController
     }
