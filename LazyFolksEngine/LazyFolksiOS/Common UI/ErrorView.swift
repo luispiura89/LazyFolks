@@ -21,10 +21,11 @@ public final class ErrorView: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.red.withAlphaComponent(0.4)
+        backgroundColor = UIColor.red.withAlphaComponent(0.6)
         translatesAutoresizingMaskIntoConstraints = false
         titleLabel?.numberOfLines = 0
         titleLabel?.textAlignment = .center
+        titleLabel?.font = .preferredFont(forTextStyle: .headline)
     }
     
     required init?(coder: NSCoder) {
