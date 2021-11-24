@@ -13,9 +13,9 @@ public final class ActivityDetailsView: UIView {
     // MARK: - Properties
     
     private var viewData: ActivityDetailsViewData?
-    private var typeFieldTitle: String?
-    private var participantsFieldTitle: String?
-    private var priceFieldTitle: String?
+    public private(set) var typeFieldTitle: String?
+    public private(set) var participantsFieldTitle: String?
+    public private(set) var priceFieldTitle: String?
     
     // MARK: - Subviews
     

@@ -1,0 +1,11 @@
+/* 
+  ActivityDetails.strings
+  LazyFolksEngine
+
+  Created by Luis Francisco Piura Mejia on 24/11/21.
+  
+*/
+
+"TYPE_FIELD_TITLE" = "Type";
+"PRICE_FIELD_TITLE" = "Price";
+"PARTICIPANTS_FIELD_TITLE" = "Number of participants";

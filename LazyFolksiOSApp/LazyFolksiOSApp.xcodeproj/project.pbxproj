@@ -14,6 +14,9 @@
 		CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C40274D93750037B5C8 /* WeakRefProxy.swift */; };
 		CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */; };
 		CD003C47274DB22C0037B5C8 /* SearchActivityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */; };
+		CD3BD905274EE08F00C24491 /* ActivityDetailsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD904274EE08F00C24491 /* ActivityDetailsComposer.swift */; };
+		CD3BD907274EE18A00C24491 /* ActivityDetailsViewControllerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD906274EE18A00C24491 /* ActivityDetailsViewControllerIntegrationTests.swift */; };
+		CD3BD90A274EE3D000C24491 /* ActivityDetailsViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD909274EE3D000C24491 /* ActivityDetailsViewController+Helpers.swift */; };
 		CD643DDC274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD643DDB274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift */; };
 		CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; };
 		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -58,6 +61,9 @@
 		CD003C40274D93750037B5C8 /* WeakRefProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefProxy.swift; sourceTree = "<group>"; };
 		CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAdapter.swift; sourceTree = "<group>"; };
 		CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityValidator.swift; sourceTree = "<group>"; };
+		CD3BD904274EE08F00C24491 /* ActivityDetailsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsComposer.swift; sourceTree = "<group>"; };
+		CD3BD906274EE18A00C24491 /* ActivityDetailsViewControllerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewControllerIntegrationTests.swift; sourceTree = "<group>"; };
+		CD3BD909274EE3D000C24491 /* ActivityDetailsViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityDetailsViewController+Helpers.swift"; sourceTree = "<group>"; };
 		CD643DDB274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchActivityViewController+Helpers.swift"; sourceTree = "<group>"; };
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +125,31 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CD3BD902274EE02500C24491 /* Activity Details Composition */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD904274EE08F00C24491 /* ActivityDetailsComposer.swift */,
+			);
+			path = "Activity Details Composition";
+			sourceTree = "<group>";
+		};
+		CD3BD903274EE03800C24491 /* Activity Details Integration */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD908274EE3B800C24491 /* Helpers */,
+				CD3BD906274EE18A00C24491 /* ActivityDetailsViewControllerIntegrationTests.swift */,
+			);
+			path = "Activity Details Integration";
+			sourceTree = "<group>";
+		};
+		CD3BD908274EE3B800C24491 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD909274EE3D000C24491 /* ActivityDetailsViewController+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CD643DDA274E7D1900EA7BF5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +189,7 @@
 		CDD8B5FC27482B7600C9F7FF /* LazyFolksiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BD902274EE02500C24491 /* Activity Details Composition */,
 				CD003C36274D5DE60037B5C8 /* Search Activity Composistion */,
 				CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */,
 				CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */,
@@ -173,6 +205,7 @@
 			children = (
 				CD003C3B274D84CF0037B5C8 /* Helpers */,
 				CD003C33274D5BBA0037B5C8 /* Search Activity Integration */,
+				CD3BD903274EE03800C24491 /* Activity Details Integration */,
 			);
 			path = LazyFolksiOSAppTests;
 			sourceTree = "<group>";
@@ -281,6 +314,7 @@
 				CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */,
 				CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */,
 				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
+				CD3BD905274EE08F00C24491 /* ActivityDetailsComposer.swift in Sources */,
 				CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */,
 				CD003C47274DB22C0037B5C8 /* SearchActivityValidator.swift in Sources */,
 				CD003C3F274D93380037B5C8 /* SearchActivityPresentationAdapter.swift in Sources */,
@@ -294,7 +328,9 @@
 			files = (
 				CD643DDC274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift in Sources */,
 				CD003C3D274D84F50037B5C8 /* XCTestCase+MemoryLeaks.swift in Sources */,
+				CD3BD907274EE18A00C24491 /* ActivityDetailsViewControllerIntegrationTests.swift in Sources */,
 				CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */,
+				CD3BD90A274EE3D000C24491 /* ActivityDetailsViewController+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
