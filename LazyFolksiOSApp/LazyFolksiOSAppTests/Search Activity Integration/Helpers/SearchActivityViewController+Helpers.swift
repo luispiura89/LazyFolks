@@ -60,6 +60,11 @@ extension SearchActivityViewController {
         searchView?.minPriceTextField.simulate(event: .editingChanged)
         searchView?.maxPriceTextField.simulate(event: .editingChanged)
     }
+    
+    func deletetypeField() {
+        searchView?.typeTextField.text = ""
+        searchView?.typeTextField.simulate(event: .editingChanged)
+    }
 }
 
 extension UIControl {

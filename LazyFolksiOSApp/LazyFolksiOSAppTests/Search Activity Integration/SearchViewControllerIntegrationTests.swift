@@ -70,6 +70,9 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         
         sut.simulateUserFilledData()
         XCTAssertTrue(sut.canSendSearchRequest, "Search button should be enabled")
+        
+        sut.deletetypeField()
+        XCTAssertFalse(sut.canSendSearchRequest, "Search button should be disabled again")
     }
     
     func test_searchView_shouldDisplayAnErrorWhenThereIsAnError() {
