@@ -13,6 +13,7 @@
 		CD003C3F274D93380037B5C8 /* SearchActivityPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C3E274D93380037B5C8 /* SearchActivityPresentationAdapter.swift */; };
 		CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C40274D93750037B5C8 /* WeakRefProxy.swift */; };
 		CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */; };
+		CD003C47274DB22C0037B5C8 /* SearchActivityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */; };
 		CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; };
 		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
@@ -55,6 +56,7 @@
 		CD003C3E274D93380037B5C8 /* SearchActivityPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresentationAdapter.swift; sourceTree = "<group>"; };
 		CD003C40274D93750037B5C8 /* WeakRefProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefProxy.swift; sourceTree = "<group>"; };
 		CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAdapter.swift; sourceTree = "<group>"; };
+		CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityValidator.swift; sourceTree = "<group>"; };
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				CD003C3E274D93380037B5C8 /* SearchActivityPresentationAdapter.swift */,
 				CD003C40274D93750037B5C8 /* WeakRefProxy.swift */,
 				CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */,
+				CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */,
 			);
 			path = "Search Activity Composistion";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				CD003C38274D5DFD0037B5C8 /* SearchViewComposer.swift in Sources */,
 				CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */,
 				CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */,
+				CD003C47274DB22C0037B5C8 /* SearchActivityValidator.swift in Sources */,
 				CD003C3F274D93380037B5C8 /* SearchActivityPresentationAdapter.swift in Sources */,
 				CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */,
 			);
