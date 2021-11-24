@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class ErrorView: UIButton {
+public final class ErrorView: UIButton {
     
     // MARK: - Properties
     
-    var message: String? {
+    public var message: String? {
         get { title(for: .normal) }
         set { setErrorMessage(message: newValue) }
     }
