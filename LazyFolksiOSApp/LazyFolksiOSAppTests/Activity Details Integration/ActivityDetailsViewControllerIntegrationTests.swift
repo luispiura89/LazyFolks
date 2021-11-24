@@ -20,6 +20,18 @@ final class ActivityDetailsViewControllerIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.priceFieldTitle, ActivityDetailsPresenter.priceFieldTitle)
     }
     
+    func test_detailsView_shouldRenderProvidedData() {
+        let type = "Type"
+        let participants = "10"
+        let title = "an activity"
+        let price = "0.2"
+        let sut = makeSUT(title: title, type: type, price: price, participants: participants)
+        
+        XCTAssertEqual(sut.type, type)
+        XCTAssertEqual(sut.participants, participants)
+        XCTAssertEqual(sut.price, price)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(

@@ -87,7 +87,7 @@ public final class ActivityDetailsView: UIView {
         UILabel.makeLabel(text: viewData?.title, numberOfLines: 0, textStyle: .title1)
     }()
     
-    private lazy var participantsLabel: UILabel = {
+    public private(set) lazy var participantsLabel: UILabel = {
         makeParticipantsViews().info
     }()
     
@@ -99,7 +99,7 @@ public final class ActivityDetailsView: UIView {
         makeParticipantsViews().icon
     }()
     
-    private lazy var priceLabel: UILabel = {
+    public private(set) lazy var priceLabel: UILabel = {
         makePriceViews().info
     }()
     
@@ -111,7 +111,7 @@ public final class ActivityDetailsView: UIView {
         makePriceViews().icon
     }()
     
-    private lazy var typeLabel: UILabel = {
+    public private(set) lazy var typeLabel: UILabel = {
         makeTypeViews().info
     }()
     

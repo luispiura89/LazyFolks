@@ -21,4 +21,15 @@ extension ActivityDetailsViewController {
         detailsView?.participantsFieldTitle
     }
     
+    var type: String? {
+        detailsView?.typeLabel.text
+    }
+    
+    var participants: String? {
+        detailsView?.participantsLabel.text
+    }
+    
+    var price: String? {
+        detailsView?.priceLabel.text
+    }
 }
