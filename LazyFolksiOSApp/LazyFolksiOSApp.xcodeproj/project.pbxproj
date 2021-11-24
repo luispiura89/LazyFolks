@@ -14,6 +14,7 @@
 		CD003C41274D93760037B5C8 /* WeakRefProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C40274D93750037B5C8 /* WeakRefProxy.swift */; };
 		CD003C43274D93AD0037B5C8 /* SearchViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */; };
 		CD003C47274DB22C0037B5C8 /* SearchActivityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */; };
+		CD643DDC274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD643DDB274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift */; };
 		CD9D38B3274C7259005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; };
 		CD9D38B4274C7259005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
@@ -57,6 +58,7 @@
 		CD003C40274D93750037B5C8 /* WeakRefProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefProxy.swift; sourceTree = "<group>"; };
 		CD003C42274D93AD0037B5C8 /* SearchViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAdapter.swift; sourceTree = "<group>"; };
 		CD003C46274DB22C0037B5C8 /* SearchActivityValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityValidator.swift; sourceTree = "<group>"; };
+		CD643DDB274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchActivityViewController+Helpers.swift"; sourceTree = "<group>"; };
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 		CD003C33274D5BBA0037B5C8 /* Search Activity Integration */ = {
 			isa = PBXGroup;
 			children = (
+				CD643DDA274E7D1900EA7BF5 /* Helpers */,
 				CD003C34274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift */,
 			);
 			path = "Search Activity Integration";
@@ -112,6 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				CD003C3C274D84F50037B5C8 /* XCTestCase+MemoryLeaks.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD643DDA274E7D1900EA7BF5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD643DDB274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD643DDC274E7D3500EA7BF5 /* SearchActivityViewController+Helpers.swift in Sources */,
 				CD003C3D274D84F50037B5C8 /* XCTestCase+MemoryLeaks.swift in Sources */,
 				CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */,
 			);
