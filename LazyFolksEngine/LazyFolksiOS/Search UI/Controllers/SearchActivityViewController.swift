@@ -20,7 +20,6 @@ public final class SearchActivityViewController: UIViewController {
     public private(set) var searchView: SearchActivityView?
     public private(set) var errorView = ErrorView(frame: .zero)
     private var searchController: SearchActivityController?
-    private var windowBounds: CGRect?
     private var delegate: SearchActivityViewControllerDelegate?
     
     public override func loadView() {
@@ -29,13 +28,11 @@ public final class SearchActivityViewController: UIViewController {
     
     public convenience init(
         searchView: SearchActivityView,
-        bounds: CGRect,
         searchController: SearchActivityController? = nil,
         delegate: SearchActivityViewControllerDelegate? = nil
     ) {
         self.init()
         self.searchView = searchView
-        self.windowBounds = bounds
         self.searchController = searchController
         self.delegate = delegate
         self.searchView?.searchHandler = searchController?.searchActivity

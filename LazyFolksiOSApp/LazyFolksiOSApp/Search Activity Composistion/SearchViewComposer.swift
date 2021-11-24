@@ -22,10 +22,9 @@ public final class SearchViewComposer {
     ) -> SearchActivityViewController {
         let presentationAdapter = SearchActivityPresentationAdapter(loader: loader)
         let delegate = SearchActivityValidator()
-        let view = makeView()
+        let view = makeView(bounds: windowBounds)
         let search = SearchActivityViewController(
             searchView: view,
-            bounds: windowBounds,
             searchController: SearchActivityController(
                 searchHandler: { [presentationAdapter] (type, participants, minPrice, maxPrice) in
                     presentationAdapter.searchActivity(type: type, participants: participants, minPrice: minPrice, maxPrice: maxPrice) },
@@ -43,8 +42,9 @@ public final class SearchViewComposer {
         return search
     }
     
-    static private func makeView() -> SearchActivityView {
+    static private func makeView(bounds: CGRect) -> SearchActivityView {
         SearchActivityView(
+            bounds: bounds,
             title: SearchActivityPresenter.title,
             subtitle: SearchActivityPresenter.subtitle,
             typePlaceholder: SearchActivityPresenter.typePlaceholder,
