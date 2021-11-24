@@ -18,8 +18,8 @@ public protocol SearchActivityViewControllerDelegate {
 public final class SearchActivityViewController: UIViewController {
     
     public private(set) var searchView: SearchActivityView?
-    public private(set) var searchController: SearchActivityController?
-    private var errorView = ErrorView(frame: .zero)
+    public private(set) var errorView = ErrorView(frame: .zero)
+    private var searchController: SearchActivityController?
     private var windowBounds: CGRect?
     private var delegate: SearchActivityViewControllerDelegate?
     

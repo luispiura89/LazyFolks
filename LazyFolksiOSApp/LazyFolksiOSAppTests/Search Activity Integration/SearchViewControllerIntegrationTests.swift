@@ -83,6 +83,25 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         XCTAssertTrue(sut.canSendSearchRequest, "Search button should be enabled")
     }
     
+    func test_searchView_shouldDisplayAnErrorWhenThereIsAnError() {
+        let (sut, loader) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        sut.simulateUserFilledData()
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertFalse(sut.isShowingErrorMessage, "Should show error view until there's an error")
+        
+        loader.simulateLoadingCompletionWithError(at: 0)
+        XCTAssertTrue(sut.isShowingErrorMessage, "Should be showing error message")
+        
+        sut.simulateUserRequestedActivitySearch()
+        XCTAssertFalse(sut.isShowingErrorMessage, "Should show error view until there's an error")
+        
+        loader.simulateLoadingCompletionSuccessfully(at: 1)
+        XCTAssertFalse(sut.isShowingErrorMessage, "Should show error view until there's an error")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (SearchActivityViewController, LoaderSpy) {
@@ -157,6 +176,10 @@ extension SearchActivityViewController {
     
     var canSendSearchRequest: Bool {
         searchView?.searchButton.isEnabled == true
+    }
+    
+    var isShowingErrorMessage: Bool {
+        errorView.message != nil
     }
     
     func simulateUserRequestedActivitySearch() {
