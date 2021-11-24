@@ -78,7 +78,7 @@ public final class SearchActivityView: UIView {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 248.0/255.0, green: 248/255.0, blue: 248/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil)
         view.addSubview(fieldsStackView)
         NSLayoutConstraint.activate([
             fieldsStackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -107,7 +107,10 @@ public final class SearchActivityView: UIView {
     }()
     
     public private(set) lazy var searchButton: LoadingButton = {
-        let button = LoadingButton(title: "Search", color: UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0))
+        let button = LoadingButton(
+            title: "Search",
+            color: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
+        )
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 45)
         ])
