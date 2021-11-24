@@ -10,5 +10,8 @@ public struct SearchActivityViewData {
 }
 
 public protocol SearchView {
+    typealias InputedData = (String, String, String, String)
+    
     func didLoad(_ data: SearchActivityViewData)
+    func updateEnteredData(_ data: InputedData?)
 }

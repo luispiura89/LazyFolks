@@ -8,12 +8,20 @@
 import UIKit
 import LazyFolksEngine
 
+public protocol SearchActivityViewControllerDelegate {
+    func updateType(value: String?)
+    func updateParticipants(value: String?)
+    func updateMinPrice(value: String?)
+    func updateMaxPrice(value: String?)
+}
+
 public final class SearchActivityViewController: UIViewController {
     
     public private(set) var searchView: SearchActivityView?
+    public private(set) var searchController: SearchActivityController?
     private var errorView = ErrorView(frame: .zero)
     private var windowBounds: CGRect?
-    private var searchController: SearchActivityController?
+    private var delegate: SearchActivityViewControllerDelegate?
     
     public override func loadView() {
         view = searchView
@@ -22,19 +30,32 @@ public final class SearchActivityViewController: UIViewController {
     public convenience init(
         searchView: SearchActivityView,
         bounds: CGRect,
-        searchController: SearchActivityController? = nil
+        searchController: SearchActivityController? = nil,
+        delegate: SearchActivityViewControllerDelegate
     ) {
         self.init()
         self.searchView = searchView
         self.windowBounds = bounds
         self.searchController = searchController
+        self.delegate = delegate
         self.searchView?.searchHandler = searchController?.searchActivity
+        self.searchView?.didTypeChangeHandler = delegate.updateType
+        self.searchView?.didParticipantsChangeHandler = delegate.updateParticipants
+        self.searchView?.didMinPriceChangeHandler = delegate.updateMinPrice
+        self.searchView?.didMaxPriceChangeHandler = delegate.updateMaxPrice
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         searchView?.addGradientBackground(frame: windowBounds)
         searchView?.addCurveTop(frame: windowBounds)
+    }
+    
+    public func updateInputedData(values: (String, String, String, String)?) {
+        if values != nil {
+            searchView?.searchButton.enableButton()
+        }
+        searchController?.updateData(values: values)
     }
 }
 

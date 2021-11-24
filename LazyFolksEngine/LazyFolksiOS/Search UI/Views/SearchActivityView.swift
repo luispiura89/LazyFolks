@@ -11,11 +11,6 @@ public final class SearchActivityView: UIView {
     
     // MARK: - Properties
     
-    var isLoading: Bool {
-        get { searchButton.isLoading }
-        set { searchButton.isLoading = newValue }
-    }
-    
     public private(set) var title: String?
     public private(set) var subtitle: String?
     public private(set) var typePlaceholder: String?
@@ -24,6 +19,10 @@ public final class SearchActivityView: UIView {
     public private(set) var maxPricePlaceholder: String?
     
     var searchHandler: (() -> Void)?
+    var didTypeChangeHandler: ((String?) -> Void)?
+    var didParticipantsChangeHandler: ((String?) -> Void)?
+    var didMinPriceChangeHandler: ((String?) -> Void)?
+    var didMaxPriceChangeHandler: ((String?) -> Void)?
            
     
     // MARK: - Subviews
@@ -91,19 +90,19 @@ public final class SearchActivityView: UIView {
         return view
     }()
     
-    private lazy var participantsTextField: UITextField = {
+    public private(set) lazy var participantsTextField: UITextField = {
         makeTexField(placeholder: participantsPlaceholder)
     }()
     
-    private lazy var typeTextField: UITextField = {
+    public private(set) lazy var typeTextField: UITextField = {
         makeTexField(placeholder: typePlaceholder)
     }()
     
-    private lazy var minPriceTextField: UITextField = {
+    public private(set) lazy var minPriceTextField: UITextField = {
         makeTexField(placeholder: minPricePlaceholder)
     }()
     
-    private lazy var maxPriceTextField: UITextField = {
+    public private(set) lazy var maxPriceTextField: UITextField = {
         makeTexField(placeholder: maxPricePlaceholder)
     }()
     
@@ -112,6 +111,7 @@ public final class SearchActivityView: UIView {
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 45)
         ])
+        button.disableButton()
         return button
     }()
     
@@ -158,6 +158,10 @@ public final class SearchActivityView: UIView {
             trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
         ])
         searchButton.addTarget(self, action: #selector(searchActivity), for: .touchUpInside)
+        typeTextField.addTarget(self, action: #selector(didEnterType), for: .editingChanged)
+        minPriceTextField.addTarget(self, action: #selector(didEnterMinPrice), for: .editingChanged)
+        participantsTextField.addTarget(self, action: #selector(didEnterParticipants), for: .editingChanged)
+        maxPriceTextField.addTarget(self, action: #selector(didEnterMaxPrice), for: .editingChanged)
     }
     
     func addGradientBackground(frame: CGRect? = nil) {
@@ -197,6 +201,22 @@ public final class SearchActivityView: UIView {
     
     @objc private func searchActivity() {
         searchHandler?()
+    }
+    
+    @objc private func didEnterType() {
+        didTypeChangeHandler?(typeTextField.text)
+    }
+    
+    @objc private func didEnterParticipants() {
+        didParticipantsChangeHandler?(participantsTextField.text)
+    }
+    
+    @objc private func didEnterMinPrice() {
+        didMinPriceChangeHandler?(minPriceTextField.text)
+    }
+    
+    @objc private func didEnterMaxPrice() {
+        didMaxPriceChangeHandler?(maxPriceTextField.text)
     }
     
     private func makeTexField(placeholder: String?) -> UITextField {

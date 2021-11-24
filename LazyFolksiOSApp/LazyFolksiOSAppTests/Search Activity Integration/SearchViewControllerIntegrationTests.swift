@@ -33,7 +33,7 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         let (sut, loaderSpy) = makeSUT()
         
         sut.loadViewIfNeeded()
-        
+        sut.simulateUserFilledData()
         sut.simulateUserRequestedActivitySearch()
         XCTAssertEqual(loaderSpy.searchActivityCallCount, 1, "Should had requested activity search")
         
@@ -53,6 +53,7 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         let (sut, loaderSpy) = makeSUT()
         
         sut.loadViewIfNeeded()
+        sut.simulateUserFilledData()
         
         sut.simulateUserRequestedActivitySearch()
         XCTAssertTrue(sut.isShowingLoadingIndicator, "Should be showing loader after first request")
@@ -69,6 +70,17 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         XCTAssertFalse(sut.isShowingLoadingIndicator, "Shouldn't show load indicator after successful request")
         sut.simulateUserRequestedActivitySearch()
         XCTAssertTrue(sut.isShowingLoadingIndicator, "Should show loading indicator after retry")
+    }
+    
+    func test_searchView_shouldEnableSearchButtonWhenUserHasFilledAllTheData() {
+        let (sut, _) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertFalse(sut.canSendSearchRequest, "Search button should be disabled")
+        
+        sut.simulateUserFilledData()
+        XCTAssertTrue(sut.canSendSearchRequest, "Search button should be enabled")
     }
     
     // MARK: - Helpers
@@ -95,7 +107,7 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         
         private var requests = [PassthroughSubject<Activity, Error>]()
         
-        func loaderPublisher(type: String, participants: Int, minPrice: Double, maxPrice: Double) -> AnyPublisher<Activity, Error> {
+        func loaderPublisher(type: String, participants: String, minPrice: String, maxPrice: String) -> AnyPublisher<Activity, Error> {
             let publisher = PassthroughSubject<Activity, Error>()
             requests.append(publisher)
             return publisher.eraseToAnyPublisher()
@@ -143,8 +155,23 @@ extension SearchActivityViewController {
         searchView?.searchButton.isLoading == true
     }
     
+    var canSendSearchRequest: Bool {
+        searchView?.searchButton.isEnabled == true
+    }
+    
     func simulateUserRequestedActivitySearch() {
         searchView?.searchButton.simulate(event: .touchUpInside)
+    }
+    
+    func simulateUserFilledData() {
+        searchView?.typeTextField.text = "Type"
+        searchView?.participantsTextField.text = "2"
+        searchView?.minPriceTextField.text = "0.2"
+        searchView?.maxPriceTextField.text = "0.5"
+        searchView?.typeTextField.simulate(event: .editingChanged)
+        searchView?.participantsTextField.simulate(event: .editingChanged)
+        searchView?.minPriceTextField.simulate(event: .editingChanged)
+        searchView?.maxPriceTextField.simulate(event: .editingChanged)
     }
 }
 

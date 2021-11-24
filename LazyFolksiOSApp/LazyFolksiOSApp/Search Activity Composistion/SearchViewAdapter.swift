@@ -17,4 +17,9 @@ final class SearchViewAdapter: SearchView {
     }
     
     func didLoad(_ data: SearchActivityViewData) {}
+    
+    func updateEnteredData(_ data: InputedData?) {
+        controller?.updateInputedData(values: data)
+    }
+    
 }

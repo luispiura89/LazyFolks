@@ -92,6 +92,10 @@ public final class SearchActivityPresenter {
         searchView.didLoad(SearchActivityViewData(activity: activity))
     }
     
+    public func updateView(inputedData: (type: String, participants: String, minPrice: String, maxPrice: String)?) {
+        searchView.updateEnteredData(inputedData)
+    }
+    
     private static func localize(key: String, comment: String) -> String {
         NSLocalizedString(
             key,

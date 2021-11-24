@@ -10,7 +10,7 @@ import LazyFolksiOS
 import LazyFolksEngine
 import UIKit
 
-public typealias SearchActivityLoader = (String, Int, Double, Double) -> AnyPublisher<Activity, Error>
+public typealias SearchActivityLoader = (String, String, String, String) -> AnyPublisher<Activity, Error>
 
 public final class SearchViewComposer {
     private init() {}
@@ -20,19 +20,24 @@ public final class SearchViewComposer {
         loader:  @escaping SearchActivityLoader = { _, _, _, _ in Empty<Activity, Error>().eraseToAnyPublisher() }
     ) -> SearchActivityViewController {
         let presentationAdapter = SearchActivityPresentationAdapter(loader: loader)
+        let delegate = SearchActivityValidator()
         let view = makeView()
         let search = SearchActivityViewController(
             searchView: view,
             bounds: windowBounds,
             searchController: SearchActivityController(
-                searchHandler: presentationAdapter.searchActivity,
+                searchHandler: { [presentationAdapter] (type, participants, minPrice, maxPrice) in
+                    presentationAdapter.searchActivity(type: type, participants: participants, minPrice: minPrice, maxPrice: maxPrice) },
                 isSearching: { [weak view] in view?.searchButton.isLoading == true }
-            )
+            ),
+            delegate: delegate
         )
         let searchView = SearchViewAdapter(controller: search)
         let loadingView = WeakRefProxy(reference: search)
         let errorView = WeakRefProxy(reference: search)
-        presentationAdapter.presenter = SearchActivityPresenter(loadingView: loadingView, errorView: errorView, searchView: searchView)
+        let presenter = SearchActivityPresenter(loadingView: loadingView, errorView: errorView, searchView: searchView)
+        presentationAdapter.presenter = presenter
+        delegate.presenter = presenter
         
         return search
     }

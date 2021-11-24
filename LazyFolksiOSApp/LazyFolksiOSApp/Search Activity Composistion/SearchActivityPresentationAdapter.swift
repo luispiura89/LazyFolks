@@ -17,7 +17,7 @@ final class SearchActivityPresentationAdapter {
         self.loader = loader
     }
     
-    func searchActivity(type: String, participants: Int, minPrice: Double, maxPrice: Double) {
+    func searchActivity(type: String, participants: String, minPrice: String, maxPrice: String) {
         presenter?.startSearchingActivity()
         cancellable = loader(type, participants, minPrice, maxPrice)
             .sink { [weak presenter] result in
