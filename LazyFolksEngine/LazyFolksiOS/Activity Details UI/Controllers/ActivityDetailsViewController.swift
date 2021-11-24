@@ -9,7 +9,7 @@ import UIKit
 
 public final class ActivityDetailsViewController: UIViewController {
     
-    private var detailsView: ActivityDetailsView?
+    public private(set) var detailsView: ActivityDetailsView?
     
     public convenience init(
         detailsView: ActivityDetailsView
