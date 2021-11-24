@@ -155,6 +155,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD3BD8DE274E7FD200C24491 /* Activity Details UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Activity Details UI";
+			sourceTree = "<group>";
+		};
+		CD3BD8E0274E808200C24491 /* Search UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD9D387F274C47C4005E849B /* snapshots */,
+				CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */,
+			);
+			path = "Search UI";
+			sourceTree = "<group>";
+		};
 		CD6FB9A6274D410E00096F9B /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +307,7 @@
 			children = (
 				CD9D3886274C5496005E849B /* Common UI */,
 				CD9D3876274BF5DF005E849B /* Search UI */,
+				CD3BD8DE274E7FD200C24491 /* Activity Details UI */,
 			);
 			path = LazyFolksiOS;
 			sourceTree = "<group>";
@@ -298,9 +315,8 @@
 		CD9D3861274BF2A4005E849B /* LazyFolksiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD9D387F274C47C4005E849B /* snapshots */,
+				CD3BD8E0274E808200C24491 /* Search UI */,
 				CD9D3871274BF550005E849B /* Helpers */,
-				CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */,
 			);
 			path = LazyFolksiOSTests;
 			sourceTree = "<group>";
