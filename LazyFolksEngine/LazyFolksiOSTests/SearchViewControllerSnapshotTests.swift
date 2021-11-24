@@ -22,6 +22,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
         let sut = makeSUT()
         
         sut.didStartLoading()
+        sut.fillData()
         
         assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_light")
         assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_dark")
@@ -31,6 +32,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
         let sut = makeSUT()
         
         sut.didFinishLoadWithError(message: "This is a long\nerror message")
+        sut.fillData()
         
         assert(snapshot: sut.snapshot(for: .iPhone13(style: .light)), named: "SEARCH_VIEW_LOADING_ERROR_light")
         assert(snapshot: sut.snapshot(for: .iPhone13(style: .dark)), named: "SEARCH_VIEW_LOADING_ERROR_dark")
@@ -47,7 +49,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
             participantsPlaceholder: "participants",
             minPricePlaceholder: "min price",
             maxPricePlaceholder: "max price")
-        let searchController =  SearchActivityViewController(searchView: searchView, bounds: bounds)
+        let searchController =  SearchActivityViewController(searchView: searchView, bounds: bounds, delegate: nil)
         searchController.loadViewIfNeeded()
         return searchController
     }
@@ -60,5 +62,9 @@ extension SearchActivityViewController {
     
     func didStartLoading() {
         didLoadingStateChanged(LoadingViewData(isLoading: true))
+    }
+    
+    func fillData() {
+        updateInputedData(values: ("Type", "2", "0.2", "0.5"))
     }
 }
