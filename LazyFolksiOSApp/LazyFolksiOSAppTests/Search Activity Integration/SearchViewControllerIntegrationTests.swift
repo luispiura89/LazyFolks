@@ -16,15 +16,13 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
     
     func test_searchView_hasTitleAndPlaceholders() {
         let (sut, _) = makeSUT()
-        let table = "SearchActivity"
-        let bundle = Bundle(for: SearchActivityPresenter.self)
         
-        XCTAssertEqual(sut.header, localized("SEARCH_ACTIVITY_VIEW_TITLE", table: table, bundle: bundle))
-        XCTAssertEqual(sut.subtitle, localized("SEARCH_ACTIVITY_VIEW_SUBTITLE", table: table, bundle: bundle))
-        XCTAssertEqual(sut.typePlaceholder, localized("SEARCH_ACTIVITY_TYPE_PLACEHOLDER", table: table, bundle: bundle))
-        XCTAssertEqual(sut.participantsPlaceholder, localized("SEARCH_ACTIVITY_PARTICIPANTS_PLACEHOLDER", table: table, bundle: bundle))
-        XCTAssertEqual(sut.minPricePlaceholder, localized("SEARCH_ACTIVITY_MIN_PRICE_PLACEHOLDER", table: table, bundle: bundle))
-        XCTAssertEqual(sut.maxPricePlaceholder, localized("SEARCH_ACTIVITY_MAX_PRICE_PLACEHOLDER", table: table, bundle: bundle))
+        XCTAssertEqual(sut.header, SearchActivityPresenter.title)
+        XCTAssertEqual(sut.subtitle, SearchActivityPresenter.subtitle)
+        XCTAssertEqual(sut.typePlaceholder, SearchActivityPresenter.typePlaceholder)
+        XCTAssertEqual(sut.participantsPlaceholder, SearchActivityPresenter.participantsPlaceholder)
+        XCTAssertEqual(sut.minPricePlaceholder, SearchActivityPresenter.minPricePlaceholder)
+        XCTAssertEqual(sut.maxPricePlaceholder, SearchActivityPresenter.maxPricePlaceholder)
     }
     
     func test_searchView_shouldRequestSearchActivity() {
@@ -126,10 +124,6 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         }
         
         return (search, loaderSpy)
-    }
-    
-    private func localized(_ key: String, table: String, bundle: Bundle) -> String {
-        bundle.localizedString(forKey: key, value: nil, table: table)
     }
     
     private func makeActivity() -> Activity {
