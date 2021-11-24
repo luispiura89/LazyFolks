@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CD003C3A274D7B350037B5C8 /* SearchActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD003C39274D7B350037B5C8 /* SearchActivityController.swift */; };
+		CD3BD8E3274E9BFB00C24491 /* ActivityDetailsViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8E2274E9BFB00C24491 /* ActivityDetailsViewControllerSnapshotTests.swift */; };
+		CD3BD8E5274E9CFA00C24491 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8E4274E9CFA00C24491 /* ActivityDetailsViewController.swift */; };
+		CD3BD8E9274E9E8500C24491 /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8E8274E9E8500C24491 /* ActivityDetailsView.swift */; };
+		CD3BD8EC274EA04200C24491 /* UIView+GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8EB274EA04200C24491 /* UIView+GradientBackground.swift */; };
+		CD3BD8EE274EA0AB00C24491 /* UIView+CurvedTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8ED274EA0AB00C24491 /* UIView+CurvedTop.swift */; };
+		CD3BD8F0274EA30F00C24491 /* UITextField+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8EF274EA30F00C24491 /* UITextField+Make.swift */; };
+		CD3BD8F2274EA34300C24491 /* UILabel+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8F1274EA34300C24491 /* UILabel+Make.swift */; };
+		CD3BD8F4274EA37100C24491 /* UIStackView+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8F3274EA37100C24491 /* UIStackView+Make.swift */; };
+		CD3BD8F7274EA70800C24491 /* ActivityDetailsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD8F6274EA70800C24491 /* ActivityDetailsViewData.swift */; };
+		CD3BD8FB274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD8F9274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png */; };
+		CD3BD8FC274EAAD900C24491 /* ACTIVITY_DETAILS_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD8FA274EAAD900C24491 /* ACTIVITY_DETAILS_light.png */; };
 		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
 		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
 		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
@@ -84,6 +95,17 @@
 
 /* Begin PBXFileReference section */
 		CD003C39274D7B350037B5C8 /* SearchActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityController.swift; sourceTree = "<group>"; };
+		CD3BD8E2274E9BFB00C24491 /* ActivityDetailsViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
+		CD3BD8E4274E9CFA00C24491 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
+		CD3BD8E8274E9E8500C24491 /* ActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
+		CD3BD8EB274EA04200C24491 /* UIView+GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GradientBackground.swift"; sourceTree = "<group>"; };
+		CD3BD8ED274EA0AB00C24491 /* UIView+CurvedTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CurvedTop.swift"; sourceTree = "<group>"; };
+		CD3BD8EF274EA30F00C24491 /* UITextField+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Make.swift"; sourceTree = "<group>"; };
+		CD3BD8F1274EA34300C24491 /* UILabel+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Make.swift"; sourceTree = "<group>"; };
+		CD3BD8F3274EA37100C24491 /* UIStackView+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Make.swift"; sourceTree = "<group>"; };
+		CD3BD8F6274EA70800C24491 /* ActivityDetailsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewData.swift; sourceTree = "<group>"; };
+		CD3BD8F9274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTIVITY_DETAILS_dark.png; sourceTree = "<group>"; };
+		CD3BD8FA274EAAD900C24491 /* ACTIVITY_DETAILS_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTIVITY_DETAILS_light.png; sourceTree = "<group>"; };
 		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
 		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
 		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
@@ -158,6 +180,8 @@
 		CD3BD8DE274E7FD200C24491 /* Activity Details UI */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BD8E6274E9D0200C24491 /* Controllers */,
+				CD3BD8E7274E9E6500C24491 /* Views */,
 			);
 			path = "Activity Details UI";
 			sourceTree = "<group>";
@@ -169,6 +193,60 @@
 				CD9D387B274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift */,
 			);
 			path = "Search UI";
+			sourceTree = "<group>";
+		};
+		CD3BD8E1274E9BCB00C24491 /* Actiity Detals UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD8F8274EAAD900C24491 /* snapshots */,
+				CD3BD8E2274E9BFB00C24491 /* ActivityDetailsViewControllerSnapshotTests.swift */,
+			);
+			path = "Actiity Detals UI";
+			sourceTree = "<group>";
+		};
+		CD3BD8E6274E9D0200C24491 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD8E4274E9CFA00C24491 /* ActivityDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CD3BD8E7274E9E6500C24491 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD8E8274E9E8500C24491 /* ActivityDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD3BD8EA274EA02A00C24491 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD8EB274EA04200C24491 /* UIView+GradientBackground.swift */,
+				CD3BD8ED274EA0AB00C24491 /* UIView+CurvedTop.swift */,
+				CD3BD8EF274EA30F00C24491 /* UITextField+Make.swift */,
+				CD3BD8F1274EA34300C24491 /* UILabel+Make.swift */,
+				CD3BD8F3274EA37100C24491 /* UIStackView+Make.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD3BD8F5274EA6F200C24491 /* Activity Details */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD8F6274EA70800C24491 /* ActivityDetailsViewData.swift */,
+			);
+			path = "Activity Details";
+			sourceTree = "<group>";
+		};
+		CD3BD8F8274EAAD900C24491 /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BD8F9274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png */,
+				CD3BD8FA274EAAD900C24491 /* ACTIVITY_DETAILS_light.png */,
+			);
+			path = snapshots;
 			sourceTree = "<group>";
 		};
 		CD6FB9A6274D410E00096F9B /* API */ = {
@@ -183,6 +261,7 @@
 		CD6FB9A7274D411900096F9B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BD8F5274EA6F200C24491 /* Activity Details */,
 				CD6FB9AE274D45F400096F9B /* Search Activity */,
 			);
 			path = Presentation;
@@ -305,6 +384,7 @@
 		CD9D3857274BF2A4005E849B /* LazyFolksiOS */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BD8EA274EA02A00C24491 /* Helpers */,
 				CD9D3886274C5496005E849B /* Common UI */,
 				CD9D3876274BF5DF005E849B /* Search UI */,
 				CD3BD8DE274E7FD200C24491 /* Activity Details UI */,
@@ -315,6 +395,7 @@
 		CD9D3861274BF2A4005E849B /* LazyFolksiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BD8E1274E9BCB00C24491 /* Actiity Detals UI */,
 				CD3BD8E0274E808200C24491 /* Search UI */,
 				CD9D3871274BF550005E849B /* Helpers */,
 			);
@@ -585,8 +666,10 @@
 				CD9D388A274C6034005E849B /* SEARCH_VIEW_LOADING_light.png in Resources */,
 				CD9D3890274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_light.png in Resources */,
 				CD9D3883274C47C4005E849B /* SEARCH_VIEW_dark.png in Resources */,
+				CD3BD8FB274EAAD900C24491 /* ACTIVITY_DETAILS_dark.png in Resources */,
 				CD9D3889274C6034005E849B /* SEARCH_VIEW_LOADING_dark.png in Resources */,
 				CD9D3882274C47C4005E849B /* SEARCH_VIEW_light.png in Resources */,
+				CD3BD8FC274EAAD900C24491 /* ACTIVITY_DETAILS_light.png in Resources */,
 				CD9D388F274C66ED005E849B /* SEARCH_VIEW_LOADING_ERROR_dark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,8 +699,15 @@
 				CD9D3878274BF609005E849B /* SearchActivityViewController.swift in Sources */,
 				CD003C3A274D7B350037B5C8 /* SearchActivityController.swift in Sources */,
 				CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */,
+				CD3BD8F0274EA30F00C24491 /* UITextField+Make.swift in Sources */,
 				CD9D3885274C5491005E849B /* LoadingButton.swift in Sources */,
+				CD3BD8EE274EA0AB00C24491 /* UIView+CurvedTop.swift in Sources */,
+				CD3BD8EC274EA04200C24491 /* UIView+GradientBackground.swift in Sources */,
+				CD3BD8E5274E9CFA00C24491 /* ActivityDetailsViewController.swift in Sources */,
 				CD9D388C274C6188005E849B /* ErrorView.swift in Sources */,
+				CD3BD8F4274EA37100C24491 /* UIStackView+Make.swift in Sources */,
+				CD3BD8E9274E9E8500C24491 /* ActivityDetailsView.swift in Sources */,
+				CD3BD8F2274EA34300C24491 /* UILabel+Make.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BD8E3274E9BFB00C24491 /* ActivityDetailsViewControllerSnapshotTests.swift in Sources */,
 				CD9D3875274BF5BA005E849B /* XCTestCase+Snapshot.swift in Sources */,
 				CD9D3873274BF576005E849B /* UIViewController+Snapshot.swift in Sources */,
 				CD9D387C274BF7D1005E849B /* SearchViewControllerSnapshotTests.swift in Sources */,
@@ -635,6 +726,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BD8F7274EA70800C24491 /* ActivityDetailsViewData.swift in Sources */,
 				CD6FB9BA274D593C00096F9B /* SearchView.swift in Sources */,
 				CD8A270A274873480096143A /* ActivitiesMapper.swift in Sources */,
 				CD8A2701274859530096143A /* HTTPClient.swift in Sources */,
