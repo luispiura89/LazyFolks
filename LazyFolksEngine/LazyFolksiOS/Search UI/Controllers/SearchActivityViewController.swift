@@ -65,6 +65,10 @@ public final class SearchActivityViewController: UIViewController, KeyboardObser
     public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return [.portrait]
     }
+    
+    deinit {
+        stopKeyboardObserving()
+    }
 }
 
 extension SearchActivityViewController: LoadingView {
