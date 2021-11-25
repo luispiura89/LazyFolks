@@ -30,7 +30,7 @@ public final class ActivityDetailsView: UIView {
     private lazy var headerStackView: UIStackView = {
         UIStackView.makeStackView(
             subviews: [activityTitleLabel],
-            margins: UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25),
+            margins: UIEdgeInsets(top: 25, left: 25, bottom: 0, right: 25),
             spacing: 60,
             alignment: .center
         )
@@ -39,7 +39,7 @@ public final class ActivityDetailsView: UIView {
     private lazy var infoStackView: UIStackView = {
         UIStackView.makeStackView(
             subviews: [typeStackView, participantsStackView, priceStackView],
-            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            margins: UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25),
             spacing: 0
         )
     }()
@@ -196,14 +196,14 @@ public final class ActivityDetailsView: UIView {
         let info = UILabel.makeLabel(
             text: fieldValue,
             numberOfLines: 0,
-            textStyle: .largeTitle,
+            textStyle: .title2,
             textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
         )
         
         let title = UILabel.makeLabel(
             text: fieldTitle,
             numberOfLines: 0,
-            textStyle: .title1,
+            textStyle: .title2,
             textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
         )
         
@@ -211,8 +211,8 @@ public final class ActivityDetailsView: UIView {
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 50),
-            imageView.heightAnchor.constraint(equalToConstant: 50),
+            imageView.widthAnchor.constraint(equalToConstant: 45),
+            imageView.heightAnchor.constraint(equalToConstant: 45),
         ])
         imageView.contentMode = .scaleAspectFit
         return (title, info, imageView)
