@@ -183,6 +183,7 @@ public final class SearchActivityView: UIView {
     
     @objc private func searchActivity() {
         searchHandler?()
+        endEditing(true)
     }
     
     @objc private func didEnterType() {
