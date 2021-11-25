@@ -22,7 +22,6 @@ public final class ActivityDetailsView: UIView {
     private lazy var mainStackView: UIStackView = {
         UIStackView.makeStackView(
             subviews: [headerStackView, containerView],
-            margins: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
             spacing: 60
         )
     }()
