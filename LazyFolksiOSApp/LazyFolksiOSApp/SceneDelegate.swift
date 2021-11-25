@@ -37,15 +37,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
+        // Search activity screen will be displayed when app launches
         window?.rootViewController = SearchViewComposer.compose(
             windowBounds: window?.bounds ?? .zero,
             loader: loaderPublisher,
-            navigationHandler: navigateToActivityDetails
+            navigationHandler: displayDetails
         )
         window?.makeKeyAndVisible()
     }
     
-    private func navigateToActivityDetails(activity: Activity) {
+    private func displayDetails(for activity: Activity) {
         let activityData = ActivityDetailsViewData(
             title: activity.description,
             type: activity.type,
@@ -62,6 +63,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         minPrice: String,
         maxPrice: String
     ) -> AnyPublisher<Activity, Error> {
+        /*
+         The loader will send a request to the URL and then it will
+         map the received data
+         */
         let url = ActivityEndpoint.get(
             type: type,
             participants: participants,
