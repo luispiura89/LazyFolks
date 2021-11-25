@@ -13,5 +13,6 @@ public protocol SearchView {
     typealias InputedData = (String, String, String, String)
     
     func didLoad(_ data: SearchActivityViewData)
-    func updateEnteredData(_ data: InputedData?)
+    func didEnteredInvalidData()
+    func didEnteredValidData(_ data: InputedData)
 }

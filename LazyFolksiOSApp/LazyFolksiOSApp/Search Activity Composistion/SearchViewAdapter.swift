@@ -29,7 +29,11 @@ final class SearchViewAdapter: SearchView {
         navigationHandler(data.activity)
     }
     
-    func updateEnteredData(_ data: InputedData?) {
+    func didEnteredInvalidData() {
+        controller?.disableSearchAction()
+    }
+    
+    func didEnteredValidData(_ data: InputedData) {
         controller?.updateInputedData(values: data)
     }
     

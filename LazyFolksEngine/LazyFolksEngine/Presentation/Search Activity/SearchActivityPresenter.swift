@@ -99,7 +99,11 @@ public final class SearchActivityPresenter {
     }
     
     public func updateView(inputedData: (type: String, participants: String, minPrice: String, maxPrice: String)?) {
-        searchView.updateEnteredData(inputedData)
+        if let inputedData = inputedData {
+            searchView.didEnteredValidData(inputedData)
+        } else {
+            searchView.didEnteredInvalidData()
+        }
     }
     
     private static func localize(key: String, comment: String) -> String {
