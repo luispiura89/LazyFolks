@@ -49,7 +49,8 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
             typePlaceholder: "type",
             participantsPlaceholder: "participants",
             minPricePlaceholder: "min price",
-            maxPricePlaceholder: "max price")
+            maxPricePlaceholder: "max price",
+            searchButtonTitle: "Search")
         let searchController =  SearchActivityViewController(searchView: searchView, delegate: nil)
         searchController.loadViewIfNeeded()
         return searchController
