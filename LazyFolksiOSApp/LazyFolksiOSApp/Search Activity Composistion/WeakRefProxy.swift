@@ -30,4 +30,8 @@ extension WeakRefProxy: LoadingErrorView where T: LoadingErrorView {
     func displayErrorMessage(_ data: ErrorViewData) {
         reference?.displayErrorMessage(data)
     }
+    
+    func removeErrorMessage() {
+        reference?.removeErrorMessage()
+    }
 }

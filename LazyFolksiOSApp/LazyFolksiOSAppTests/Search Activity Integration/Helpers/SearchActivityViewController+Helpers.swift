@@ -52,6 +52,7 @@ extension SearchActivityViewController {
     
     func simulateUserRequestedActivitySearch() {
         searchView?.searchButton.simulate(event: .touchUpInside)
+        RunLoop.current.run(until: Date())
     }
     
     func simulateUserFilledData() {

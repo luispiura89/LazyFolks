@@ -58,7 +58,7 @@ final class SearchViewControllerSnapshotTests: XCTestCase {
 }
 
 extension SearchActivityViewController {
-    func didFinishLoadWithError(message: String?) {
+    func didFinishLoadWithError(message: String) {
         displayErrorMessage(ErrorViewData(errorMessage: message))
     }
     

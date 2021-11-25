@@ -81,7 +81,7 @@ public final class SearchActivityPresenter {
     
     public func startSearchingActivity() {
         loadingView.didLoadingStateChanged(LoadingViewData(isLoading: true))
-        errorView.displayErrorMessage(ErrorViewData(errorMessage: nil))
+        errorView.removeErrorMessage()
     }
     
     public func didFinishLoading(with error: Error) {
