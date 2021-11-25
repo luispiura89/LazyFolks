@@ -44,42 +44,15 @@ public final class ActivityDetailsView: UIView {
     }()
     
     private lazy var typeStackView: UIStackView = {
-        UIStackView.makeStackView(
-            subviews: [
-                typeIconImageView,
-                typeTitleLabel,
-                typeLabel
-            ],
-            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
-            spacing: 5,
-            alignment: .center
-        )
+        makeFieldContainer(title: typeTitleLabel, info: typeLabel, icon: typeIconImageView)
     }()
     
     private lazy var participantsStackView: UIStackView = {
-        UIStackView.makeStackView(
-            subviews: [
-                participantsIconImageView,
-                participantsTitleLabel,
-                participantsLabel
-            ],
-            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
-            spacing: 5,
-            alignment: .center
-        )
+        makeFieldContainer(title: participantsTitleLabel, info: participantsLabel, icon: participantsIconImageView)
     }()
     
     private lazy var priceStackView: UIStackView = {
-        UIStackView.makeStackView(
-            subviews: [
-                priceIconImageView,
-                priceTitleLabel,
-                priceLabel
-            ],
-            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
-            spacing: 5,
-            alignment: .center
-        )
+        makeFieldContainer(title: priceTitleLabel, info: priceLabel, icon: priceIconImageView)
     }()
     
     private lazy var activityTitleLabel: UILabel = {
@@ -215,5 +188,18 @@ public final class ActivityDetailsView: UIView {
         ])
         imageView.contentMode = .scaleAspectFit
         return (title, info, imageView)
+    }
+    
+    private func makeFieldContainer(title: UILabel, info: UILabel, icon: UIImageView) -> UIStackView {
+        UIStackView.makeStackView(
+            subviews: [
+                icon,
+                title,
+                info
+            ],
+            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            spacing: 5,
+            alignment: .center
+        )
     }
 }
