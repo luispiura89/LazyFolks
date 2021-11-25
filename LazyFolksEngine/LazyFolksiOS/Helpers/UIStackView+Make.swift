@@ -13,10 +13,11 @@ extension UIStackView {
         subviews: [UIView],
         margins: UIEdgeInsets? = nil,
         spacing: CGFloat,
-        alignment: Alignment = .fill
+        alignment: Alignment = .fill,
+        axis: NSLayoutConstraint.Axis = .vertical
     ) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: subviews)
-        stackView.axis = .vertical
+        stackView.axis = axis
         stackView.spacing = spacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         margins.map { stackView.layoutMargins = $0 }

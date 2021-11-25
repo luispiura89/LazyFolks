@@ -8,7 +8,7 @@
 import UIKit
 import LazyFolksEngine
 
-public final class ActivityDetailsView: UIView {
+public final class ActivityDetailsView: UIScrollView {
     
     // MARK: - Properties
     
@@ -38,8 +38,8 @@ public final class ActivityDetailsView: UIView {
     private lazy var infoStackView: UIStackView = {
         UIStackView.makeStackView(
             subviews: [typeStackView, participantsStackView, priceStackView],
-            margins: UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25),
-            spacing: 0
+            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
+            spacing: 10
         )
     }()
     
@@ -112,7 +112,10 @@ public final class ActivityDetailsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil)
+        alwaysBounceHorizontal = false
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
     }
     
     public convenience init(
@@ -143,6 +146,7 @@ public final class ActivityDetailsView: UIView {
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainStackView.widthAnchor.constraint(equalToConstant: frame.width),
             trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
             bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor)
         ])
@@ -168,14 +172,14 @@ public final class ActivityDetailsView: UIView {
         let info = UILabel.makeLabel(
             text: fieldValue,
             numberOfLines: 0,
-            textStyle: .title2,
+            textStyle: .subheadline,
             textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
         )
         
         let title = UILabel.makeLabel(
             text: fieldTitle,
             numberOfLines: 0,
-            textStyle: .title2,
+            textStyle: .headline,
             textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
         )
         
@@ -183,23 +187,35 @@ public final class ActivityDetailsView: UIView {
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 45),
-            imageView.heightAnchor.constraint(equalToConstant: 45),
+            imageView.widthAnchor.constraint(equalToConstant: 40),
+            imageView.heightAnchor.constraint(equalToConstant: 40),
         ])
         imageView.contentMode = .scaleAspectFit
         return (title, info, imageView)
     }
     
     private func makeFieldContainer(title: UILabel, info: UILabel, icon: UIImageView) -> UIStackView {
-        UIStackView.makeStackView(
+        let textfields = UIStackView.makeStackView(
             subviews: [
-                icon,
                 title,
                 info
             ],
-            margins: UIEdgeInsets(top: 20, left: 25, bottom: 0, right: 25),
-            spacing: 5,
-            alignment: .center
+            margins: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+            spacing: 8
         )
+        let container = UIStackView.makeStackView(
+            subviews: [
+                icon,
+                textfields
+            ],
+            margins: UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16),
+            spacing: 20,
+            alignment: .leading,
+            axis: .horizontal
+        )
+        container.backgroundColor = .white
+        container.clipsToBounds = true
+        container.layer.cornerRadius = 5
+        return container
     }
 }
