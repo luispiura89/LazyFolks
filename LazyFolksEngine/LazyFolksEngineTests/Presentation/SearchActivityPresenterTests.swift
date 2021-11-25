@@ -99,6 +99,14 @@ final class SearchActivityPresenterTests: XCTestCase {
         XCTAssertEqual(viewSpy.messages, [.inputedData(type, participants, minPrice, maxPrice)])
     }
     
+    func test_presenter_shouldTellTheViewToRenderInvalidDataState() {
+        let (presenter, viewSpy) = makeSUT()
+        
+        presenter.updateView(inputedData: nil)
+        
+        XCTAssertEqual(viewSpy.messages, [.invalidData])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (SearchActivityPresenter, ViewSpy) {
@@ -112,13 +120,14 @@ final class SearchActivityPresenterTests: XCTestCase {
     }
     
     private final class ViewSpy: LoadingView, LoadingErrorView, SearchView {
-        
+
         enum Message: Hashable {
             
             case loading(Bool)
             case failure(String?)
             case success(Activity)
-            case inputedData(String?, String?, String?, String?)
+            case inputedData(String, String, String, String)
+            case invalidData
         }
         
         private(set) var messages = Set<Message>()
@@ -137,13 +146,13 @@ final class SearchActivityPresenterTests: XCTestCase {
             messages.insert(.success(data.activity))
         }
         
-        func updateEnteredData(_ data: InputedData?) {
-            if let data = data {
-                let (type, participants, minPrice, maxPrice) = data
-                messages.insert(.inputedData(type, participants, minPrice, maxPrice))
-            } else {
-                messages.insert(.inputedData(nil, nil, nil, nil))
-            }
+        func didEnteredInvalidData() {
+            messages.insert(.invalidData)
+        }
+        
+        func didEnteredValidData(_ data: InputedData) {
+            let (type, participants, minPrice, maxPrice) = data
+            messages.insert(.inputedData(type, participants, minPrice, maxPrice))
         }
     }
 }

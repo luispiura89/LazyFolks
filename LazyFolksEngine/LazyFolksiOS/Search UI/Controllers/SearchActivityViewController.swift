@@ -53,13 +53,13 @@ public final class SearchActivityViewController: UIViewController, KeyboardObser
 
     }
     
-    public func updateInputedData(values: (String, String, String, String)?) {
-        if values != nil {
-            searchView?.searchButton.enableButton()
-        } else {
-            searchView?.searchButton.disableButton()
-        }
+    public func updateInputedData(values: (String, String, String, String)) {
+        searchView?.searchButton.enableButton()
         searchController?.updateData(values: values)
+    }
+    
+    public func disableSearchAction() {
+        searchView?.searchButton.disableButton()
     }
     
     public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
