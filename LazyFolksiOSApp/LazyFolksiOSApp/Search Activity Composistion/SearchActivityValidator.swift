@@ -8,6 +8,9 @@
 import LazyFolksEngine
 import LazyFolksiOS
 
+/// Class in charge of handling the `SearchActivityViewController` validations
+/// it was created as a protocol implementation to decouple the `SearchActivityViewController` from specific types
+
 final class SearchActivityValidator: SearchActivityViewControllerDelegate {
     
     var presenter: SearchActivityPresenter?

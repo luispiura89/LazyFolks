@@ -171,6 +171,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD9EF877274FE2CC00E7309F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CDD8B5F127482B7600C9F7FF = {
 			isa = PBXGroup;
 			children = (
@@ -195,12 +203,12 @@
 			children = (
 				CD3BD902274EE02500C24491 /* Activity Details Composition */,
 				CD003C36274D5DE60037B5C8 /* Search Activity Composistion */,
+				CD9EF877274FE2CC00E7309F /* Helpers */,
 				CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */,
 				CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */,
 				CDD8B60627482B7700C9F7FF /* Assets.xcassets */,
 				CDD8B60827482B7700C9F7FF /* LaunchScreen.storyboard */,
 				CDD8B60B27482B7700C9F7FF /* Info.plist */,
-				CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */,
 			);
 			path = LazyFolksiOSApp;
 			sourceTree = "<group>";

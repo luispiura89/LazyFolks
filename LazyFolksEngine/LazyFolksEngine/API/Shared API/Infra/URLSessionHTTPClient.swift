@@ -7,6 +7,12 @@
 
 import Foundation
 
+/// Class in charge of handling the HTTP requests
+/// is an `HTTPClient` implementation, that way we could replace it easily if we want
+/// to send our request using other Framework.
+/// This class is a protocol implementation to keep the rest of the business logic
+/// decouple from infrastructure details.
+
 public final class URLSessionHTTPClient: HTTPClient {
     
     private let session: URLSession
