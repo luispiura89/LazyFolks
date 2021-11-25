@@ -15,6 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private let baseURL = URL(string: "https://www.boredapi.com/api/")!
+    
+    private lazy var httpClient: HTTPClient = {
+        let session = URLSession(configuration: .ephemeral)
+        return URLSessionHTTPClient(session: session)
+    }()
+    
+    convenience init(httpClient: HTTPClient) {
+        self.init()
+        self.httpClient = httpClient
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -52,14 +62,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         minPrice: String,
         maxPrice: String
     ) -> AnyPublisher<Activity, Error> {
-        let session = URLSession(configuration: .ephemeral)
         let url = ActivityEndpoint.get(
             type: type,
             participants: participants,
             minRange: minPrice,
             maxRange: maxPrice
         ).requestURL(baseURL: baseURL)
-        return URLSessionHTTPClient(session: session)
+        return httpClient
             .getPublisher(from: url)
             .dispatchOnMainQueue()
             .tryMap(ActivitiesMapper.map)

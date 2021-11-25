@@ -9,7 +9,7 @@ import Combine
 import LazyFolksEngine
 import Foundation
 
-extension URLSessionHTTPClient {
+extension HTTPClient {
     typealias Publisher = AnyPublisher <(Data, HTTPURLResponse), Error>
     
     func getPublisher(from url: URL) -> Publisher {
