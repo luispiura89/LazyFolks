@@ -8,6 +8,10 @@
 import LazyFolksEngine
 import LazyFolksiOS
 
+/// Class created to decouple the `SearchActivityViewController` from domain types
+/// such as `Activity`. The presenter will notify this class when the fetch activity data
+/// completes successfully and this class will drive the message to `SearchActivityViewController`
+
 final class SearchViewAdapter: SearchView {
     
     private weak var controller: SearchActivityViewController?

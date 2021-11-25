@@ -12,6 +12,8 @@ import UIKit
 
 public typealias SearchActivityLoader = (String, String, String, String) -> AnyPublisher<Activity, Error>
 
+/// This factory class is in charge of create an instance of `SearchActivityViewController` with all its dependencies
+
 public final class SearchViewComposer {
     private init() {}
     

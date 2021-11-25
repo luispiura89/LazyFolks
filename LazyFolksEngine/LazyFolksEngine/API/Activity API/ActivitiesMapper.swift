@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// Class in charge of mapping the `Data` received from the `HTTPClient`
+/// either into valid data or into an error
+
 public final class ActivitiesMapper {
     
     private struct DecodableError: Decodable {

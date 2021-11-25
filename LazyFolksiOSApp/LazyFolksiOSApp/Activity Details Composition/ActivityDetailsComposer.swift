@@ -10,6 +10,8 @@ import LazyFolksEngine
 import LazyFolksiOS
 import UIKit
 
+/// This factory class is in charge of create an instance of `ActivityDetailsViewController` with all its dependencies
+
 public final class ActivityDetailsComposer {
     public static func compose(
         windowBounds: CGRect,

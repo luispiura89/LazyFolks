@@ -8,6 +8,10 @@
 import LazyFolksEngine
 import Combine
 
+/// This class was created to decouple the `SearchActivityController` from the loaders
+/// that means that even when `SearchActivityController` can perform fetch actions
+/// it is agnostic from whom is doing the request
+
 final class SearchActivityPresentationAdapter {
     private let loader: SearchActivityLoader
     private var cancellable: AnyCancellable?

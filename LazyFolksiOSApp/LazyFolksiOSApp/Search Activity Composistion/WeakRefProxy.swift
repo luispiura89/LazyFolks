@@ -7,6 +7,10 @@
 
 import LazyFolksEngine
 
+/// Class created to avoid the leak of implementation details in the presenter
+/// With this class there's no need to specify that views in the presenter are weak
+/// and that the views should be `AnyObject` type
+
 final class WeakRefProxy<T: AnyObject> {
     
     private weak var reference: T?
