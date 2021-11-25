@@ -158,7 +158,8 @@ public final class SearchActivityView: UIView {
     
     func adjustInsets(keyboardFrame: CGRect) {
         let intersection = keyboardFrame.intersection(frame)
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: intersection.height + 50, right: 0)
+        let additionalSpace: CGFloat = 50
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: intersection.height + additionalSpace, right: 0)
     }
     
     func hideKeyboard() {
