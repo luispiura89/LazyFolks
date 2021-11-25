@@ -7,6 +7,10 @@
 
 import Foundation
 
+/// This class is in charge of two main actions:
+/// 1. Checking if a search request can be sent, and
+/// 2. Sending the search request
+
 public final class SearchActivityController {
     
     public typealias SearchValues = (String, String, String, String)
