@@ -79,16 +79,16 @@ extension SearchActivityViewController: LoadingView {
 
 extension SearchActivityViewController: LoadingErrorView {
     public func displayErrorMessage(_ data: ErrorViewData) {
-        let message = data.errorMessage
-        errorView.message = message
-        if message == nil {
-            errorView.removeFromSuperview()
-        } else {
-            guard let searchView = searchView else { return }
-            searchView.addSubview(errorView)
-            errorView.topAnchor.constraint(equalTo: searchView.safeAreaLayoutGuide.topAnchor).isActive = true
-            errorView.leadingAnchor.constraint(equalTo: searchView.leadingAnchor).isActive = true
-            searchView.trailingAnchor.constraint(equalTo: errorView.trailingAnchor).isActive = true
-        }
+        errorView.message = data.errorMessage
+        guard let searchView = searchView else { return }
+        errorView.removeFromSuperview()
+        searchView.addSubview(errorView)
+        errorView.topAnchor.constraint(equalTo: searchView.safeAreaLayoutGuide.topAnchor).isActive = true
+        errorView.leadingAnchor.constraint(equalTo: searchView.leadingAnchor).isActive = true
+        searchView.trailingAnchor.constraint(equalTo: errorView.trailingAnchor).isActive = true
+    }
+    
+    public func removeErrorMessage() {
+        errorView.message = nil
     }
 }

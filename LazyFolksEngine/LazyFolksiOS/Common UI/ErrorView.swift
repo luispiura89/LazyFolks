@@ -35,13 +35,15 @@ public final class ErrorView: UIButton {
     // MARK: - Private methods
     
     private func setErrorMessage(message: String?) {
-        setTitle(message, for: .normal)
         
         if message == nil {
             UIView.animate(withDuration: 0.5) { [weak self] in
                 self?.alpha = 0
+            } completion: { [weak self] _ in
+                self?.setTitle(message, for: .normal)
             }
         } else {
+            setTitle(message, for: .normal)
             UIView.animate(withDuration: 0.5) { [weak self] in
                 self?.alpha = 1
             }

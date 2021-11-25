@@ -6,14 +6,15 @@
 //
 
 public struct ErrorViewData {
-    public let errorMessage: String?
+    public let errorMessage: String
     
     
-    public init(errorMessage: String?) {
+    public init(errorMessage: String) {
         self.errorMessage = errorMessage
     }
 }
 
 public protocol LoadingErrorView {
     func displayErrorMessage(_ data: ErrorViewData)
+    func removeErrorMessage()
 }

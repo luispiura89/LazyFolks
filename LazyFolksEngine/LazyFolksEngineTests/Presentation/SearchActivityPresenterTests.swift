@@ -49,7 +49,7 @@ final class SearchActivityPresenterTests: XCTestCase {
         
         presenter.startSearchingActivity()
         
-        XCTAssertEqual(viewSpy.messages, [.loading(true), .failure(nil)])
+        XCTAssertEqual(viewSpy.messages, [.loading(true), .removeErrorMessage])
     }
     
     func test_presenter_shouldTellTheViewToDisplayNotFoundActivityErrorOnError() {
@@ -124,10 +124,11 @@ final class SearchActivityPresenterTests: XCTestCase {
         enum Message: Hashable {
             
             case loading(Bool)
-            case failure(String?)
+            case failure(String)
             case success(Activity)
             case inputedData(String, String, String, String)
             case invalidData
+            case removeErrorMessage
         }
         
         private(set) var messages = Set<Message>()
@@ -140,6 +141,10 @@ final class SearchActivityPresenterTests: XCTestCase {
         
         func displayErrorMessage(_ data: ErrorViewData) {
             messages.insert(.failure(data.errorMessage))
+        }
+        
+        func removeErrorMessage() {
+            messages.insert(.removeErrorMessage)
         }
         
         func didLoad(_ data: SearchActivityViewData) {
