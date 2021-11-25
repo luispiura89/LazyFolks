@@ -23,6 +23,7 @@ final class SearchViewControllerIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.participantsPlaceholder, SearchActivityPresenter.participantsPlaceholder)
         XCTAssertEqual(sut.minPricePlaceholder, SearchActivityPresenter.minPricePlaceholder)
         XCTAssertEqual(sut.maxPricePlaceholder, SearchActivityPresenter.maxPricePlaceholder)
+        XCTAssertEqual(sut.searchButtonTitle, SearchActivityPresenter.searchButtonTitle)
     }
     
     func test_searchView_shouldRequestSearchActivity() {

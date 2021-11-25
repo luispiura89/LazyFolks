@@ -17,6 +17,7 @@ public final class SearchActivityView: UIView {
     public private(set) var participantsPlaceholder: String?
     public private(set) var minPricePlaceholder: String?
     public private(set) var maxPricePlaceholder: String?
+    public private(set) var searchButtonTitle: String?
     
     var searchHandler: (() -> Void)?
     var didTypeChangeHandler: ((String?) -> Void)?
@@ -106,7 +107,7 @@ public final class SearchActivityView: UIView {
     
     public private(set) lazy var searchButton: LoadingButton = {
         let button = LoadingButton(
-            title: "Search",
+            title: searchButtonTitle,
             color: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
         )
         NSLayoutConstraint.activate([
@@ -131,7 +132,8 @@ public final class SearchActivityView: UIView {
         typePlaceholder: String,
         participantsPlaceholder: String,
         minPricePlaceholder: String,
-        maxPricePlaceholder: String
+        maxPricePlaceholder: String,
+        searchButtonTitle: String
     ) {
         self.init(frame: bounds)
         
@@ -141,6 +143,7 @@ public final class SearchActivityView: UIView {
         self.participantsPlaceholder = participantsPlaceholder
         self.minPricePlaceholder = minPricePlaceholder
         self.maxPricePlaceholder = maxPricePlaceholder
+        self.searchButtonTitle = searchButtonTitle
         
         setupSubviews()
         containerView.addCurveTop(frame: bounds)

@@ -38,6 +38,10 @@ final class SearchActivityPresenterTests: XCTestCase {
             SearchActivityPresenter.maxPricePlaceholder,
             localized("SEARCH_ACTIVITY_MAX_PRICE_PLACEHOLDER", bundle: bundle, table: table)
         )
+        XCTAssertEqual(
+            SearchActivityPresenter.searchButtonTitle,
+            localized("SEARCH_ACTIVITY_SEARCH_BUTTON_TITLE", bundle: bundle, table: table)
+        )
     }
     
     func test_presenter_shouldTellTheViewToLoadWhenSearchStarts() {

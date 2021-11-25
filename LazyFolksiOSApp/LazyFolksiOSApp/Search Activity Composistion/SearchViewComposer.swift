@@ -50,7 +50,8 @@ public final class SearchViewComposer {
             typePlaceholder: SearchActivityPresenter.typePlaceholder,
             participantsPlaceholder: SearchActivityPresenter.participantsPlaceholder,
             minPricePlaceholder: SearchActivityPresenter.minPricePlaceholder,
-            maxPricePlaceholder: SearchActivityPresenter.maxPricePlaceholder
+            maxPricePlaceholder: SearchActivityPresenter.maxPricePlaceholder,
+            searchButtonTitle: SearchActivityPresenter.searchButtonTitle
         )
     }
 }

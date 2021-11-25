@@ -34,6 +34,10 @@ extension SearchActivityViewController {
         searchView?.maxPricePlaceholder
     }
     
+    var searchButtonTitle: String? {
+        searchView?.searchButtonTitle
+    }
+    
     var isShowingLoadingIndicator: Bool {
         searchView?.searchButton.isLoading == true
     }

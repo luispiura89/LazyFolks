@@ -59,6 +59,12 @@ public final class SearchActivityPresenter {
             comment: "General error")
     }
     
+    public static var searchButtonTitle: String {
+        localize(
+            key: "SEARCH_ACTIVITY_SEARCH_BUTTON_TITLE",
+            comment: "General error")
+    }
+    
     private let loadingView: LoadingView
     private let errorView: LoadingErrorView
     private let searchView: SearchView
