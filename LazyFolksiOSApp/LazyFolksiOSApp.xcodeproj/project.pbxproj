@@ -23,6 +23,7 @@
 		CD9D38B7274C725E005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; };
 		CD9D38B8274C725E005E849B /* LazyFolksiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD9EF872274EEFCF00E7309F /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */; };
+		CD9EF876274F132000E7309F /* SearchActivityAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EF875274F132000E7309F /* SearchActivityAcceptanceTests.swift */; };
 		CDD8B5FE27482B7600C9F7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */; };
 		CDD8B60027482B7600C9F7FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */; };
 		CDD8B60727482B7700C9F7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD8B60627482B7700C9F7FF /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		CD9D38B2274C7259005E849B /* LazyFolksEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D38B6274C725E005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9EF871274EEFCF00E7309F /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
+		CD9EF875274F132000E7309F /* SearchActivityAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityAcceptanceTests.swift; sourceTree = "<group>"; };
 		CDD8B5FA27482B7600C9F7FF /* LazyFolksiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFolksiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8B5FD27482B7600C9F7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD8B5FF27482B7600C9F7FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				CD003C3B274D84CF0037B5C8 /* Helpers */,
 				CD003C33274D5BBA0037B5C8 /* Search Activity Integration */,
 				CD3BD903274EE03800C24491 /* Activity Details Integration */,
+				CD9EF875274F132000E7309F /* SearchActivityAcceptanceTests.swift */,
 			);
 			path = LazyFolksiOSAppTests;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				CD3BD907274EE18A00C24491 /* ActivityDetailsViewControllerIntegrationTests.swift in Sources */,
 				CD003C35274D5BED0037B5C8 /* SearchViewControllerIntegrationTests.swift in Sources */,
 				CD3BD90A274EE3D000C24491 /* ActivityDetailsViewController+Helpers.swift in Sources */,
+				CD9EF876274F132000E7309F /* SearchActivityAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

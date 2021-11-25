@@ -23,13 +23,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-        let bounds = window!.bounds
-        window!.rootViewController = SearchViewComposer.compose(
-            windowBounds: bounds,
+        configureWindow()
+    }
+    
+    func configureWindow() {
+        window?.rootViewController = SearchViewComposer.compose(
+            windowBounds: window?.bounds ?? .zero,
             loader: loaderPublisher,
             navigationHandler: navigateToActivityDetails
         )
-        window!.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
     }
     
     private func navigateToActivityDetails(activity: Activity) {
