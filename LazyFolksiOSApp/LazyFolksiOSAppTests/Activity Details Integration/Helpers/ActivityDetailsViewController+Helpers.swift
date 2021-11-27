@@ -22,14 +22,14 @@ extension ActivityDetailsViewController {
     }
     
     var type: String? {
-        detailsView?.typeLabel.text
+        detailsView?.typeItemView.infoLabel.text
     }
     
     var participants: String? {
-        detailsView?.participantsLabel.text
+        detailsView?.participantsItemView.infoLabel.text
     }
     
     var price: String? {
-        detailsView?.priceLabel.text
+        detailsView?.priceItemView.infoLabel.text
     }
 }

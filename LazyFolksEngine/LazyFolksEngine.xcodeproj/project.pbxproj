@@ -25,6 +25,7 @@
 		CD3BD90E274EE54000C24491 /* ActivityDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD3BD90D274EE54000C24491 /* ActivityDetails.strings */; };
 		CD3BD910274EE76000C24491 /* ActivityDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD90F274EE76000C24491 /* ActivityDetailsPresenterTests.swift */; };
 		CD3BD913274EE7D200C24491 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD912274EE7D200C24491 /* TestHelpers.swift */; };
+		CD6BAA85275284C800B13901 /* ActivityDetailsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6BAA84275284C800B13901 /* ActivityDetailsItemView.swift */; };
 		CD6FB9AD274D439400096F9B /* SearchActivityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */; };
 		CD6FB9B0274D463E00096F9B /* SearchActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */; };
 		CD6FB9B2274D472F00096F9B /* SearchActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6FB9B1274D472F00096F9B /* SearchActivity.strings */; };
@@ -119,6 +120,7 @@
 		CD3BD90D274EE54000C24491 /* ActivityDetails.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ActivityDetails.strings; sourceTree = "<group>"; };
 		CD3BD90F274EE76000C24491 /* ActivityDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		CD3BD912274EE7D200C24491 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		CD6BAA84275284C800B13901 /* ActivityDetailsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsItemView.swift; sourceTree = "<group>"; };
 		CD6FB9AC274D439400096F9B /* SearchActivityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenterTests.swift; sourceTree = "<group>"; };
 		CD6FB9AF274D463E00096F9B /* SearchActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActivityPresenter.swift; sourceTree = "<group>"; };
 		CD6FB9B1274D472F00096F9B /* SearchActivity.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SearchActivity.strings; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				CD3BD8E8274E9E8500C24491 /* ActivityDetailsView.swift */,
+				CD6BAA84275284C800B13901 /* ActivityDetailsItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				CD3BD901274EC8EC00C24491 /* UIView+Make.swift in Sources */,
 				CD3BD8F4274EA37100C24491 /* UIStackView+Make.swift in Sources */,
 				CD3BD8E9274E9E8500C24491 /* ActivityDetailsView.swift in Sources */,
+				CD6BAA85275284C800B13901 /* ActivityDetailsItemView.swift in Sources */,
 				CD3BD8F2274EA34300C24491 /* UILabel+Make.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
