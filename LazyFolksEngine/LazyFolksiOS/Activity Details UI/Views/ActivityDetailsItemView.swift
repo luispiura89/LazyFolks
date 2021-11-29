@@ -9,7 +9,7 @@ import UIKit
 
 public final class ActivityDetailsItemView: UIStackView {
     
-    private var icon: String?
+    private var icon: UIImage?
     private var info: String?
     private var title: String?
     
@@ -17,7 +17,7 @@ public final class ActivityDetailsItemView: UIStackView {
         super.init(frame: frame)
     }
     
-    convenience init(title: String?, info: String?, icon: String?) {
+    convenience init(title: String?, info: String?, icon: UIImage?) {
         self.init(frame: .zero)
         self.icon = icon
         self.info = info
@@ -52,7 +52,7 @@ public final class ActivityDetailsItemView: UIStackView {
     }()
     
     private func makeViews() -> (title: UILabel, info: UILabel, icon: UIImageView) {
-        makeFieldViews(fieldTitle: title, fieldValue: info, iconName: icon)
+        makeFieldViews(fieldTitle: title, fieldValue: info, icon: icon)
     }
     
     private func makeFieldContainer(title: UILabel, info: UILabel) -> UIStackView {
@@ -69,24 +69,23 @@ public final class ActivityDetailsItemView: UIStackView {
     private func makeFieldViews(
         fieldTitle: String?,
         fieldValue: String?,
-        iconName: String?
+        icon: UIImage?
     ) -> (title: UILabel, info: UILabel, icon: UIImageView) {
         let info = UILabel.makeLabel(
             text: fieldValue,
             numberOfLines: 0,
             textStyle: .subheadline,
-            textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
+            textColor: .orange1
         )
         
         let title = UILabel.makeLabel(
             text: fieldTitle,
             numberOfLines: 0,
             textStyle: .headline,
-            textColor: UIColor(named: "Orange1", in: Bundle(for: Self.self), compatibleWith: nil)
+            textColor: .orange1
         )
         
-        let image = UIImage(named: iconName ?? "", in: Bundle(for: Self.self), compatibleWith: nil)
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: icon)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 40),

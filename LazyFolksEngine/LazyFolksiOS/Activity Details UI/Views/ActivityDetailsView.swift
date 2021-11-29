@@ -44,15 +44,15 @@ public final class ActivityDetailsView: UIScrollView {
     }()
     
     public private(set) lazy var typeItemView: ActivityDetailsItemView = {
-        ActivityDetailsItemView(title: typeFieldTitle, info: viewData?.type, icon: "TypeIcon")
+        ActivityDetailsItemView(title: typeFieldTitle, info: viewData?.type, icon: .typeIcon)
     }()
     
     public private(set) lazy var participantsItemView: ActivityDetailsItemView = {
-        ActivityDetailsItemView(title: participantsFieldTitle, info: viewData?.participants, icon: "ParticipantsIcon")
+        ActivityDetailsItemView(title: participantsFieldTitle, info: viewData?.participants, icon: .participantsIcon)
     }()
     
     public private(set) lazy var priceItemView: ActivityDetailsItemView = {
-        ActivityDetailsItemView(title: priceFieldTitle, info: viewData?.price, icon: "PriceIcon")
+        ActivityDetailsItemView(title: priceFieldTitle, info: viewData?.price, icon: .priceIcon)
     }()
     
     private lazy var activityTitleLabel: UILabel = {
@@ -61,7 +61,7 @@ public final class ActivityDetailsView: UIScrollView {
 
     
     private lazy var containerView: UIView = {
-        let view = UIView.makeView(color: UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil))
+        let view = UIView.makeView(color: .gray)
         view.addSubview(infoStackView)
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -77,7 +77,7 @@ public final class ActivityDetailsView: UIScrollView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor(named: "Gray", in: Bundle(for: Self.self), compatibleWith: nil)
+        backgroundColor = .gray
         alwaysBounceHorizontal = false
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false

@@ -43,6 +43,8 @@
 		CD8A270F274957050096143A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A270E274957050096143A /* Activity.swift */; };
 		CD8A2711274957FE0096143A /* ActivityEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2710274957FE0096143A /* ActivityEndpoint.swift */; };
 		CD8A2713274959260096143A /* ActivityEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A2712274959250096143A /* ActivityEndpointTests.swift */; };
+		CD9BEF05275535000025D10D /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9BEF04275535000025D10D /* UIColor+Helpers.swift */; };
+		CD9BEF07275537FD0025D10D /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9BEF06275537FD0025D10D /* UIImage+Helpers.swift */; };
 		CD9D385E274BF2A4005E849B /* LazyFolksiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9D3856274BF2A4005E849B /* LazyFolksiOS.framework */; };
 		CD9D386C274BF3C3005E849B /* LazyFolksEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; };
 		CD9D386D274BF3C3005E849B /* LazyFolksEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDD8B5D927482B2400C9F7FF /* LazyFolksEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -138,6 +140,8 @@
 		CD8A270E274957050096143A /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CD8A2710274957FE0096143A /* ActivityEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEndpoint.swift; sourceTree = "<group>"; };
 		CD8A2712274959250096143A /* ActivityEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEndpointTests.swift; sourceTree = "<group>"; };
+		CD9BEF04275535000025D10D /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		CD9BEF06275537FD0025D10D /* UIImage+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
 		CD9D3856274BF2A4005E849B /* LazyFolksiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyFolksiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D385D274BF2A4005E849B /* LazyFolksiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFolksiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9D3872274BF576005E849B /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 		CD3BD8EA274EA02A00C24491 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CD9BEF04275535000025D10D /* UIColor+Helpers.swift */,
 				CD3BD8EB274EA04200C24491 /* UIView+GradientBackground.swift */,
 				CD3BD8ED274EA0AB00C24491 /* UIView+CurvedTop.swift */,
 				CD3BD8EF274EA30F00C24491 /* UITextField+Make.swift */,
@@ -247,6 +252,7 @@
 				CD3BD8F3274EA37100C24491 /* UIStackView+Make.swift */,
 				CD3BD900274EC8EC00C24491 /* UIView+Make.swift */,
 				CD9EF873274EFDF800E7309F /* KeyboardObserver.swift */,
+				CD9BEF06275537FD0025D10D /* UIImage+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -736,7 +742,9 @@
 				CD9D387E274BF956005E849B /* SearchActivityView.swift in Sources */,
 				CD3BD8F0274EA30F00C24491 /* UITextField+Make.swift in Sources */,
 				CD9D3885274C5491005E849B /* LoadingButton.swift in Sources */,
+				CD9BEF07275537FD0025D10D /* UIImage+Helpers.swift in Sources */,
 				CD3BD8EE274EA0AB00C24491 /* UIView+CurvedTop.swift in Sources */,
+				CD9BEF05275535000025D10D /* UIColor+Helpers.swift in Sources */,
 				CD3BD8EC274EA04200C24491 /* UIView+GradientBackground.swift in Sources */,
 				CD3BD8E5274E9CFA00C24491 /* ActivityDetailsViewController.swift in Sources */,
 				CD9D388C274C6188005E849B /* ErrorView.swift in Sources */,
