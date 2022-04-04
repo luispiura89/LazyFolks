@@ -29,10 +29,10 @@ public final class LoadingButton: UIButton {
     // MARK: - Subviews
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(style: .medium)
-        activityIndicator.color = .white
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        return activityIndicator
+        let activity = UIActivityIndicatorView(style: .medium)
+        activity.color = .white
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        return activity
     }()
     
     // MARK: - Init
